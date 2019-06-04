@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Vaspkit做电荷密度差图 | VASPKIT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！ ########## vaspkit should be cited as following########## V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspk">
+<meta name="keywords" content="VASP,vaspkit,电荷密度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vaspkit做电荷密度差图">
+<meta property="og:url" content="http://vaspkit.com/2019/06/03/test/index.html">
+<meta property="og:site_name" content="VASPKIT">
+<meta property="og:description" content="本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！ ########## vaspkit should be cited as following########## V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspk">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/chgdiff1.png">
+<meta property="og:updated_time" content="2019-06-04T02:51:33.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vaspkit做电荷密度差图">
+<meta name="twitter:description" content="本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！ ########## vaspkit should be cited as following########## V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspk">
+<meta name="twitter:image" content="http://vaspkit.com/images/vaspkit-hse-band/chgdiff1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="VASPKIT" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">VASPKIT</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://vaspkit.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/03/test/" class="article-date">
+  <time datetime="2019-06-02T16:00:00.000Z" itemprop="datePublished">2019-06-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/理论计算化学/">理论计算化学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vaspkit做电荷密度差图
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！</p>
+<p><strong>########## vaspkit should be cited as following##########</strong></p>
+<p><strong>V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
+<p>Vaspkit可以方便的处理VASP输出的电荷密度文件(CHGCAR)，做电荷密度差分处理，VTST脚本或者VESTA也可以做，但是不如vaspkit方便灵活。<br>（注：此文中讲述的功能同样适用于任何的实空间函数形式的文件处理，比如静电势差值图(LOCPOT)，电子定域化函数差值图(ELFCAR)，能带分解的电荷密度插值图(PARCHG)等等。）</p>
+<p>电荷密度差分（charge density difference）是研究电子结构的重要手段之一。可以直观的得到两个片段相互作用后的电子流向，原子形成分子过程中电子密度的变化、探究化学键的本质。电荷密度差分有以下几种形式：</p>
+<p>（1）体系的电荷密度减去组成它的两个或几个片段的密度：<br>$$<br>\Delta \rho=\rho_{A B}-\rho_{A}-\rho_{B}<br>$$</p>
+<p>（2）自洽计算收敛以后体系的电荷密度减去该原子构型下每个原子的球对称的电荷密度(即初猜电荷密度)，也称为变形电荷密度(Deformation charge density)<br>$$<br>\Delta \rho=\rho\left(A B_{\text { self-consistent }}\right)-\rho\left(A B_{\text { atomic }}\right)<br>$$</p>
+<p>（3）在某个状态的密度减去这个体系在另外一个状态的密度。比如：外加电场作用下的电荷密度减去没有外势场的电荷密度。再比如：激发态的密度减去它在基态时的密度。<br>$$<br>\Delta \rho=\rho\left(A B_{\text { state 1 }}\right)-\rho\left(A B_{\text { state 0 }}\right)<br>$$</p>
+<p>以上三种电荷密度差，无论哪一种计算又要保证<strong>原子坐标坐标必须一致</strong>！</p>
+<p>对于（1）的计算只需要优化AB的结构，A、B片段保持AB结构中原子坐标，不能再对片段进行结构进行单独优化。</p>
+<p>（2）（3）不能用两个原子坐标不同结构的电荷密度相减，而只能共用其中一个状态的几何构型。</p>
+<h2 id="CHGCAR文件格式"><a href="#CHGCAR文件格式" class="headerlink" title="CHGCAR文件格式"></a>CHGCAR文件格式</h2><p>CHGCAR是包含电子密度信息的格点文件，对于自旋非极化体系（ISPIN = 1）计算只包含电荷密度，对于自旋极化体系（ISPIN = 2）计算还包含自旋电子密度。可以用VESTA，Jmol等程序打开。<br>CHGCAR的第一部分和POSCAR, CONTCAR的格式是完全一样的，它包含了最终结构的晶格矢量，原子核坐标等信息。紧接着是三个数字，这三个数是实空间函数的网格密度，对应于NGXF，NGYF，NGZF三个变量。然后是电荷密度信息ρ(r) * V<sub>cell</sub>。一共有NGXF * NGYF * NGZF个数值。比如：下面是一个Al2O3晶胞计算的CHGCAR文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Al2O3 Cell opt                          </span><br><span class="line">   1.00000000000000     </span><br><span class="line">     6.138452    0.000551   -0.011568</span><br><span class="line">     5.434311    2.854620   -0.011568</span><br><span class="line">    -1.324042   -0.326661    5.501689</span><br><span class="line">   O    Al</span><br><span class="line">     6     4</span><br><span class="line">Direct</span><br><span class="line">  0.160314  0.160314  0.108934</span><br><span class="line">  0.839686  0.839686  0.891066</span><br><span class="line">  0.495028  0.495028  0.257399</span><br><span class="line">  0.504972  0.504972  0.742601</span><br><span class="line">  0.826429  0.826429  0.432705</span><br><span class="line">  0.173571  0.173571  0.567295</span><br><span class="line">  0.090130  0.090130  0.795615</span><br><span class="line">  0.909870  0.909870  0.204385</span><br><span class="line">  0.342109  0.342109  0.683236</span><br><span class="line">  0.657891  0.657891  0.316764</span><br><span class="line">100  100   96</span><br><span class="line"> 0.43432567054E+01 0.44027037758E+01 0.45822813500E+01 0.48861003640E+01 0.53223812855E+01</span><br><span class="line"> 0.59054783755E+01 0.66583226816E+01 0.76145085758E+01 0.88190771181E+01 0.10327304760E+02</span><br><span class="line">。。。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vaspkit计算两个片段的电荷密度差"><a href="#Vaspkit计算两个片段的电荷密度差" class="headerlink" title="Vaspkit计算两个片段的电荷密度差"></a>Vaspkit计算两个片段的电荷密度差</h2><p>以CO分子吸附再Ni(100)表面为例：</p>
+<p>步骤一：优化<strong>CO/Ni(100)</strong>的结构，优化好的CONTCAR文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> CONTCAR\(3)                            </span><br><span class="line">   1.00000000000000     </span><br><span class="line">     4.9777998924000002    0.0000000000000000    0.0000000000000000</span><br><span class="line">     0.0000000000000000    4.9777998924000002    0.0000000000000000</span><br><span class="line">     0.0000000000000000    0.0000000000000000   23.7996006012000016</span><br><span class="line">   Ni   C    O </span><br><span class="line">    24     1     1</span><br><span class="line">Selective dynamics</span><br><span class="line">Direct</span><br><span class="line">  0.0000000000000000  0.0000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.0000403141048793  0.0001267891084566  0.3465324639523857   T   T   T</span><br><span class="line">  0.0003869756759585  0.0005016061154492  0.4914092265927721   T   T   T</span><br><span class="line">  0.2500000000000000  0.2500000000000000  0.1260499910000021   F   F   F</span><br><span class="line">  0.2501509938760123  0.2501939027302242  0.2738045972087804   T   T   T</span><br><span class="line">  0.2510445350818244  0.2510358567191133  0.4214201499164574   T   T   T</span><br><span class="line">  0.5000000000000000  0.0000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.5001131027590162  0.0001793013434579  0.3476242737143451   T   T   T</span><br><span class="line">  0.5003637542315573  0.9997315722502194  0.4921789851389491   T   T   T</span><br><span class="line">  0.7499999759999980  0.2500000000000000  0.1260499910000021   F   F   F</span><br><span class="line">  0.7499316556673818  0.2502046005629239  0.2738030513532408   T   T   T</span><br><span class="line">  0.7491890345597767  0.2510567755592561  0.4213836669568778   T   T   T</span><br><span class="line">  0.0000000000000000  0.5000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.0001477148529645  0.5002040345309098  0.3476407140178068   T   T   T</span><br><span class="line">  0.9998279455461869  0.5004850843478295  0.4921814441992751   T   T   T</span><br><span class="line">  0.2500000000000000  0.7499999759999980  0.1260499910000021   F   F   F</span><br><span class="line">  0.2501233421650753  0.7499923211510620  0.2738063435823861   T   T   T</span><br><span class="line">  0.2509685482545621  0.7492259105458245  0.4213662097234874   T   T   T</span><br><span class="line">  0.5000000000000000  0.5000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.5000095461819711  0.5000093692680139  0.3475763670314436   T   T   T</span><br><span class="line">  0.4997626166386695  0.4997469098518152  0.4975764390870765   T   T   T</span><br><span class="line">  0.7499999759999980  0.7499999759999980  0.1260499910000021   F   F   F</span><br><span class="line">  0.7499481468791345  0.7499759622207023  0.2737998574575187   T   T   T</span><br><span class="line">  0.7493532326515719  0.7494160592036465  0.4213303989337192   T   T   T</span><br><span class="line">  0.5053523115939882  0.5076925776123602  0.5706792117914432   T   T   T</span><br><span class="line">  0.5089497223101063  0.5124605842843479  0.6195520236066443   T   T   T</span><br></pre></td></tr></table></figure>
+
+<p>步骤二：分别计算Ni(100)和CO的单点能<br>CO和Ni(100)片段的坐标从CO/Ni(100)的CONTCAR里直接截取，不要再结构优化！！</p>
+<p>步骤三：用vaspkit 314功能做电荷差分，VTST脚本或者VESTA也可以做，但是不如vaspkit方便。依次输入三个片段的CHGCAR路径:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">314</span><br><span class="line"> ======================= File Options ============================</span><br><span class="line"> Input the Names of Charge/Potential Files with Space: </span><br><span class="line"> (e.g., to get AB-A-B, type: ~/AB/CHGCAR ./A/CHGCAR ../B/CHGCAR)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">./CHGCAR ./co/CHGCAR ./slab/CHGCAR</span><br><span class="line"></span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (02) Reading Charge Density From ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (03) Reading Structural Parameters from ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (04) Reading Charge Density From ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (05) Reading Structural Parameters from ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (06) Reading Charge Density From ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (07) Written CHGDIFF.vasp File!</span><br></pre></td></tr></table></figure>
+
+<p>生成CHGDIFF.vasp包含电荷密度差的信息，可以直接导入到VESTA里作图。</p>
+<h2 id="Vaspkit计算变形电荷密度差"><a href="#Vaspkit计算变形电荷密度差" class="headerlink" title="Vaspkit计算变形电荷密度差"></a>Vaspkit计算变形电荷密度差</h2><p>变形电荷密度</p>
+<h2 id="Vaspkit计算外加电场下的电荷密度差"><a href="#Vaspkit计算外加电场下的电荷密度差" class="headerlink" title="Vaspkit计算外加电场下的电荷密度差"></a>Vaspkit计算外加电场下的电荷密度差</h2><h2 id="电荷密度差作图"><a href="#电荷密度差作图" class="headerlink" title="电荷密度差作图"></a>电荷密度差作图</h2><p>得到的电荷密度差文件必须作成图才便于被直观地考察，常用的图分为三类：</p>
+<p>（1）3D 等值面图，isosurface。</p>
+<p>（2）2D 切面图</p>
+<p>（3）1D，平面平均的数值，plane-averaged </p>
+<p>通常这几种图可以配合使用讨论。等值面图和切面图用VESTA画最方便，平面平均图用vaspkit生成最方便。</p>
+<p>得到的CHGDIFF.vasp用vesta打开，isosurface青色部分电荷密度减小，黄色密度电荷密度增加。<br>$$<br>\rho=\rho(\mathrm{CO} / \mathrm{Ni})-\rho(\mathrm{CO})-\rho(\mathrm{Ni})<br>$$</p>
+<p><img src="/images/vaspkit-hse-band/chgdiff1.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://vaspkit.com/2019/06/03/test/" data-id="cjwh7j1h20000vcushjkip2kh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VASP/">VASP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vaspkit/">vaspkit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电荷密度/">电荷密度</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/04/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/理论计算化学/">理论计算化学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VASP/">VASP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vaspkit/">vaspkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电荷密度/">电荷密度</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/VASP/" style="font-size: 10px;">VASP</a> <a href="/tags/vaspkit/" style="font-size: 10px;">vaspkit</a> <a href="/tags/电荷密度/" style="font-size: 10px;">电荷密度</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/04/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/03/test/">Vaspkit做电荷密度差图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 V. Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
