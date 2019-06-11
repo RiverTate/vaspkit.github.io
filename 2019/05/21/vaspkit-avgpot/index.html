@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>Vaspkit做电荷密度差图 | VASPKIT</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Vaspkit做电荷密度差图 | VASPKIT">
+  <title>Vaspkit对静电势进行平面平均计算功函的方法 | VASPKIT</title>
+  <meta name="keywords" content=" VASP , 能带 ">
+  <meta name="description" content="Vaspkit对静电势进行平面平均计算功函的方法 | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！ ########## vaspkit should be cited as following########## V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspk">
 <meta property="og:type" content="article">
@@ -236,9 +236,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-chgdiff" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-vaspkit-avgpot" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Vaspkit做电荷密度差图</h1>
+        <h1 class="article-title">Vaspkit对静电势进行平面平均计算功函的方法</h1>
     
     <div class="article-meta">
         
@@ -248,15 +248,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="vaspkit">vaspkit</a>
+                <a href="javascript:" data-rel="理论计算化学">理论计算化学</a>
             
         </span>
         
         
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">VASP</a>
+            
+            <a href="javascript:" class="color3">能带</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-04 15:25:08">2019-06-03 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-11 20:33:20">2019-05-21 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -278,7 +286,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CHGCAR文件格式"><span class="toc-text">CHGCAR文件格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vaspkit计算两个片段的电荷密度差"><span class="toc-text">Vaspkit计算两个片段的电荷密度差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vaspkit计算变形电荷密度差"><span class="toc-text">Vaspkit计算变形电荷密度差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vaspkit计算外加电场下的电荷密度差"><span class="toc-text">Vaspkit计算外加电场下的电荷密度差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#电荷密度差作图"><span class="toc-text">电荷密度差作图</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -296,34 +304,28 @@
         <p>本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！</p>
 <p><strong>########## vaspkit should be cited as following##########</strong></p>
 <p><strong>V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
-<p>Vaspkit可以方便的处理VASP输出的电荷密度文件(CHGCAR)，做电荷密度差分处理，VTST脚本或者VESTA也可以做，但是不如vaspkit方便灵活。<br>（注：此文中讲述的功能同样适用于任何的实空间函数形式的文件处理，比如静电势差值图(LOCPOT)，电子定域化函数差值图(ELFCAR)，能带分解的电荷密度插值图(PARCHG)等等。）</p>
-<p>电荷密度差分（charge density difference）是研究电子结构的重要手段之一。可以直观的得到两个片段相互作用后的电子流向，原子形成分子过程中电子密度的变化、探究化学键的本质。电荷密度差分有以下几种形式：</p>
-<p>（1）体系的电荷密度减去组成它的两个或几个片段的密度：</p>
+<p>Plane-average for grid files is one of the basic function of vaspkit (426). It supports all grid files of vasp output, such as CHGCAR, LOCPOT, ELFCAR. All such grid files write by following commands in Fortran:</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">WRITE</span>(IU,<span class="keyword">FORM</span>) (((C(NX,NY,NZ),NX=<span class="number">1</span>,NGXC),NY=<span class="number">1</span>,NGYZ),NZ=<span class="number">1</span>,NGZC)</span><br></pre></td></tr></table></figure>
+<p>For one selected direction, such as z direction. Vaspkit do an average in XY plane on each NZ, and output POTPAVG.dat with two columns. First column is z coordination (in Angstrom), Second column is Planar Average-Potential (in eV) or Densitiy (in e).</p>
+<p>Here, take LOCPOT as an example. It contains total local potential (in eV) when LVTOT   =  .TRUE. exists in the INCAR file, or contains electrostatic potential (in eV) when LVHAR = .TRUE. exists in the INCAR file. Electrostatic potential is desirable for the evaluation of the work-function, because the electrostatic potential converges more rapidly to the vacuum level than the total potential. To get the work-function, potential along z direction (i.e. slab normal direction) must be averaged in the slab planes. </p>
+<p>Hamiltonian of Kohn-Sham is:</p>
 <script type="math/tex; mode=display">
-\Delta \rho=\rho_{A B}-\rho_{A}-\rho_{B}</script><p>（2）自洽计算收敛以后体系的电荷密度减去该原子构型下每个原子的球对称的电荷密度(即初猜电荷密度)，也称为变形电荷密度(Deformation charge density)</p>
+\hat{H}=-\frac{1}{2} \nabla^{2}-\sum_{A} \frac{Z_{A}}{\left|\boldsymbol{r}-\boldsymbol{R}_{A}\right|}+\int_{\infty} \frac{\rho\left(\boldsymbol{r}^{\prime}\right)}{\left|\boldsymbol{r}-\boldsymbol{r}^{\prime}\right|} d \boldsymbol{r}^{\prime}+v_{x c}[\rho(\boldsymbol{r})]</script><p>Electrostatic potential is the summation of second (ionic) and third (hartree) parts of Hamiltonian .</p>
+<p>For example, calculate the work-function of Au(111) slab with five atomic layers. </p>
+<p>(1) Do an optimization and a single-point calculation to get the LOCPOT file, single-point INCAR as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">##### initial parameters I/O #####</span><br><span class="line">SYSTEM = Au</span><br><span class="line">NCORE = 5 </span><br><span class="line">ISTART = 1 </span><br><span class="line">ICHARG = 1 </span><br><span class="line">LWAVE = .TRUE. </span><br><span class="line">LCHARG = .TRUE. </span><br><span class="line">LVTOT = .FALSE. </span><br><span class="line">LVHAR = .TRUE. </span><br><span class="line">LELF = .FALSE. </span><br><span class="line"></span><br><span class="line">#### Electronic Relaxation ####</span><br><span class="line">ENCUT = 400 </span><br><span class="line">ISMEAR = 1 </span><br><span class="line">SIGMA = 0.2 </span><br><span class="line">EDIFF = 1E-6 </span><br><span class="line">NELMIN = 5 </span><br><span class="line">NELM = 300 </span><br><span class="line">GGA = PE </span><br><span class="line">LREAL = Auto </span><br><span class="line">IDIPOL = 3</span><br></pre></td></tr></table></figure>
+<p>(2) Run vaspkit 426 function, and select the surface normal direction:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">426</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">                  You MUST Know What You are Doing  </span><br><span class="line">   Check Convergence of Planar Average Value on Vacuum-Thickness!</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> ===================== Specified Direction =======================</span><br><span class="line"> Which Direction is for the Planar Average?           </span><br><span class="line"> 1) x Direction                                       </span><br><span class="line"> 2) y Direction                                       </span><br><span class="line"> 3) z Direction                                       </span><br><span class="line">                                                      </span><br><span class="line"> 0) Quit                                              </span><br><span class="line"> 9) Back                                              </span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">3</span><br><span class="line"> --&gt;&gt; (1) Reading Structural Parameters from LOCPOT File...</span><br><span class="line"> --&gt;&gt; (2) Reading Local Potential From LOCPOT File...</span><br><span class="line"> --&gt;&gt; (3) Written POTPAVG.dat File!</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">  Check the Convergence of Vacuum-Level Versus Vacuum Thickness!      </span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> +-------------------------- Summary ----------------------------+</span><br><span class="line"> Vacuum-Level  (eV):    6.695</span><br><span class="line"> +---------------------------------------------------------------+</span><br></pre></td></tr></table></figure></p>
+<p>So, the Vacuum-Level is 6.695, POTPAVG.dat as following:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Planar Distance (in Angstrom), Planar Average-Potential (in eV) or -Densitiy (in e)</span><br><span class="line"> 0.0000    0.27377302E+01</span><br><span class="line"> 0.1025    0.94832051E+00</span><br><span class="line"> 0.2049   -0.13842911E+01</span><br><span class="line"> 0.3074   -0.40872693E+01</span><br><span class="line"> 0.4099   -0.69356914E+01</span><br><span class="line"> 0.5123   -0.96882699E+01</span><br><span class="line"> 0.6148   -0.12150765E+02</span><br><span class="line"> 0.7172   -0.14164741E+02</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure></p>
+<p>(3) get the fermi level by:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep E-fermi OUTCAR </span><br><span class="line">E-fermi :   1.5199     XC(G=0):  -6.7056     alpha+bet : -6.4642</span><br></pre></td></tr></table></figure></p>
+<p>(4) Draw figure with origin or matplotlib:</p>
+<p><code>python3 ./planeavg.py 1.5199</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line">mpl.use(<span class="string">'Agg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line">mpl.rcParams[<span class="string">'font.size'</span>] = <span class="number">42.</span></span><br><span class="line"><span class="comment">#mpl.rc('font',family='Times New Roman')</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.ticker <span class="keyword">as</span> ticker</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">35</span>,<span class="number">21</span>))	<span class="comment"># set figure size</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">111</span>)			<span class="comment"># describing the position of the subplot</span></span><br><span class="line">plane=np.loadtxt(<span class="string">"./POTPAVG.dat"</span>)	<span class="comment"># read</span></span><br><span class="line">ax.plot(plane[<span class="number">1</span>:,<span class="number">0</span>],plane[<span class="number">1</span>:,<span class="number">1</span>],lw=<span class="number">4</span>,c=<span class="string">'blue'</span>)	<span class="comment"># remove the first line</span></span><br><span class="line">xmax, xmin = max(plane[<span class="number">1</span>:,<span class="number">0</span>]), min(plane[<span class="number">1</span>:,<span class="number">0</span>])</span><br><span class="line">ymax, ymin = max(plane[<span class="number">1</span>:,<span class="number">1</span>]), min(plane[<span class="number">1</span>:,<span class="number">1</span>])</span><br><span class="line">plt.xlim(xmin, xmax)</span><br><span class="line">plt.ylim(ymin<span class="number">-1</span>, ymax+<span class="number">1</span>)</span><br><span class="line">plt.xticks(np.arange(<span class="number">0</span>, xmax, <span class="number">5</span>))</span><br><span class="line">plt.yticks(np.arange(int(ymin), int(ymax), <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">plt.ylabel(<span class="string">"Potential (eV)"</span>)</span><br><span class="line">plt.xlabel(<span class="string">r"Distance ($\mathrm&#123;\AA&#125;$)"</span>,labelpad=<span class="number">40</span>)</span><br><span class="line">ax.yaxis.set_minor_locator(ticker.MultipleLocator(<span class="number">1.5</span>))</span><br><span class="line">ax.legend((<span class="string">'Planar average of potential'</span>),\</span><br><span class="line">          loc=<span class="number">0</span>,shadow=<span class="literal">True</span>,labelspacing=<span class="number">0.1</span>,fontsize=<span class="number">35</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">fig.subplots_adjust(left=<span class="number">0.1</span>, bottom=<span class="number">0.1</span>, right=<span class="number">0.9</span>, top=<span class="number">0.9</span>,hspace=<span class="number">0.55</span>)</span><br><span class="line">plt.hlines(float(sys.argv[<span class="number">1</span>]), xmin, xmax, colors = <span class="string">"c"</span>, linestyles = <span class="string">"dashed"</span>)</span><br><span class="line">plt.savefig(<span class="string">'plane_average.png'</span>,img_format=<span class="string">'eps'</span>,dpi=<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<p>The obtained Plane-averaged electrostatic potential figure:</p>
+<p><img src="/images/vaspkit-avgpot/vaspkit-avgpot1.png" alt></p>
+<p><img src="/images/vaspkit-avgpot/vaspkit-avgpot2.png" alt></p>
+<p>So, work function can be calculated as:</p>
 <script type="math/tex; mode=display">
-\Delta \rho=\rho\left(A B_{\text { self-consistent }}\right)-\rho\left(A B_{\text { atomic }}\right)</script><p>（3）在某个状态的密度减去这个体系在另外一个状态的密度。比如：外加电场作用下的电荷密度减去没有外势场的电荷密度。再比如：激发态的密度减去它在基态时的密度。</p>
-<script type="math/tex; mode=display">
-\Delta \rho=\rho\left(A B_{\text { state 1 }}\right)-\rho\left(A B_{\text { state 0 }}\right)</script><p>以上三种电荷密度差，无论哪一种计算又要保证<strong>原子坐标坐标必须一致</strong>！</p>
-<p>对于（1）的计算只需要优化AB的结构，A、B片段保持AB结构中原子坐标，不能再对片段进行结构进行单独优化。</p>
-<p>（2）（3）不能用两个原子坐标不同结构的电荷密度相减，而只能共用其中一个状态的几何构型。</p>
-<h2 id="CHGCAR文件格式"><a href="#CHGCAR文件格式" class="headerlink" title="CHGCAR文件格式"></a>CHGCAR文件格式</h2><p>CHGCAR是包含电子密度信息的格点文件，对于自旋非极化体系（ISPIN = 1）计算只包含电荷密度，对于自旋极化体系（ISPIN = 2）计算还包含自旋电子密度。可以用VESTA，Jmol等程序打开。<br>CHGCAR的第一部分和POSCAR, CONTCAR的格式是完全一样的，它包含了最终结构的晶格矢量，原子核坐标等信息。紧接着是三个数字，这三个数是实空间函数的网格密度，对应于NGXF，NGYF，NGZF三个变量。然后是电荷密度信息ρ(r) <em> V<sub>cell</sub>。一共有NGXF \</em> NGYF * NGZF个数值。比如：下面是一个Al2O3晶胞计算的CHGCAR文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Al2O3 Cell opt                          </span><br><span class="line">   1.00000000000000     </span><br><span class="line">     6.138452    0.000551   -0.011568</span><br><span class="line">     5.434311    2.854620   -0.011568</span><br><span class="line">    -1.324042   -0.326661    5.501689</span><br><span class="line">   O    Al</span><br><span class="line">     6     4</span><br><span class="line">Direct</span><br><span class="line">  0.160314  0.160314  0.108934</span><br><span class="line">  0.839686  0.839686  0.891066</span><br><span class="line">  0.495028  0.495028  0.257399</span><br><span class="line">  0.504972  0.504972  0.742601</span><br><span class="line">  0.826429  0.826429  0.432705</span><br><span class="line">  0.173571  0.173571  0.567295</span><br><span class="line">  0.090130  0.090130  0.795615</span><br><span class="line">  0.909870  0.909870  0.204385</span><br><span class="line">  0.342109  0.342109  0.683236</span><br><span class="line">  0.657891  0.657891  0.316764</span><br><span class="line">100  100   96</span><br><span class="line"> 0.43432567054E+01 0.44027037758E+01 0.45822813500E+01 0.48861003640E+01 0.53223812855E+01</span><br><span class="line"> 0.59054783755E+01 0.66583226816E+01 0.76145085758E+01 0.88190771181E+01 0.10327304760E+02</span><br><span class="line">。。。</span><br></pre></td></tr></table></figure>
-<h2 id="Vaspkit计算两个片段的电荷密度差"><a href="#Vaspkit计算两个片段的电荷密度差" class="headerlink" title="Vaspkit计算两个片段的电荷密度差"></a>Vaspkit计算两个片段的电荷密度差</h2><p>以CO分子吸附再Ni(100)表面为例：</p>
-<p>步骤一：优化<strong>CO/Ni(100)</strong>的结构，优化好的CONTCAR文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> CONTCAR\(3)                            </span><br><span class="line">   1.00000000000000     </span><br><span class="line">     4.9777998924000002    0.0000000000000000    0.0000000000000000</span><br><span class="line">     0.0000000000000000    4.9777998924000002    0.0000000000000000</span><br><span class="line">     0.0000000000000000    0.0000000000000000   23.7996006012000016</span><br><span class="line">   Ni   C    O </span><br><span class="line">    24     1     1</span><br><span class="line">Selective dynamics</span><br><span class="line">Direct</span><br><span class="line">  0.0000000000000000  0.0000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.0000403141048793  0.0001267891084566  0.3465324639523857   T   T   T</span><br><span class="line">  0.0003869756759585  0.0005016061154492  0.4914092265927721   T   T   T</span><br><span class="line">  0.2500000000000000  0.2500000000000000  0.1260499910000021   F   F   F</span><br><span class="line">  0.2501509938760123  0.2501939027302242  0.2738045972087804   T   T   T</span><br><span class="line">  0.2510445350818244  0.2510358567191133  0.4214201499164574   T   T   T</span><br><span class="line">  0.5000000000000000  0.0000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.5001131027590162  0.0001793013434579  0.3476242737143451   T   T   T</span><br><span class="line">  0.5003637542315573  0.9997315722502194  0.4921789851389491   T   T   T</span><br><span class="line">  0.7499999759999980  0.2500000000000000  0.1260499910000021   F   F   F</span><br><span class="line">  0.7499316556673818  0.2502046005629239  0.2738030513532408   T   T   T</span><br><span class="line">  0.7491890345597767  0.2510567755592561  0.4213836669568778   T   T   T</span><br><span class="line">  0.0000000000000000  0.5000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.0001477148529645  0.5002040345309098  0.3476407140178068   T   T   T</span><br><span class="line">  0.9998279455461869  0.5004850843478295  0.4921814441992751   T   T   T</span><br><span class="line">  0.2500000000000000  0.7499999759999980  0.1260499910000021   F   F   F</span><br><span class="line">  0.2501233421650753  0.7499923211510620  0.2738063435823861   T   T   T</span><br><span class="line">  0.2509685482545621  0.7492259105458245  0.4213662097234874   T   T   T</span><br><span class="line">  0.5000000000000000  0.5000000000000000  0.2000000000000028   F   F   F</span><br><span class="line">  0.5000095461819711  0.5000093692680139  0.3475763670314436   T   T   T</span><br><span class="line">  0.4997626166386695  0.4997469098518152  0.4975764390870765   T   T   T</span><br><span class="line">  0.7499999759999980  0.7499999759999980  0.1260499910000021   F   F   F</span><br><span class="line">  0.7499481468791345  0.7499759622207023  0.2737998574575187   T   T   T</span><br><span class="line">  0.7493532326515719  0.7494160592036465  0.4213303989337192   T   T   T</span><br><span class="line">  0.5053523115939882  0.5076925776123602  0.5706792117914432   T   T   T</span><br><span class="line">  0.5089497223101063  0.5124605842843479  0.6195520236066443   T   T   T</span><br></pre></td></tr></table></figure></p>
-<p>步骤二：分别计算Ni(100)和CO的单点能<br>CO和Ni(100)片段的坐标从CO/Ni(100)的CONTCAR里直接截取，不要再结构优化！！</p>
-<p>步骤三：用vaspkit 314功能做电荷差分，VTST脚本或者VESTA也可以做，但是不如vaspkit方便。依次输入三个片段的CHGCAR路径:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">314</span><br><span class="line"> ======================= File Options ============================</span><br><span class="line"> Input the Names of Charge/Potential Files with Space: </span><br><span class="line"> (e.g., to get AB-A-B, type: ~/AB/CHGCAR ./A/CHGCAR ../B/CHGCAR)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">./CHGCAR ./co/CHGCAR ./slab/CHGCAR</span><br><span class="line"></span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (02) Reading Charge Density From ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (03) Reading Structural Parameters from ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (04) Reading Charge Density From ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (05) Reading Structural Parameters from ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (06) Reading Charge Density From ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (07) Written CHGDIFF.vasp File!</span><br></pre></td></tr></table></figure>
-<p>生成CHGDIFF.vasp包含电荷密度差的信息，可以直接导入到VESTA里作图。</p>
-<h2 id="Vaspkit计算变形电荷密度差"><a href="#Vaspkit计算变形电荷密度差" class="headerlink" title="Vaspkit计算变形电荷密度差"></a>Vaspkit计算变形电荷密度差</h2><p>变形电荷密度</p>
-<h2 id="Vaspkit计算外加电场下的电荷密度差"><a href="#Vaspkit计算外加电场下的电荷密度差" class="headerlink" title="Vaspkit计算外加电场下的电荷密度差"></a>Vaspkit计算外加电场下的电荷密度差</h2><h2 id="电荷密度差作图"><a href="#电荷密度差作图" class="headerlink" title="电荷密度差作图"></a>电荷密度差作图</h2><p>得到的电荷密度差文件必须作成图才便于被直观地考察，常用的图分为三类：</p>
-<p>（1）3D 等值面图，isosurface。</p>
-<p>（2）2D 切面图</p>
-<p>（3）1D，平面平均的数值，plane-averaged </p>
-<p>通常这几种图可以配合使用讨论。等值面图和切面图用VESTA画最方便，平面平均图用vaspkit生成最方便。</p>
-<p>得到的CHGDIFF.vasp用vesta打开，isosurface青色部分电荷密度减小，黄色密度电荷密度增加。</p>
-<script type="math/tex; mode=display">
-\rho=\rho(\mathrm{CO} / \mathrm{Ni})-\rho(\mathrm{CO})-\rho(\mathrm{Ni})</script><p><img src="/images/chgdiff/chgdiff1.png" alt></p>
+\Phi=E_{\mathrm{vac}}-E_{\mathrm{F}}</script><p>$\Phi$ = 6.695 - 1.5199 = 5.1751 eV</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -337,12 +339,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>Vaspkit做电荷密度差图</p>
+    <p><span>文章标题:</span>Vaspkit对静电势进行平面平均计算功函的方法</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
-    <p><span>发布时间:</span>2019-06-03, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-04, 15:25:08</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/06/03/chgdiff/" title="Vaspkit做电荷密度差图">http://vaspkit.com/2019/06/03/chgdiff/</a>
+    <p><span>发布时间:</span>2019-05-21, 00:00:00</p>
+    <p><span>最后更新:</span>2019-06-11, 20:33:20</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/05/21/vaspkit-avgpot/" title="Vaspkit对静电势进行平面平均计算功函的方法">http://vaspkit.com/2019/05/21/vaspkit-avgpot/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -350,44 +352,6 @@
 
 
 
-
-    
-        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<input type="hidden" id="MathJax-js" value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 
     
 
