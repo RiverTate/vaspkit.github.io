@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>VASPKIT</title>
-  <meta name="keywords" content>
-  <meta name="description" content="VASPKIT">
+  <title>Vaspkit对静电势做macroscopic-averaged potential | VASPKIT</title>
+  <meta name="keywords" content=" VASP , vaspkit ">
+  <meta name="description" content="Vaspkit对静电势做macroscopic-averaged potential | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！ ########## vaspkit should be cited as following########## V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspk">
 <meta name="keywords" content="VASP,vaspkit">
@@ -56,7 +56,7 @@
 </div>
 
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="nav mobile">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg">
@@ -245,12 +245,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-vaspkit-macropot" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VASPKIT"><span class="toc-text">VASPKIT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About-VASPKIT"><span class="toc-text">About VASPKIT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature"><span class="toc-text">Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VASP-input-files："><span class="toc-text">VASP input files：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bandstructure"><span class="toc-text">Bandstructure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#density"><span class="toc-text">density</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Download"><span class="toc-text">Download</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developer"><span class="toc-text">Developer</span></a></li></ol></li></ol>
+        <h1 class="article-title">Vaspkit对静电势做macroscopic-averaged potential</h1>
+    
+    <div class="article-meta">
+        
+        
+        <span class="author"><a href="javascript:">Jincheng Liu</a></span>
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="理论计算化学">理论计算化学</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">VASP</a>
+            
+            <a href="javascript:" class="color3">vaspkit</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-06-17 01:29:42">2019-06-17 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
     
 <style>
     .left-col .switch-btn,
@@ -263,59 +310,59 @@
     }
 </style>
 </div>
-            <h1 id="VASPKIT"><a href="#VASPKIT" class="headerlink" title="VASPKIT"></a>VASPKIT</h1><h2 id="About-VASPKIT"><a href="#About-VASPKIT" class="headerlink" title="About VASPKIT"></a>About VASPKIT</h2><p>VASPKIT is a postprocessing tool for VASP code. It was written by Fortran 90! </p>
-<pre><code>            \\\///         
-           / _  _ \       Hey, you must know what you are doing.  
-         (| (.)(.) |)     Otherwise you might get wrong results!  
- +-----.OOOo--()--oOOO.------------------------------------------+
- |       A Pre- and Post-Processing Program for VASP Code        |
- |          VASPKIT Version: 0.80.beta1 (20 Apr. 2019)           |
- |            Developed by Vei WANG (wangvei@me.com)             |
- |            Contributor: Nan XU (tamas@zju.edu.cn)             |
- +-----.oooO-----------------------------------------------------+
-        (   )   Oooo.     
-         \ (    (   )     
-          \_)    ) /      
-                (_/       
- ===================== Structural Options ========================
- 1)  VASP Input Files Generator    2)  Elastic-Properties         
- 3)  K-Path Generator              4)  Structure Editor           
- 5)  Catalysis-ElectroChemi Kit    6)  Symmetry Search            
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文章为原创，版权归vaspkit作者团队所有，文章转载请先取得作者的同意，非常欢迎转发文章链接）！</p>
+<p><strong>########## vaspkit should be cited as following##########</strong></p>
+<p><strong>V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
+<p>Besides planar-avergaed potential (<a href="https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/" target="_blank" rel="noopener">https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/</a>) , VASPKIT can also calculate macroscopic-averaged potential, which is obtained by convolving the planar-avergaed potential with a moving average.  e.g. If one want to do planar-avergaed potential in z-direction, use z = average(x, y) for every z. If one want to do macroscopic-averaged potential in z-dirction, use z = average(x, y, z +/- $\Delta$z’) for every z, where z’ is the layer distance for repeat strctures.</p>
+<p>For example: MoS<sub>2</sub>/WS<sub>2</sub> heterogeneous junction.</p>
+<p><strong>Step 1</strong>. do a single-point calculation with LVHAR = .TRUE., </p>
+<p><strong>Step 2</strong>. run vaspkit 427 function to obtain planar-avergaed potential and macroscopic-averaged potential from LOCPOT. </p>
+<ol>
+<li><p>Select which Direction is calculte for the Planar Average?  </p>
+</li>
+<li><p>Input the period length to calculate macroscopic average. (To acculerate the convergence, this value should be close to and smaller than the layer distanse) </p>
+</li>
+<li><p>Input iteration number to get smoother macroscopic curve.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">427</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">                  You MUST Know What You are Doing  </span><br><span class="line">   Check Convergence of Planar Average Value on Vacuum-Thickness!</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> ===================== Specified Direction =======================</span><br><span class="line"> Which Direction is for the Planar Average?           </span><br><span class="line"> 1) x Direction                                       </span><br><span class="line"> 2) y Direction                                       </span><br><span class="line"> 3) z Direction                                       </span><br><span class="line">                                                      </span><br><span class="line"> 0) Quit                                              </span><br><span class="line"> 9) Back                                              </span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1</span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from LOCPOT File...</span><br><span class="line">  --&gt;&gt; (02) Reading Local Potential From LOCPOT File...</span><br><span class="line"> Please input the period length to calculate macroscopic average:</span><br><span class="line"> (Typical value: the minimum length of repeated unit.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1.5</span><br><span class="line"> Please input iteration number to get smoother macroscopic curve:</span><br><span class="line"> (Must be integer. You can gradually increase from 1 to 3.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">3</span><br><span class="line">  --&gt;&gt; (03) Written PLANAR_AVERAGE.dat File!</span><br><span class="line"> +-------------------------- Summary ----------------------------+</span><br><span class="line"> Maximum of macroscopic average:   0.099</span><br><span class="line"> Minimum of macroscopic average:  -0.101</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line">  --&gt;&gt; (04) Written MACROSCOPIC_AVERAGE.dat File!</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>Step 3</strong>. Draw graphs from the output <code>MACROSCOPIC_AVERAGE.dat</code>, and <code>PLANAR_AVERAGE.dat</code></p>
+<p><img src="/images/vaspkit-macropot/vaspkit-macropot1.png" alt></p>
+<p><img src="/images/vaspkit-macropot/vaspkit-macropot2.png" alt></p>
 
- ===================== Electronic Options ========================
- 11) Density-of-States             21) DFT Band-Structure         
- 23) 3D Band-Structure             25) Hybrid-DFT Band-Structure  
- 26) Fermi-Surface                 28) Band-Structure Unfolding   
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
 
- =========== Charge &amp; Potential &amp; Wavefunction Options ===========
- 31) Charge &amp; Spin Density         42) Potential-Related          
- 51) Wave-Function Analysis  
- ====================== Misc Utilities ===========================
- 71) Linear Optics                 72) Molecular-Dynamics Kit 
- 73) VASP2BoltzTraP Interface      74) USER interface
- 91) Semiconductor Calculator      92) 2D-Materials Kit       
 
- 0)  Quit                                                         
- ------------&gt;&gt;
-</code></pre><h2 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h2><h3 id="VASP-input-files："><a href="#VASP-input-files：" class="headerlink" title="VASP input files："></a>VASP input files：</h3><p>generate K-mesh for SCF calculation</p>
-<h3 id="Bandstructure"><a href="#Bandstructure" class="headerlink" title="Bandstructure"></a>Bandstructure</h3><p>generate K-path for band structure calculation</p>
-<h3 id="density"><a href="#density" class="headerlink" title="density"></a>density</h3><h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><p>到目前为止已经写了<code class="article_number">&lt;/code&gt;篇文章， 共<code class="site_word_count"></code>字。</code></p>
-<p>本站访问人数：<code class="site_uv">&lt;/code&gt;人次 ， 访问量：<code class="site_pv"></code>次</code></p>
-<h2 id="Developer"><a href="#Developer" class="headerlink" title="Developer"></a>Developer</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href="http://yelog.org/2017/03/24/3-hexo-shortcuts/">3-hexo快捷键说明</a></li>
-</ul>
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>Vaspkit对静电势做macroscopic-averaged potential</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
+    <p><span>发布时间:</span>2019-06-17, 00:00:00</p>
+    <p><span>最后更新:</span>2019-06-17, 01:29:42</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/06/17/vaspkit-macropot/" title="Vaspkit对静电势做macroscopic-averaged potential">http://vaspkit.com/2019/06/17/vaspkit-macropot/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
