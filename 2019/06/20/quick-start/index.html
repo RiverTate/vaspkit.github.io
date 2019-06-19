@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>macroscopic-averaged potential | VASPKIT</title>
-  <meta name="keywords" content=" VASP , vaspkit ">
-  <meta name="description" content="macroscopic-averaged potential | VASPKIT">
+  <title>VASPKIT Quick Start | VASPKIT</title>
+  <meta name="keywords" content>
+  <meta name="description" content="VASPKIT Quick Start | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## Besides plana">
 <meta name="keywords" content="VASP,vaspkit">
@@ -264,9 +264,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-vaspkit-macropot" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-quick-start" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">macroscopic-averaged potential</h1>
+        <h1 class="article-title">VASPKIT Quick Start</h1>
     
     <div class="article-meta">
         
@@ -281,18 +281,10 @@
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color5">VASP</a>
-            
-            <a href="javascript:" class="color3">vaspkit</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-19 23:02:13">2019-06-17 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 01:30:17">2019-06-20 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -332,23 +324,26 @@
         <p><strong>########## citation ##########</strong></p>
 <p><strong>V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
 <p><strong>########## citation ##########</strong></p>
-<p>Besides planar-avergaed potential (<a href="https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/" target="_blank" rel="noopener">https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/</a>) , VASPKIT can also calculate macroscopic-averaged potential, which is obtained by convolving the planar-avergaed potential with a moving average.  e.g. If one want to do planar-avergaed potential in z-direction, use z = average(x, y) for every z. If one want to do macroscopic-averaged potential in z-dirction, use z = average(x, y, z +/- $\Delta$z’) for every z, where z’ is the layer distance for repeat strctures.</p>
-<p>For example: MoS<sub>2</sub>/WS<sub>2</sub> heterogeneous junction.</p>
-<p><strong>Step 1</strong>. do a single-point calculation with LVHAR = .TRUE., </p>
-<p><strong>Step 2</strong>. run vaspkit 427 function to obtain planar-avergaed potential and macroscopic-averaged potential from LOCPOT. </p>
-<ol>
-<li><p>Select which Direction is calculte for the Planar Average?  </p>
-</li>
-<li><p>Input the period length to calculate macroscopic average. (To acculerate the convergence, this value should be close to and smaller than the layer distanse) </p>
-</li>
-<li><p>Input iteration number to get smoother macroscopic curve.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">427</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">                  You MUST Know What You are Doing  </span><br><span class="line">   Check Convergence of Planar Average Value on Vacuum-Thickness!</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> ===================== Specified Direction =======================</span><br><span class="line"> Which Direction is for the Planar Average?           </span><br><span class="line"> 1) x Direction                                       </span><br><span class="line"> 2) y Direction                                       </span><br><span class="line"> 3) z Direction                                       </span><br><span class="line">                                                      </span><br><span class="line"> 0) Quit                                              </span><br><span class="line"> 9) Back                                              </span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1</span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from LOCPOT File...</span><br><span class="line">  --&gt;&gt; (02) Reading Local Potential From LOCPOT File...</span><br><span class="line"> Please input the period length to calculate macroscopic average:</span><br><span class="line"> (Typical value: the minimum length of repeated unit.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1.5</span><br><span class="line"> Please input iteration number to get smoother macroscopic curve:</span><br><span class="line"> (Must be integer. You can gradually increase from 1 to 3.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">3</span><br><span class="line">  --&gt;&gt; (03) Written PLANAR_AVERAGE.dat File!</span><br><span class="line"> +-------------------------- Summary ----------------------------+</span><br><span class="line"> Maximum of macroscopic average:   0.099</span><br><span class="line"> Minimum of macroscopic average:  -0.101</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line">  --&gt;&gt; (04) Written MACROSCOPIC_AVERAGE.dat File!</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>Step 3</strong>. Draw graphs from the output <code>MACROSCOPIC_AVERAGE.dat</code>, and <code>PLANAR_AVERAGE.dat</code></p>
-<p><img src="/images/vaspkit-macropot/vaspkit-macropot1.png" alt></p>
-<p><img src="/images/vaspkit-macropot/vaspkit-macropot2.png" alt></p>
-
+<p>The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling. VASP users are widely distributed, such as chemistry, physics, material, enviornment. Users have developed and contributed scripts or applets used in their field based on VASP. Vaspkit is a Pre- and Post-Processing Program for the VASP code, written by Fortran and used under the Linux environment. </p>
+<p>In order to ensure the full functionality of the vaspkit, users can configure the environment of the vaspkit. Copy the environment variable file to the user directory by running the following command under the bash terminal.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -f how_to_set_environment_variable ~/.vaspkit</span><br></pre></td></tr></table></figure>
+<p>Edit the <code>.vaspkit</code> file,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.vaspkit</span><br></pre></td></tr></table></figure>
+<p>The configuration file is mainly used to set the environment variables of the vaspkit, including the VASP version information, the directory of the target library, the selection of the functional, and whether to select the POTCAR according to the VASP official recommendation, and so on. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># cp how_to_set_environment_variable ~/.vaspkit and modify the ~/.vaspkit file based on your settings!    </span><br><span class="line">VASP5                    .TRUE.             # .TRUE. or .FALSE.; Set .FALSE. if using vasp.4.x </span><br><span class="line">GGA_PATH                 &apos;~/POTCAR/GGA&apos;     #  Path of GGA potential. </span><br><span class="line">PBE_PATH                 &apos;~/POTCAR/PBE&apos;     #  Path of PBE potential. </span><br><span class="line">LDA_PATH                 &apos;~/POTCAR/LDA&apos;     #  Path of LDA potential. </span><br><span class="line">POTCAR_TYPE               PBE               #  PBE, GGA or LDA; </span><br><span class="line">GW_POTCAR                .FALSE.            # .TRUE. or .FALSE.;</span><br><span class="line">RECOMMENDED_POTCAR       .TRUE.             # .TRUE. or .FALSE.; </span><br><span class="line">MINI_INCAR               .FALSE.            # .TRUE. or .FALSE.; </span><br><span class="line">SET_FERMI_ENERGY_ZERO    .TRUE.             # .TRUE. or .FALSE.;  </span><br><span class="line">SET_INCAR_WRITE_MODE     OVERRIDE           #  OVERRIDE, APPEND,BACK-UP-OLD,BACK-UP-NEW; </span><br><span class="line"></span><br><span class="line">PYTHON_VERSION           3                  #  Python version is 2. SET it 3 if your python environment is python3</span><br><span class="line">PLOT_MATPLOTLIB          .TURE.            #  Set it .TRUE. if you want to generate Graphs. (Matplotlib and Numpy packages MUST be embedded in Python)</span><br><span class="line"></span><br><span class="line">ADVANCED_USER            .TRUE.            #  VASPKIT0.72 has opened the user interface. Please fill in your settings in the block &apos;USER_DEFINED&apos; if you want vaspkit to integrate your own scripts in the &apos;UTILITIES&apos; file. </span><br><span class="line">VASPKIT_UTILITIES_PATH   ~/bin/vaspkit.0.80/utilities/ </span><br><span class="line"></span><br><span class="line">#USER_DEFINED &apos;</span><br><span class="line">u1 python get_entropy.py .TRUE. get_entropy_for_adsorbate</span><br><span class="line">u2 python bader2pqr.py .FALSE. bader2pqr</span><br><span class="line">#END_USER_DEFINED</span><br></pre></td></tr></table></figure>
+<p>After setting up your local repository POTCAR directory and completing some other settings, you can start vaspkit. For convenience, you can add the absolute path of the vaspkit to the environment variable. If you are a LINUX user, you can do this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;export PATH=/home/vaspkit.0.73/bin/:$PATH&apos; &gt;&gt; ~/.bashrc</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>Replace the absolute path of the <code>/home/vaspkit.0.73/bin/</code> directory by user’s own <code>vaspkit</code> executable.</p>
+<p>Vaspkit provides an automatic configuration script <code>setup.sh</code> since version 0.73. Execute</p>
+<p>​     <code>source setup.sh</code> </p>
+<p>or <code>bash setup.sh</code></p>
+<p> to complete the configuration. It is very friendly for new users, but the directory of the squat library needs to be set by itself. If <code>~/.vaspkit</code> already exists, the above operation will not overwrite it and still use the old version of the environment variable.</p>
+<p>After completing the above settings, you can start the vaspkit program by directly typing vaspkit. Then, you will see a very cute interface that is consistent with the one shown below:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">           \\\///</span><br><span class="line">          / _  _ \       Hey, you must know what you are doing.</span><br><span class="line">        (| (.)(.) |)     Otherwise you might get wrong results!</span><br><span class="line">+-----.OOOo--()--oOOO.------------------------------------------+</span><br><span class="line">|       A Pre- and Post-Processing Program for VASP Code        |</span><br><span class="line">|           VASPKIT Version: 0.73 (18 Apr. 2019)                |</span><br><span class="line">|            Developed by Vei WANG (wangvei@me.com)             |</span><br><span class="line">|            Contributor: Nan XU (tamas@zju.edu.cn)             |</span><br><span class="line">+-----.oooO-----------------------------------------------------+</span><br><span class="line">       (   )   Oooo.</span><br><span class="line">        \ (    (   )</span><br><span class="line">         \_)    ) /</span><br><span class="line">               (_/</span><br><span class="line">===================== Structural Options ========================</span><br><span class="line">1)  VASP Input Files Generator    2)  Elastic-Properties</span><br><span class="line">3)  K-Path Generator              4)  Structure Editor</span><br><span class="line">5)  Catalysis-ElectroChemi Kit    6)  Symmetry Search</span><br><span class="line"></span><br><span class="line">===================== Electronic Options ========================</span><br><span class="line">11) Density-of-States             21) DFT Band-Structure</span><br><span class="line">23) 3D Band-Structure             25) Hybrid-DFT Band-Structure</span><br><span class="line">26) Fermi-Surface                 28) Band-Structure Unfolding</span><br><span class="line"></span><br><span class="line">=========== Charge &amp; Potential &amp; Wavefunction Options ===========</span><br><span class="line">31) Charge &amp; Spin Density         42) Potential-Related</span><br><span class="line">51) Wave-Function Analysis</span><br><span class="line">====================== Misc Utilities ===========================</span><br><span class="line">71) Linear Optics                 72) Molecular-Dynamics Kit</span><br><span class="line">73) VASP2BoltzTraP Interface</span><br><span class="line">91) Semiconductor Calculator      92) 2D-Materials Kit</span><br><span class="line"></span><br><span class="line">0)  Quit</span><br><span class="line">------------&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>If the following problem occurs, your LINUX runtime dependent library version is too low and needs to be upgraded (not recommended), you can contact the developer to get the version compiled in the low version LINUX environment.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vaspkit: /lib64/libc.so.6: version `GLIBC_2.14&apos; not found (required by vaspkit)</span><br></pre></td></tr></table></figure>
+<p>If the<code>-bash: line 7: ./vaspkit: Permission denied permission</code> issue occurs, simply add the vaspkit execute permission:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x /home/vaspkit.0.73/bin/vaspkit</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
     </div>
@@ -361,12 +356,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>macroscopic-averaged potential</p>
+    <p><span>文章标题:</span>VASPKIT Quick Start</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
-    <p><span>发布时间:</span>2019-06-17, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-19, 23:02:13</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/06/17/vaspkit-macropot/" title="macroscopic-averaged potential">http://vaspkit.com/2019/06/17/vaspkit-macropot/</a>
+    <p><span>发布时间:</span>2019-06-20, 00:00:00</p>
+    <p><span>最后更新:</span>2019-06-20, 01:30:17</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT Quick Start">http://vaspkit.com/2019/06/20/quick-start/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -374,6 +369,44 @@
 
 
 
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js" value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 
     
 
