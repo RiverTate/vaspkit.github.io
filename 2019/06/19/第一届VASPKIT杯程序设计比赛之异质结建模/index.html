@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>macroscopic-averaged potential | VASPKIT</title>
-  <meta name="keywords" content=" VASP , vaspkit ">
-  <meta name="description" content="macroscopic-averaged potential | VASPKIT">
+  <title>第一届VASPKIT杯程序设计比赛之异质结建模 | VASPKIT</title>
+  <meta name="keywords" content>
+  <meta name="description" content="第一届VASPKIT杯程序设计比赛之异质结建模 | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="为丰富和完善VASPKIT 软件包的功能，VASPKIT开发者团队决定举办第一届VASPKIT杯程序设计比赛。本届比赛以通过编写程序脚本、实现异质结建模为主要内容，期待各方程序设计高手参赛，其中优秀程序作品可将其功能并入VASPKIT软件包。此次比赛同时也为了激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编程的方式解决实际问题的能力。期待各位计算学子热情参与。 VASPKIT杯事宜： 参">
 <meta property="og:type" content="article">
@@ -262,35 +262,27 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-vaspkit-macropot" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-第一届VASPKIT杯程序设计比赛之异质结建模" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">macroscopic-averaged potential</h1>
+        <h1 class="article-title">第一届VASPKIT杯程序设计比赛之异质结建模</h1>
     
     <div class="article-meta">
         
         
-        <span class="author"><a href="javascript:">Jincheng Liu</a></span>
+        <span class="author"><a href="javascript:">VASPKIT group</a></span>
         
         
         <span class="book">
             
-                <a href="javascript:" data-rel="vaspkit">vaspkit</a>
+                <a href="javascript:" data-rel="vaspkit杯">vaspkit杯</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color5">VASP</a>
-            
-            <a href="javascript:" class="color3">vaspkit</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-19 23:02:13">2019-06-17 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-19 23:01:22">2019-06-19 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -312,7 +304,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#VASPKIT杯事宜："><span class="toc-text">VASPKIT杯事宜：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参赛须知："><span class="toc-text">参赛须知：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试项目："><span class="toc-text">测试项目：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -327,25 +319,86 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>########## citation ##########</strong></p>
-<p><strong>V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
-<p><strong>########## citation ##########</strong></p>
-<p>Besides planar-avergaed potential (<a href="https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/" target="_blank" rel="noopener">https://vaspkit.github.io/2019/05/21/vaspkit-avgpot/</a>) , VASPKIT can also calculate macroscopic-averaged potential, which is obtained by convolving the planar-avergaed potential with a moving average.  e.g. If one want to do planar-avergaed potential in z-direction, use z = average(x, y) for every z. If one want to do macroscopic-averaged potential in z-dirction, use z = average(x, y, z +/- $\Delta$z’) for every z, where z’ is the layer distance for repeat strctures.</p>
-<p>For example: MoS<sub>2</sub>/WS<sub>2</sub> heterogeneous junction.</p>
-<p><strong>Step 1</strong>. do a single-point calculation with LVHAR = .TRUE., </p>
-<p><strong>Step 2</strong>. run vaspkit 427 function to obtain planar-avergaed potential and macroscopic-averaged potential from LOCPOT. </p>
-<ol>
-<li><p>Select which Direction is calculte for the Planar Average?  </p>
+        <p>为丰富和完善VASPKIT 软件包的功能，VASPKIT开发者团队决定举办<strong>第一届VASPKIT杯程序设计比赛</strong>。本届比赛以通过编写程序脚本、实现异质结建模为主要内容，期待各方程序设计高手参赛，其中优秀程序作品可将其功能并入<strong>VASPKIT</strong>软件包。此次比赛同时也为了激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编程的方式解决实际问题的能力。<strong>期待</strong>各位计算学子热情参与。</p>
+<h4 id="VASPKIT杯事宜："><a href="#VASPKIT杯事宜：" class="headerlink" title="VASPKIT杯事宜："></a><strong>VASPKIT杯事宜：</strong></h4><ul>
+<li><p>参赛时间：7月1日-7月31日。<strong>北京时间</strong>31日22:00<strong>投稿截止</strong>。</p>
 </li>
-<li><p>Input the period length to calculate macroscopic average. (To acculerate the convergence, this value should be close to and smaller than the layer distanse) </p>
+<li><p>参赛方式：将自己的<strong>软件源码及参赛文档</strong>发送电子邮件至：<a href="mailto:vaspkit_cup@hotmail.com" target="_blank" rel="noopener">vaspkit_cup@hotmail.com</a>，邮件标题为：“<strong>真实姓名-单位全称-异质结建模</strong>”，中英文皆可。建议附件用同样格式命名。</p>
 </li>
-<li><p>Input iteration number to get smoother macroscopic curve.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">427</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">                  You MUST Know What You are Doing  </span><br><span class="line">   Check Convergence of Planar Average Value on Vacuum-Thickness!</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> ===================== Specified Direction =======================</span><br><span class="line"> Which Direction is for the Planar Average?           </span><br><span class="line"> 1) x Direction                                       </span><br><span class="line"> 2) y Direction                                       </span><br><span class="line"> 3) z Direction                                       </span><br><span class="line">                                                      </span><br><span class="line"> 0) Quit                                              </span><br><span class="line"> 9) Back                                              </span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1</span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from LOCPOT File...</span><br><span class="line">  --&gt;&gt; (02) Reading Local Potential From LOCPOT File...</span><br><span class="line"> Please input the period length to calculate macroscopic average:</span><br><span class="line"> (Typical value: the minimum length of repeated unit.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">1.5</span><br><span class="line"> Please input iteration number to get smoother macroscopic curve:</span><br><span class="line"> (Must be integer. You can gradually increase from 1 to 3.)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">3</span><br><span class="line">  --&gt;&gt; (03) Written PLANAR_AVERAGE.dat File!</span><br><span class="line"> +-------------------------- Summary ----------------------------+</span><br><span class="line"> Maximum of macroscopic average:   0.099</span><br><span class="line"> Minimum of macroscopic average:  -0.101</span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line">  --&gt;&gt; (04) Written MACROSCOPIC_AVERAGE.dat File!</span><br></pre></td></tr></table></figure>
+<li><p>评判方式：<strong>优先看</strong>脚本交互性、普适性、建模效果，次要考虑计算时间.</p>
+</li>
+<li><p>评判团队： <strong>VASPKIT杯组织者团队</strong>，包含<strong>VASPKIT</strong>软件开发者<strong>王伟</strong>，<strong>许楠</strong>，<strong>刘锦程</strong>；新加坡国立大学博士研究生<strong>王添</strong>；中国科技大学博士研究生<strong>吴道雄</strong>；剑桥大学博士后<strong>张召富</strong>（以上排序不分先后）。</p>
+</li>
+<li><p>参赛奖励：<strong>视参与人数与赞助数目定奖金</strong>，保证<strong>至少</strong>一等奖一名，奖金至少<strong>800</strong>元人民币；二等奖至少一名，奖金至少<strong>400</strong>元；三等奖至少一名，奖金至少<strong>200</strong>元；参与奖人数不限，<strong>完成基本内容即可获得参与奖</strong>。同时优秀的代码<strong>有机会</strong>添加到<strong>VASPKIT</strong>主程序中。第一、二、三等奖以<strong>快递邮寄</strong>形式颁发<strong>实体证书</strong>，其他参与者颁发<strong>电子参与证书</strong>。</p>
+</li>
+<li><p>版权和法务：参赛者需要<strong>签署</strong>并提交附件中的参赛文档：<a href="VASPKIT杯程序设计比赛参赛文档.docx">VASPKIT杯程序设计比赛参赛文档.docx</a>，<strong>声明</strong>自己提交的脚本是<strong>自己原创</strong>、并非抄袭的脚本，避免不必要的麻烦。签署方式<strong>推荐手写真实名字</strong>并拍照或扫描为电子版，与自己的作品一起发送到比赛邮箱。<strong>VASPKIT</strong>开发者团队<strong>保证</strong>签名不会用于其他用途。</p>
+</li>
+<li><p>相关链接：</p>
+<p><strong>VASPKIT</strong>软件官方网站链接：<a href="https://vaspkit.com/">https://vaspkit.com/</a></p>
+<p><strong>VASPKIT</strong>开发者之一GitHub链接：<a href="https://github.com/tamaswells/VASPKIT_manual" target="_blank" rel="noopener">https://github.com/tamaswells</a> </p>
+<p><strong>并行科技</strong>公司官网链接：<a href="https://www.paratera.com/" target="_blank" rel="noopener">https://www.paratera.com/</a></p>
+</li>
+</ul>
+<h4 id="参赛须知："><a href="#参赛须知：" class="headerlink" title="参赛须知："></a><strong>参赛须知：</strong></h4><ol>
+<li><p>使用自己独立撰写的<strong>脚本或程序</strong>，来实现下述列举的异质结建模测试项目，完成基本要求即可；加分项为备选项，可以不完成；</p>
+</li>
+<li><p>输入文件（独立材料的POSCAR）已经提供，输出文件为异质结的POSCAR文件；</p>
+</li>
+<li><p>程序语言包括但不限于<strong>Python</strong>, <strong>Fortran</strong>, <strong>Shell</strong>, <strong>MATLAB</strong>，<strong>C/C++</strong>,等，推荐选择可以在<strong>Linux</strong>系统下运行的脚本或程序；</p>
+</li>
+<li><p>异质结建模脚本可以充分调用如<strong>VASPKIT</strong>或者其他<strong>开源</strong>软件/脚本，<em>如使用商业软件MS等会酌情减分</em>。如需调用<strong>VASPKIT</strong>以外的脚本，需在上传源码中附上相应的软件/脚本，并详细列清楚使用说明。</p>
+</li>
+<li><p>下述测试项目中涉及到的文献仅为例子，方便参赛者了解材料结构和基本性质，参赛者可以自己寻找更多参考文献。</p>
+</li>
+<li><p>最终解释权归<strong>VASPKIT</strong>杯组织者团队</p>
 </li>
 </ol>
-<p><strong>Step 3</strong>. Draw graphs from the output <code>MACROSCOPIC_AVERAGE.dat</code>, and <code>PLANAR_AVERAGE.dat</code></p>
-<p><img src="/images/vaspkit-macropot/vaspkit-macropot1.png" alt></p>
-<p><img src="/images/vaspkit-macropot/vaspkit-macropot2.png" alt></p>
+<h4 id="测试项目："><a href="#测试项目：" class="headerlink" title="测试项目："></a><strong>测试项目：</strong></h4><ol>
+<li><p><strong>2D/2D异质结简单版本</strong>：两个2D材料基矢夹角相同，晶格常数误差范围内相同。例子：MoS2/WSe2</p>
+<p>基本要求：利用提供的01_MoS2_POSCAR 和01_WSe2_POSCAR 文件构建最小原子数、且<em>mismatch在5%之内</em>的异质结，初始层间距为3Å，异质结真空15Å，保持异质结基矢夹角与单层材料一致（即120$^{\circ}$），晶格常数为两个slab材料的平均数。</p>
+<p>注：初始层间距定义为 MoS2 和 WSe2 之间 S 原子层和 Se 原子层之间的距离</p>
+<p>Ref: 2014 Stacking effects on the electronic and optical properties of bilayer transition metal dichalcogenides MoS2, MoSe2, WS2, and WSe2</p>
+<p>加分项1：可以人工自定义初始层间距</p>
+<p>加分项2：可以人工自定义异质结真空厚度</p>
+<p>加分项3：可以人工自定义mismatch</p>
+<p>加分项4：可以人工自定义异质结夹角</p>
+<p>加分项5：可以读取提供的的01_MoS2_bulk_POSCAR和 01_WSe2_bulk_POSCAR两个体材料结构自动切割出单层slab，并且做异质结建模</p>
+<p>加分项6：可以自定义异质结晶格选取标准：使用上层材料晶格、下层材料晶格、上下层材料晶格平均值。</p>
+<p>加分项7： 可以输出多个不同的原子堆垛方式的异质结。输出可以为多个POSCAR文件，也可以使用一个平移矢量表示：异质结中下层材料相对于其 slab 结构中的位置的平移矢量(以分数坐标表示)。以测试项目中提供的 POSCAR 为例，假设 MoS2 在下，构建异质结时不平移，则是 AA 堆垛方式。MoS2 平移 [-1/3 1/3 0] 构建的就是异质结就是 AB’堆垛），参考Phys. Rev. B <strong>89</strong> (2014) 075409, Figure 1.</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>2D/2D异质结中级版本</strong>：两个2D材料基矢夹角相同，晶格常数不同。例子：MoS2/graphene</p>
+<p>基本要求：利用提供的02_MoS2_POSCAR 和02_Graphene_POSCAR 文件构建最小原子数、且<em>mismatch在5%之内</em>的异质结，初始层间距为3Å，异质结真空15Å。</p>
+<p>Ref: 2017 First-principles study of the structural and electronic properties of graphene/MoS2 interfaces</p>
+<p>加分项：程序可以输出符合要求 mismatch 前提下，异质结晶胞晶格最小的三种 slab 晶胞搭配方案，并给出这三种搭配方案基本信息，比如异质结晶胞原子数和晶格常数/夹角。</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>2D/2D异质结复杂版本</strong>，两个2D材料基矢夹角不同，晶格常数不同。例子：graphene/black P</p>
+<p>基本要求：利用提供的03_black_P_POSCAR和03_Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。异质结夹角为90$^{\circ}$。</p>
+<p>Ref: 2015 Electronic Properties of Phosphorene/ Graphene and Phosphorene/Hexagonal Boron Nitride Heterostructures</p>
+<p>加分项：可以人工自定义满足mismatch的其他异质结夹角</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>金属/半导体异质结</strong>：Ni/MoS2 </p>
+<p>基本要求：利用提供的04_Ni111_POSCAR和04_MoS2_POSCAR 文件构建最小原子数、且<em>mismatch在5%之内</em>的异质结，初始层间距为3Å，异质结真空15Å。</p>
+<p>Ref: 2015 3D Behavior of Schottky Barriers of 2D Transition-Metal Dichalcogenides</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>3D/3D异质结</strong>： HfO2/GaN，其中两侧都是FCC结构</p>
+<p>基本要求：利用提供的05_GaN001_POSCAR和05_HfO2001_POSCAR文件构建最小原子数、且<em>mismatch在5%之内</em>的异质结，初始层间距为2Å，异质结真空15Å。</p>
+<p>Ref：2015 GaN as an Interfacial Passivation Layer: Tuning Band Offset and Removing Fermi Level Pinning for III−V MOS Devices</p>
+</li>
+</ol>
+<div style="float:right"><img src="章.png"><br>
+<span>VASPKIT杯组织者团队</span><br><br>
+<span>2019/06/19</span><br><br></div>                                                                                                                                                       
+
+<p>​                                                                                                                                                                           </p>
+<p>​                                                                                                                                                                                       </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
@@ -359,12 +412,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>macroscopic-averaged potential</p>
+    <p><span>文章标题:</span>第一届VASPKIT杯程序设计比赛之异质结建模</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
-    <p><span>发布时间:</span>2019-06-17, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-19, 23:02:13</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/06/17/vaspkit-macropot/" title="macroscopic-averaged potential">http://vaspkit.com/2019/06/17/vaspkit-macropot/</a>
+    <p><span>发布时间:</span>2019-06-19, 00:00:00</p>
+    <p><span>最后更新:</span>2019-06-19, 23:01:22</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/06/19/第一届VASPKIT杯程序设计比赛之异质结建模/" title="第一届VASPKIT杯程序设计比赛之异质结建模">http://vaspkit.com/2019/06/19/第一届VASPKIT杯程序设计比赛之异质结建模/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -372,6 +425,44 @@
 
 
 
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js" value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 
     
 
