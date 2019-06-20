@@ -6,19 +6,19 @@
   <meta name="keywords" content>
   <meta name="description" content="VASPKIT v0.80 Menual | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
+<meta name="description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VASPKIT v0.80 Menual">
-<meta property="og:url" content="http://vaspkit.com/2019/06/20/quick-start/index.html">
+<meta property="og:title" content="Charge density difference">
+<meta property="og:url" content="http://vaspkit.com/2019/06/03/chgdiff/index.html">
 <meta property="og:site_name" content="VASPKIT">
-<meta property="og:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
+<meta property="og:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
 <meta property="og:locale" content="English">
-<meta property="og:image" content="http://vaspkit.com/images/vaspkit-manual/vaspkit-manual1.jpg">
-<meta property="og:updated_time" content="2019-06-20T10:53:15.419Z">
+<meta property="og:image" content="http://vaspkit.com/images/chgdiff/chgdiff1.png">
+<meta property="og:updated_time" content="2019-06-19T17:01:20.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VASPKIT v0.80 Menual">
-<meta name="twitter:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
-<meta name="twitter:image" content="http://vaspkit.com/images/vaspkit-manual/vaspkit-manual1.jpg">
+<meta name="twitter:title" content="Charge density difference">
+<meta name="twitter:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
+<meta name="twitter:image" content="http://vaspkit.com/images/chgdiff/chgdiff1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -266,7 +266,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-20 18:53:15">2019-06-20 01:30</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 22:51:50">2019-06-20 01:30</time>
         
     </div>
     <div class="article-meta">
@@ -288,7 +288,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Generate-POSCAR"><span class="toc-text">2.4 Generate POSCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Input-File-Self-Check"><span class="toc-text">2.5 Input File Self Check</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -501,21 +501,56 @@ N=\max \left(1,\left|\vec{b}_{i}\right| / \mathrm{KPTResolvedValue}\right)</scri
 Gamma
   14  14  14
 0.0  0.0  0.0
-</code></pre><h3 id="2-3-Generate-POTCAR"><a href="#2-3-Generate-POTCAR" class="headerlink" title="2.3 Generate POTCAR"></a>2.3 Generate POTCAR</h3><p>When generating KPOINTS, POTCAR will also be generate automatically. It extracts the elements information from POSCAR and combines the corresponding POTCAR from the pseudopotential folders that you set in <code>~/.vaspkit</code>.</p>
+</code></pre><h3 id="2-3-Generate-POTCAR"><a href="#2-3-Generate-POTCAR" class="headerlink" title="2.3 Generate POTCAR"></a>2.3 Generate POTCAR</h3><p>When generating KPOINTS, POTCAR will also be generate automatically. Or use <code>103</code> to generate POTCAR.</p>
+<pre><code>103
+  --&gt;&gt; (01) Reading Structural Parameters from POSCAR File...
+  --&gt;&gt; (02) Written POTCAR File with the Standard Potential!
+</code></pre><p>It extracts the elements information from POSCAR and combines the corresponding POTCAR from the pseudopotential folders that you set in <code>~/.vaspkit</code>.</p>
 <pre><code>GGA_PATH                 &#39;~/POTCAR/GGA&#39;     #  Path of GGA potential. 
 PBE_PATH                 &#39;~/POTCAR/PBE&#39;     #  Path of PBE potential. 
 LDA_PATH                 &#39;~/POTCAR/LDA&#39;     #  Path of LDA potential.
 POTCAR_TYPE               PBE               #  PBE, GGA or LDA; 
 RECOMMENDED_POTCAR       .TRUE.             # .TRUE. or .FALSE.;
-</code></pre><p>Set <code>POTCAR_TYPE</code> to <code>PBE</code>, <code>GGA</code>, or<code>LDA</code> as your requirement. The <code>RECOMMENDED_POTCAR</code> tag control whether to use recommended potentials from VASP manual (Page. 195, 2018.10.29, <a href="http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html" target="_blank" rel="noopener">http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html</a>). If one want to generate POTCAR for GW calculation, Set the <code>GW_POTCAR</code> to .TRUE. in <code>~/.vaspkit</code>.</p>
-<pre><code>GW_POTCAR                .FALSE.            # .TRUE. or .FALSE.;
-</code></pre><p>There are several types of POTCAR. </p>
+</code></pre><p>Set <code>POTCAR_TYPE</code> to <code>PBE</code>, <code>GGA</code>, or<code>LDA</code> as your requirement. The <code>RECOMMENDED_POTCAR</code> tag control whether to use recommended potentials from VASP manual (Page. 195, 2018.10.29, <a href="http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html" target="_blank" rel="noopener">http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html</a>). If <code>RECOMMENDED_POTCAR</code> is <code>.FALSE.</code>, POTCAR with no extensions will be used. If <code>RECOMMENDED_POTCAR</code> is <code>.TRUE.</code>, official recommended POTCAR will be used.</p>
+<p>POTCAR types:</p>
 <ol>
-<li>No suffix</li>
-<li>with <code>_d</code> suffix, which excludes the d states from the core. (For main-group element)</li>
-<li>with <code>_sv</code> or <code>_pv</code> suffix, which excludes the s or sp states from the core. (For transition metals)</li>
-<li></li>
+<li>No extensions “_”</li>
+<li><code>_d</code>. An extension d, treat the <em>d</em> semi core states as valence state.</li>
+<li><code>_pv</code> or <code>_sv</code>. The extensions <code>_pv</code> and <code>_sv</code> imply that the <em>p</em> and <em>s</em> semi-core states are<br>treated as valence states.</li>
+<li><code>_h</code> and <code>_s</code>. An extension <code>_h</code> or<code>_s</code> implies that the potential is harder or softer than the standard potential and hence requires a higher or lower energy cutoff.</li>
+<li>Pseudo hydrogen. ex: <code>H.5</code></li>
+<li><p><code>_GW</code>. Used for GW calculation.</p>
+<p>If one want to generate POTCAR for GW calculation, Set the <code>GW_POTCAR</code> to .TRUE. in <code>~/.vaspkit</code>. </p>
+</li>
 </ol>
+<pre><code>GW_POTCAR                .FALSE.            # .TRUE. or .FALSE.;
+</code></pre><p>VASPKIT also provide <code>104</code> tag to generate POTCAR manually by selecting the type of potential for each element.</p>
+<pre><code>104
+ --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
+ Auto detected POTCAR_TYPE is O, please type the one you want!
+O_h
+ Auto detected POTCAR_TYPE is Ti, please type the one you want!
+Ti_sv
+ --&gt;&gt; (2) Written POTCAR File with user specified Potential!
+</code></pre><p>In this example, enter the customized type of potentials O and Ti. Ti_sv was chosen for Ti and O_h was chosen for O. If there is no user defined potential type in the list of potentials, VASPKIT will ask user re-enter.</p>
+<h3 id="2-4-Generate-POSCAR"><a href="#2-4-Generate-POSCAR" class="headerlink" title="2.4 Generate POSCAR"></a>2.4 Generate POSCAR</h3><p>VASPKIT can transform .cif and .xsd  (Materials Studio format) file to POSCAR format by tag <code>105</code> and <code>106</code>. </p>
+<p><code>105</code> will run cif2pos.py script automatically.</p>
+<pre><code>105
+ Please type in the filename of cif-&gt;
+al2o3.cif
+Pleas input the order of element, `ENTER` for default!
+Example: &#39;Al O&#39; in this CIF
+
+  --&gt;&gt; (01) POSCAR has been generated...
+</code></pre><p><code>106</code> will run xsd2pos.py script automatically. Note that the atom fix information in .xsd file is kept when transform.</p>
+<pre><code>106
+ Build-&gt;Symmetry-&gt;Make P1,then select atoms to be fixed, Modify-&gt;Constraints-&gt;fi
+ x fractional position-&gt;
+ Please type in the filename of xsd-&gt;
+CONTCAR-n2-3.xsd
+  --&gt;&gt; (01) POSCAR has been generated...
+</code></pre><p><code>107</code> can reorder the elements in POSCAR file.</p>
+<h3 id="2-5-Input-File-Self-Check"><a href="#2-5-Input-File-Self-Check" class="headerlink" title="2.5 Input File Self Check"></a>2.5 Input File Self Check</h3><p>VASPKIT has functionality of format correction and pseudopotential checking by <code>109</code>. Enter 109, VASPKIT will automatically correct the INCAR and POSCAR formats and check if the POTCAR and POSCAR are consistent.</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
@@ -533,7 +568,7 @@ RECOMMENDED_POTCAR       .TRUE.             # .TRUE. or .FALSE.;
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-06-20, 01:30:17</p>
-    <p><span>最后更新:</span>2019-06-20, 18:53:15</p>
+    <p><span>最后更新:</span>2019-06-20, 22:51:50</p>
     <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT v0.80 Menual">http://vaspkit.com/2019/06/20/quick-start/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
