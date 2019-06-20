@@ -21,7 +21,11 @@
 <meta property="og:image" content="http://vaspkit.com/images/band/band4.png">
 <meta property="og:image" content="http://vaspkit.com/images/band/band5.png">
 <meta property="og:image" content="http://vaspkit.com/images/band/band7.png">
-<meta property="og:updated_time" content="2019-06-20T14:56:55.608Z">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band1.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band2.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band3.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band4.png">
+<meta property="og:updated_time" content="2019-06-20T15:16:23.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VASPKIT v0.80 Menual">
 <meta name="twitter:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
@@ -206,14 +210,14 @@
     
     <nav id="title-list-nav">
         
-        <a class="vaspkit " href="/2019/06/03/chgdiff/" data-tag data-author="Jincheng Liu">
-            <span class="post-title" title="Charge density difference">Charge density difference</span>
-            <span class="post-date" title="2019-06-03 00:00:00">2019/06/03</span>
-        </a>
-        
         <a class="vaspkit " href="/2019/05/19/pband/" data-tag="VASP,能带" data-author="Jincheng Liu">
             <span class="post-title" title="Draw Band Structure figure by Origin">Draw Band Structure figure by Origin</span>
             <span class="post-date" title="2019-05-19 00:00:00">2019/05/19</span>
+        </a>
+        
+        <a class="vaspkit " href="/2019/06/03/chgdiff/" data-tag data-author="Jincheng Liu">
+            <span class="post-title" title="Charge density difference">Charge density difference</span>
+            <span class="post-date" title="2019-06-03 00:00:00">2019/06/03</span>
         </a>
         
         <a class="vaspkit " href="/2019/05/21/vaspkit-avgpot/" data-tag="VASP,能带" data-author="Jincheng Liu">
@@ -231,14 +235,14 @@
             <span class="post-date" title="2019-05-14 00:00:00">2019/05/14</span>
         </a>
         
-        <a class="vaspkit " href="/2019/06/20/quick-start/" data-tag data-author="Jincheng Liu">
-            <span class="post-title" title="VASPKIT v0.80 Menual">VASPKIT v0.80 Menual</span>
-            <span class="post-date" title="2019-06-20 01:30:17">2019/06/20</span>
-        </a>
-        
         <a class="vaspkit " href="/2019/05/22/vaspkit-hse-band/" data-tag="VASP,能带" data-author="Jincheng Liu">
             <span class="post-title" title="Band Structure calculation (Hybird functional)">Band Structure calculation (Hybird functional)</span>
             <span class="post-date" title="2019-05-22 00:00:00">2019/05/22</span>
+        </a>
+        
+        <a class="vaspkit " href="/2019/06/20/quick-start/" data-tag data-author="Jincheng Liu">
+            <span class="post-title" title="VASPKIT v0.80 Menual">VASPKIT v0.80 Menual</span>
+            <span class="post-date" title="2019-06-20 01:30:17">2019/06/20</span>
         </a>
         
     </nav>
@@ -281,7 +285,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-19 21:12:12">2019-05-14 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 23:12:18">2019-05-14 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -321,10 +325,10 @@
         <p><strong>########## citation ##########</strong></p>
 <p><strong>V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
 <p><strong>########## citation ##########</strong></p>
-<p><strong>irreducible Brillouin zone</strong> is the first Brillouin zone reduced by all of the symmetries in the points group of the lattice (point group of the crystal). To do band structure calculation, one should select high symmetry points, and link them along edges of Brillouin zone. </p>
+<p>To do band structure calculation, one need to prepare a primitive cell crystal and its K points path (K-path) alone Irreducible Brillouin Zone. Irreducible Brillouin Zone is the first Brillouin zone reduced by all of the symmetries in the points group of the lattice (point group of the crystal). To do band structure calculation, one should select high symmetry points, and link them along edges of Brillouin zone. </p>
 <p>For instance, FCC metel：</p>
 <p><img src="/images/band/band1.png" alt></p>
-<p>FCC metel：</p>
+<p>BCC metel：</p>
 <p><img src="/images/band/band2.png" alt></p>
 <p>The rule to select K-path is unique. Usually, It is unnecessary to select all the edges of irreducible Brillouin zone. The representative and important line are selected and written as line-mode in KPOINTS file. But for large-scale and high-throughout calculation, there should be a rule to define the path from there symmetry and structural information。pymatgen and seeK-path provide some solutions but only can be used for 3D system. VASPKIT provide a tool to generate K-path for 1D, 2D, and 3D materials based on a systematic rule:</p>
 <p> <a href="http://dx.doi.org/10.1016/j.commatsci.2016.10.015" target="_blank" rel="noopener">Y. Hinuma, G. Pizzi, Y. Kumagai, F. Oba, I. Tanaka, Band structure diagram paths based on crystallography, Comp. Mat. Sci. 128, 140 (2017). DOI: 10.1016/j.commatsci.2016.10.015</a> .</p>
@@ -589,7 +593,7 @@ Mo
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-05-14, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-19, 21:12:12</p>
+    <p><span>最后更新:</span>2019-06-20, 23:12:18</p>
     <span>原始链接:</span><a class="post-url" href="/2019/05/14/band/" title="Band Structure calculation (Pure functional)">http://vaspkit.com/2019/05/14/band/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
