@@ -2,21 +2,27 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>VASPKIT v0.80 Quick Start | VASPKIT</title>
+  <title>VASPKIT v0.80 Menual | VASPKIT</title>
   <meta name="keywords" content>
-  <meta name="description" content="VASPKIT v0.80 Quick Start | VASPKIT">
+  <meta name="description" content="VASPKIT v0.80 Menual | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## The Vienna Ab">
+<meta name="description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## Vaspkit can g">
+<meta name="keywords" content="VASP,能带">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VASPKIT v0.80 Quick Start">
-<meta property="og:url" content="http://vaspkit.com/2019/06/20/quick-start/index.html">
+<meta property="og:title" content="Band Structure calculation (Hybird functional)">
+<meta property="og:url" content="http://vaspkit.com/2019/05/22/vaspkit-hse-band/index.html">
 <meta property="og:site_name" content="VASPKIT">
-<meta property="og:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## The Vienna Ab">
+<meta property="og:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## Vaspkit can g">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-06-20T01:55:36.948Z">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band1.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band2.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band3.png">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band4.png">
+<meta property="og:updated_time" content="2019-06-19T13:15:04.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VASPKIT v0.80 Quick Start">
-<meta name="twitter:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## The Vienna Ab">
+<meta name="twitter:title" content="Band Structure calculation (Hybird functional)">
+<meta name="twitter:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## Vaspkit can g">
+<meta name="twitter:image" content="http://vaspkit.com/images/vaspkit-hse-band/vaspkit-hse-band1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -244,8 +250,8 @@
         </a>
         
         <a class="vaspkit " href="/2019/06/20/quick-start/" data-tag data-author="Jincheng Liu">
-            <span class="post-title" title="VASPKIT v0.80 Quick Start">VASPKIT v0.80 Quick Start</span>
-            <span class="post-date" title="2019-06-20 00:00:00">2019/06/20</span>
+            <span class="post-title" title="VASPKIT v0.80 Menual">VASPKIT v0.80 Menual</span>
+            <span class="post-date" title="2019-06-20 01:30:17">2019/06/20</span>
         </a>
         
     </nav>
@@ -262,7 +268,7 @@
     <div class="pjax">
         <article id="post-quick-start" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">VASPKIT v0.80 Quick Start</h1>
+        <h1 class="article-title">VASPKIT v0.80 Menual</h1>
     
     <div class="article-meta">
         
@@ -280,7 +286,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-20 09:55:36">2019-06-20 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 18:17:12">2019-06-20 01:30</time>
         
     </div>
     <div class="article-meta">
@@ -302,7 +308,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-files"><span class="toc-text">2. Generate Input files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-generate-INCAR"><span class="toc-text">2.1 generate INCAR</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -318,9 +324,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>########## citation ##########</strong></p>
-<p><strong>V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
+<p><strong>Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. <a href="http://vaspkit.sourceforge.net" target="_blank" rel="noopener">http://vaspkit.sourceforge.net</a>.</strong></p>
 <p><strong>########## citation ##########</strong></p>
+<p><img src="/images/vaspkit-manual/vaspkit-manual1.jpg" alt></p>
 <p>The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling. VASP users are widely distributed, such as chemistry, physics, material, enviornment. Users have developed and contributed scripts or applets used in their field based on VASP. VASPKIT is a Pre- and Post-Processing Program for the VASP code, written by Fortran and used under the Linux environment. </p>
+<p>[TOC]</p>
 <h2 id="1-Quick-Start"><a href="#1-Quick-Start" class="headerlink" title="1. Quick Start"></a>1. Quick Start</h2><p>(1) In order to ensure the full functionality of the VASPKIT, users need to configure the environment of the vaspkit from <code>~/.vaspkit</code> file. Copy the environment variable file to the user directory by running the following command under the bash terminal.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -f how_to_set_environment_variable ~/.vaspkit</span><br></pre></td></tr></table></figure>
 <p>Edit the <code>.vaspkit</code> file,</p>
@@ -341,7 +349,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vaspkit: /lib64/libc.so.6: version `GLIBC_2.14&apos; not found (required by vaspkit)</span><br></pre></td></tr></table></figure>
 <p>If the<code>-bash: line 7: ./vaspkit: Permission denied permission</code> issue occurs, simply add the vaspkit execute permission:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x /home/vaspkit.0.73/bin/vaspkit</span><br></pre></td></tr></table></figure>
-<h2 id="2-Generate-Input-files"><a href="#2-Generate-Input-files" class="headerlink" title="2. Generate Input files"></a>2. Generate Input files</h2><p>In order to successfully run VASP tasks, usually one need 4 files: INCAR, POSCAR, POTCAR and KPOINTS.</p>
+<h2 id="2-Generate-Input-Files"><a href="#2-Generate-Input-Files" class="headerlink" title="2. Generate Input Files"></a>2. Generate Input Files</h2><p>In order to successfully run VASP tasks, usually one need 4 files: INCAR, POSCAR, POTCAR and KPOINTS.</p>
 <ol>
 <li><p>INCAR file is a control file that tells VASP what tasks to calculate and how to calculate; </p>
 </li>
@@ -351,7 +359,31 @@
 <li>KPOINTS, which can be included in INCAR, but not recommended for omitting, contains K-points information in the reciprocal space at which the wave function integrates to obtain the charge density. </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">101) Customize INCAR File</span><br><span class="line">102) Generate KPOINTS File for SCF Calculation</span><br><span class="line">103) Generate POTCAR File with Default Setting</span><br><span class="line">104) Generate POTCAR File with User Specified Potential</span><br><span class="line">105) Generate POSCAR File from cif (no fractional occupations)</span><br><span class="line">106) Generate POSCAR File from Material Studio xsd (retain fixes)</span><br><span class="line">107) Reformat POSCAR File in Specified Order of Elements</span><br><span class="line">108) Successive Procedure to Generate VASP Files and Check</span><br><span class="line">109) Check All VASP Files</span><br></pre></td></tr></table></figure>
-<h3 id="2-1-generate-INCAR"><a href="#2-1-generate-INCAR" class="headerlink" title="2.1 generate INCAR"></a>2.1 generate INCAR</h3>
+<h3 id="2-1-Generate-INCAR"><a href="#2-1-Generate-INCAR" class="headerlink" title="2.1 Generate INCAR"></a>2.1 Generate INCAR</h3><p>Run vaspkit in the directory containing POSCAR. Enter <code>1</code> to select the function VASP Input Files Generator, and then enter <code>101</code>to select customize INCAR File, you will get the following display information:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">101</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line">                You MUST Know What You Are Doing</span><br><span class="line">  Some Parameters in INCAR File Neet To Be Set/Adjusted Manually      </span><br><span class="line"> +---------------------------------------------------------------+</span><br><span class="line"> ======================== INCAR Options ==========================</span><br><span class="line"> ST) Static-Calculation            SR) Standard Relaxation        </span><br><span class="line"> MG) Magnetic Properties           SO) Spin-Orbit Coupling         </span><br><span class="line"> D3) DFT-D3 no-damping Correction  H6) HSE06 Calculation         </span><br><span class="line"> PU) DFT+U Calculation             MD) Molecular Dynamics        </span><br><span class="line"> GW) GW0 Calculation               BS) BSE Calculation  </span><br><span class="line"> DC) Elastic Constant              EL) ELF Calculation       </span><br><span class="line"> BD) Bader Charge Analysis         OP) Optical Properties        </span><br><span class="line"> EC) Static Dielectric Constant    PC) Decomposed Charge Density   </span><br><span class="line"> FD) Phonon-Finite-Displacement    DT) Phonon-DFPT            </span><br><span class="line"> NE) Nudged Elastic Band (NEB)     DM) The Dimer Method             </span><br><span class="line"> FQ) Frequence Calculations        LR) Lattice Relaxation          </span><br><span class="line"></span><br><span class="line"> 0)   Quit                                                       </span><br><span class="line"> 9)   Back      </span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line"> Input Key-Parameters (STH6D3 means HSE06-D3 Static-Calcualtion)</span><br></pre></td></tr></table></figure>
+<p>Enter the words for specific function to generate the INCAR file that are required for the calculation task. For example, if enter LR, one will get a INCAR for lattice relaxation task with detail comments:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Global Parameters</span><br><span class="line">  ISTART =  1            (Read existing wavefunction; if there)</span><br><span class="line">  # ISPIN =  2           (Spin polarised DFT)</span><br><span class="line">  # ICHARG =  11         (Non-self-consistent: GGA/LDA band structures)</span><br><span class="line">  LREAL  = Auto          (Projection operators: automatic)</span><br><span class="line">  # ENCUT  =  400        (Cut-off energy for plane wave basis set, in eV)</span><br><span class="line">  PREC   =  Normal       (Precision level)</span><br><span class="line">  LWAVE  = .TRUE.        (Write WAVECAR or not)</span><br><span class="line">  LCHARG = .TRUE.        (Write CHGCAR or not)</span><br><span class="line">  ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)</span><br><span class="line">  # LVTOT  = .TRUE.      (Write total electrostatic potential into LOCPOT or not)</span><br><span class="line">  # LVHAR  = .TRUE.      (Write ionic+Hartree electrostatic potential into LOCPOT or not)</span><br><span class="line">  # NELECT =             (No. of electrons: charged cells; be careful)</span><br><span class="line">  # LPLANE = .TRUE.      (Real space distribution; supercells)</span><br><span class="line">  # NPAR   = 4           (Max is no. nodes; don&apos;t set for hybrids)</span><br><span class="line">  # NWRITE = 2           (Medium-level output)</span><br><span class="line">  # KPAR   = 2           (Divides k-grid into separate groups)</span><br><span class="line">  # NGX    = 500         (FFT grid mesh density for nice charge/potential plots)</span><br><span class="line">  # NGY    = 500         (FFT grid mesh density for nice charge/potential plots)</span><br><span class="line">  # NGZ    = 500         (FFT grid mesh density for nice charge/potential plots)</span><br><span class="line"></span><br><span class="line">Lattice Relaxation</span><br><span class="line">  NSW    =  300          (number of ionic steps)</span><br><span class="line">  ISMEAR =  0            (gaussian smearing method )</span><br><span class="line">  SIGMA  =  0.05         (please check the width of the smearing)</span><br><span class="line">  IBRION =  2            (Algorithm: 0-MD; 1-Quasi-New; 2-CG)</span><br><span class="line">  ISIF   =  3            (optimize atomic coordinates and lattice parameters)</span><br><span class="line">  EDIFFG = -1.5E-02      (Ionic convergence; eV/AA)</span><br><span class="line">  PREC   =  Accurate     (Precision level)</span><br></pre></td></tr></table></figure>
+<p>If one want a cleaner INCAR file without comments, set the  <code>~/.vaspkit</code> file with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MINI_INCAR               .TRUE.</span><br></pre></td></tr></table></figure>
+<p>The automatic generated INCAR for lattice relaxation task will be: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Global Parameters</span><br><span class="line">  ISTART = 1</span><br><span class="line">  LREAL = Auto</span><br><span class="line">  PREC = Normal</span><br><span class="line">  LWAVE = .TRUE.</span><br><span class="line">  LCHARG = .TRUE.</span><br><span class="line">  ADDGRID= .TRUE.</span><br><span class="line"></span><br><span class="line">Lattice Relaxation</span><br><span class="line">  NSW = 300</span><br><span class="line">  ISMEAR = 0</span><br><span class="line">  SIGMA = 0.05</span><br><span class="line">  IBRION = 2</span><br><span class="line">  ISIF = 3</span><br><span class="line">  EDIFFG = -1.5E-02</span><br><span class="line">  PREC = Accurate</span><br></pre></td></tr></table></figure>
+<p>Users can modify some parameters as they want from these INCAR file.</p>
+<p>If there is already an INCAR file, the original INCAR file will be overwritten. You can edit the <code>~/.vaspkit</code> to change the INCAR output settings. Simply change the line of </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET_INCAR_WRITE_MODE     OVERRIDE	#  OVERRIDE, APPEND,BACK-UP-OLD,BACK-UP-NEW;</span><br></pre></td></tr></table></figure>
+<p>From the default <code>OVERRIDE</code> to <code>APPEND</code>, <code>BACK-UP-OLD</code>, or <code>BACK-UP-NEW</code>, corresponding to the new content added to the original INCAR, back up the original INCAR, back up the new INCAR.</p>
+<h3 id="2-2-Generate-KPOINTS"><a href="#2-2-Generate-KPOINTS" class="headerlink" title="2.2 Generate KPOINTS"></a>2.2 Generate KPOINTS</h3><p>For usual self-consistent calculation, users need to write a KPOINTS file to specify density of kpoints and the method for automatic k-mesh generation . </p>
+<p>VASPKIT can generate KPOINTS file automatically with pre-exist POSCAR file. Start vaspkit, enter <code>1</code> to select the function <code>VASP Input Files Generator</code>, then enter <code>102</code> to generate KPOINTS file for SCF Calculation, you will get the following display information:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">102</span><br><span class="line"> ======================= K-Mesh Scheme ==========================</span><br><span class="line"> 1) Monkhorst-Pack Scheme                            </span><br><span class="line"> 2) Gamma Scheme                                     </span><br><span class="line">                                                     </span><br><span class="line"> 0)   Quit                                             </span><br><span class="line"> 9)   Back                                             </span><br><span class="line"> -------------&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>Enter <code>1</code> to select the original Monkhorst-Pack scheme,</p>
+<p>Enter <code>2</code> to select the Gamma centered Monkhorst-Pack scheme.</p>
+<p>Then, VASPKIT ask us to input allowed spacing between k points in units of 2$\pi$Å<sup>-1</sup>. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from POSCAR File...</span><br><span class="line"> +-------------------------- Warm Tips --------------------------+</span><br><span class="line"> </span><br><span class="line"> * Accuracy Levels: Gamma-Only: 0;              </span><br><span class="line">    Low: 0.06~0.04;             </span><br><span class="line">    Medium: 0.04~0.03;          </span><br><span class="line">    Fine: 0.02-0.01.            </span><br><span class="line"> * 0.03-0.04 is Generally Precise Enough!                </span><br><span class="line">   +---------------------------------------------------------------+</span><br><span class="line">    Input KPT-Resolved Value (e.g., 0.04, in unit of 2*PI/Angstrom): </span><br><span class="line">    ------------&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>The number of k-points increases when the spacing is decreased. The number of k-points in the direction of the first, second and third reciprocal lattice vector is determined by </p>
+<script type="math/tex; mode=display">
+N=\max \left(1,\left|\vec{b}_{i}\right| / \mathrm{KPTResolvedValue}\right)</script><p>These values are rounded to the next integer greater than or equal to <strong><em>N</em></strong>. The recommend value 0.04 (2$\pi$*Å<sup>-1</sup>) is enough for most system. This parameter is similar as the parameter KSPACING in INCAR. But the unit is different. Unit of KSPACING is Å<sup>-1</sup>, and the unit of VASPKIT is 2$\pi$Å<sup>-1</sup>. </p>
+<p>The first line of output KPOINTS file show the KPT-Resolved Value.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">K-Mesh Generated with KP-Resolved Value (...): 0.020</span><br><span class="line">0</span><br><span class="line">Gamma</span><br><span class="line">  14  14  14</span><br><span class="line">0.0  0.0  0.0</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Generate-POTCAR"><a href="#2-3-Generate-POTCAR" class="headerlink" title="2.3 Generate POTCAR"></a>2.3 Generate POTCAR</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
     </div>
@@ -364,12 +396,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>VASPKIT v0.80 Quick Start</p>
+    <p><span>文章标题:</span>VASPKIT v0.80 Menual</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
-    <p><span>发布时间:</span>2019-06-20, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-20, 09:55:36</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT v0.80 Quick Start">http://vaspkit.com/2019/06/20/quick-start/</a>
+    <p><span>发布时间:</span>2019-06-20, 01:30:17</p>
+    <p><span>最后更新:</span>2019-06-20, 18:17:12</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT v0.80 Menual">http://vaspkit.com/2019/06/20/quick-start/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
