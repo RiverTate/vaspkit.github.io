@@ -6,19 +6,26 @@
   <meta name="keywords" content>
   <meta name="description" content="VASPKIT v0.80 Menual | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
+<meta name="description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Charge density difference">
-<meta property="og:url" content="http://vaspkit.com/2019/06/03/chgdiff/index.html">
+<meta property="og:title" content="VASPKIT v0.80 Menual">
+<meta property="og:url" content="http://vaspkit.com/2019/06/20/quick-start/index.html">
 <meta property="og:site_name" content="VASPKIT">
-<meta property="og:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
+<meta property="og:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
 <meta property="og:locale" content="English">
-<meta property="og:image" content="http://vaspkit.com/images/chgdiff/chgdiff1.png">
-<meta property="og:updated_time" content="2019-06-19T17:01:20.697Z">
+<meta property="og:image" content="http://vaspkit.com/images/vaspkit-manual/vaspkit-manual1.jpg">
+<meta property="og:image" content="http://vaspkit.com/images/band/band1.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band2.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band3.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band6.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band4.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band5.png">
+<meta property="og:image" content="http://vaspkit.com/images/band/band7.png">
+<meta property="og:updated_time" content="2019-06-20T14:56:55.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charge density difference">
-<meta name="twitter:description" content="########## citation ########## V. Wang, N. Xu, Jin-Cheng Liu VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ########## VASPKIT is po">
-<meta name="twitter:image" content="http://vaspkit.com/images/chgdiff/chgdiff1.png">
+<meta name="twitter:title" content="VASPKIT v0.80 Menual">
+<meta name="twitter:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
+<meta name="twitter:image" content="http://vaspkit.com/images/vaspkit-manual/vaspkit-manual1.jpg">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -266,7 +273,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-20 22:51:50">2019-06-20 01:30</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 22:56:55">2019-06-20 01:30</time>
         
     </div>
     <div class="article-meta">
@@ -288,7 +295,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Generate-POSCAR"><span class="toc-text">2.4 Generate POSCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Input-File-Self-Check"><span class="toc-text">2.5 Input File Self Check</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Generate-POSCAR"><span class="toc-text">2.4 Generate POSCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Input-File-Self-Check"><span class="toc-text">2.5 Input File Self Check</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Band-Structure"><span class="toc-text">3 Band Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Pre-process-Band-Structure-pure-functional"><span class="toc-text">3.1 Pre-process Band Structure (pure functional)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-MoS2-2D-single-layer"><span class="toc-text">Example: MoS2 2D single-layer</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -551,6 +558,258 @@ CONTCAR-n2-3.xsd
   --&gt;&gt; (01) POSCAR has been generated...
 </code></pre><p><code>107</code> can reorder the elements in POSCAR file.</p>
 <h3 id="2-5-Input-File-Self-Check"><a href="#2-5-Input-File-Self-Check" class="headerlink" title="2.5 Input File Self Check"></a>2.5 Input File Self Check</h3><p>VASPKIT has functionality of format correction and pseudopotential checking by <code>109</code>. Enter 109, VASPKIT will automatically correct the INCAR and POSCAR formats and check if the POTCAR and POSCAR are consistent.</p>
+<h2 id="3-Band-Structure"><a href="#3-Band-Structure" class="headerlink" title="3 Band Structure"></a>3 Band Structure</h2><p>VASPKIT is very powerful at pre- and post- process VASP band structure calculation. </p>
+<h3 id="3-1-Pre-process-Band-Structure-pure-functional"><a href="#3-1-Pre-process-Band-Structure-pure-functional" class="headerlink" title="3.1 Pre-process Band Structure (pure functional)"></a>3.1 Pre-process Band Structure (pure functional)</h3><p><strong>irreducible Brillouin zone</strong> is the first Brillouin zone reduced by all of the symmetries in the points group of the lattice (point group of the crystal). To do band structure calculation, one should select high symmetry points, and link them along edges of Brillouin zone. </p>
+<p>For instance, FCC metel：</p>
+<p><img src="/images/band/band1.png" alt></p>
+<p>FCC metel：</p>
+<p><img src="/images/band/band2.png" alt></p>
+<p>The rule to select K-path is unique. Usually, It is unnecessary to select all the edges of irreducible Brillouin zone. The representative and important line are selected and written as line-mode in KPOINTS file. But for large-scale and high-throughout calculation, there should be a rule to define the path from there symmetry and structural information。pymatgen and seeK-path provide some solutions but only can be used for 3D system. VASPKIT provide a tool to generate K-path for 1D, 2D, and 3D materials based on a systematic rule:</p>
+<p> <a href="http://dx.doi.org/10.1016/j.commatsci.2016.10.015" target="_blank" rel="noopener">Y. Hinuma, G. Pizzi, Y. Kumagai, F. Oba, I. Tanaka, Band structure diagram paths based on crystallography, Comp. Mat. Sci. 128, 140 (2017). DOI: 10.1016/j.commatsci.2016.10.015</a> .</p>
+<p>there is Brillouin zones for 2D materials:</p>
+<p><img src="/images/band/band3.png" alt></p>
+<p>Other ways to get K-path automatically</p>
+<p>pymatgen（<a href="https://pymatgen.org/）Computational" target="_blank" rel="noopener">https://pymatgen.org/）Computational</a> Materials Science 49 (2010) 299–312.<br>seeK-path（<a href="https://www.materialscloud.org/work/tools/seekpath）Computational" target="_blank" rel="noopener">https://www.materialscloud.org/work/tools/seekpath）Computational</a> Materials Science 128 (2017) 140–184.</p>
+<p>VASPKIT use the same method as seeK-path website, and can generate line-mode KPOINTS file automatically off-line. </p>
+<h2 id="Example-MoS2-2D-single-layer"><a href="#Example-MoS2-2D-single-layer" class="headerlink" title="Example: MoS2 2D single-layer"></a>Example: MoS<sub>2</sub> 2D single-layer</h2><p>Band structure of single-layer MoS<sub>2</sub> without spin polarization without spin-orbital coupling.</p>
+<p><img src="/images/band/band6.png" alt></p>
+<p>（1）Prepare MoS<sub>2</sub> POSCAR. </p>
+<p>Because the K-path that generated by VASPKIT base on standardized primitive cell, so please first standardize the POSCAR.</p>
+<p>For 2D material: Keep the center of Z coordination of 2D material at the <strong><em>c</em></strong>/2. (i.e. fractional coordination of z = 0.5 ). This could be accomplished by VASPKIT <code>921</code>or <code>923</code>. </p>
+<p>For 3D material, use VASPKIT <code>602</code> to generate a standardized primitive cell, PRIMCELL.vasp, and replace the original POSCAR.</p>
+<p>Here the standardized POSCAR of MoS<sub>2</sub> :</p>
+<pre><code>MoS2
+1.0
+        3.1659998894         0.0000000000         0.0000000000
+       -1.5829999447         2.7418363326         0.0000000000
+        0.0000000000         0.0000000000        18.4099998474
+    S   Mo
+    2    1
+Direct
+     0.000000000         0.000000000         0.413899988
+     0.000000000         0.000000000         0.586099982
+     0.666666687         0.333333343         0.500000000
+</code></pre><p>vaspkit 923 could standardize 2D crystal cell，(i) put the vacuum layer at z direction，(ii) put the 2D material to the center of z coordination：</p>
+<pre><code>92
+ +-------------------------- Warm Tips --------------------------+
+             Please Use These Features with CAUTION!     
+ +---------------------------------------------------------------+
+ ===================== 2D Materials Toolkit ======================
+ 921) Center Aomic-Layer along z direction                        
+ 922) Resize Vacuum Thickness                                     
+ 923) Standardize 2D Crystal Cell                                 
+ 926) Elastic Constants for 2D Materials       
+ 927) Valence and Conduction Band Edges Referenced to Vacuum Level
+ 929) Summary for Relaxed 2D Structure                            
+
+ 0)   Quit                                                        
+ 9)   Back                                                        
+ ------------&gt;&gt;
+923
+ --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
+ --&gt;&gt; (2) Written POSCAR_NEW File!
+</code></pre><p>（2）Do geometry optimization, and then do a single-point self-consistent calculation to get the CHGCAR。</p>
+<p>（3）Run VASPKIT <code>302</code> get 2D K-path files: (Note: please check the Space Group)</p>
+<pre><code>302
+ +-------------------------- Warm Tips --------------------------+
+     See An Example in vaspkit/examples/seek_kpath/graphene_2D.        
+ This feature is still experimental &amp; check the PRIMCELL.vasp file.       
+ +---------------------------------------------------------------+
+ --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
+ +-------------------------- Summary ----------------------------+
+           The vacuum slab is supposed to be along c axis   
+                           Prototype: AB2
+           Total Atoms in Input Cell:   3
+     Lattice Constants in Input Cell:   3.166   3.166  18.410
+        Lattice Angles in Input Cell:  90.000  90.000 120.000
+       Total Atoms in Primitive Cell:   3
+ Lattice Constants in Primitive Cell:   3.166   3.166  18.410
+    Lattice Angles in Primitive Cell:  90.000  90.000 120.000
+                  2D Bravais Lattice: Hexagonal
+                         Space Group: 187
+                         Point Group: 26 [ D3h ]
+                       International: P-6m2
+                 Symmetry Operations:  12
+                    Suggested K-Path: (shown in the next line)
+ [ GAMMA-M-K-GAMMA ]
+ +---------------------------------------------------------------+
+ --&gt;&gt; (2) Written PRIMCELL.vasp file.
+ --&gt;&gt; (3) Written KPATH.in File for Band-Structure Calculation.
+ --&gt;&gt; (4) Written HIGH_SYMMETRY_POINTS File for Reference.
+</code></pre><p>KPATH.in file include line-mode K-path. <code>cp KPATH.in KPOINTS</code> </p>
+<p>HIGH_SYMMETRY_POINTS include the information of high symmetry points. VASPKIT do NOT promise the K-path is right, please compare the results from seeK-path website（<a href="https://www.materialscloud.org/work/tools/seekpath）" target="_blank" rel="noopener">https://www.materialscloud.org/work/tools/seekpath）</a></p>
+<pre><code>High-symmetry points (in fractional coordinates). You can check them with the seekpath database [https://www.materialscloud.org/work/tools/seekpath].
+   0.0000000000   0.0000000000   0.0000000000     GAMMA
+   0.3333333333   0.3333333333   0.0000000000     K
+   0.5000000000   0.0000000000   0.0000000000     M
+
+
+If you use this module, please cite the following work:
+[1] V. Wang, N. Xu, VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net.
+[2] V. Wang, Y.-Y. Liang, Y. Kawazeo, W.-T. Geng, High-Throughput Computational Screening of Two-Dimensional Semiconductors, arXiv:1806.04285.
+</code></pre><p>（4）read the CHGCAR from single-point calculation and submit VASP job, do the band structure calculation.</p>
+<p>INCAR example：</p>
+<pre><code>##### initial I/O #####
+SYSTEM = MoS2  
+KPAR = 4       
+NCORE = 5 
+ISTART = 1 
+ICHARG = 11 
+LWAVE = .TRUE. 
+LCHARG = .TRUE.
+LVTOT = .FALSE.
+LVHAR = .FALSE.
+LELF = .FALSE. 
+LORBIT = 11 
+NEDOS = 1000 
+
+##### SCF #####
+ENCUT = 500
+ISMEAR = 0 
+SIGMA = 0.05
+EDIFF = 1E-6
+NELMIN = 5 
+NELM = 300 
+GGA = PE 
+LREAL = .FALSE.
+PREC = Accurate
+</code></pre><p>（5）After calculation, do post-process by VASPKIT <code>21</code></p>
+<p><strong>211 get the basic band structure</strong>：</p>
+<pre><code>211
+  --&gt;&gt; (01) Reading Input Parameters From INCAR File...
+  --&gt;&gt; (02) Reading Fermi-Energy from DOSCAR File...
+ ooooooooo The Fermi Energy will be set to zero eV ooooooooooooooo
+  --&gt;&gt; (03) Reading Energy-Levels From EIGENVAL File...
+  --&gt;&gt; (04) Reading Structural Parameters from POSCAR File...
+  --&gt;&gt; (05) Reading K-Paths From KPOINTS File...
+  --&gt;&gt; (06) Written BAND.dat File!
+  --&gt;&gt; (07) Written BAND_REFORMATTED.dat File!
+  --&gt;&gt; (08) Written KLINES.dat File!
+  --&gt;&gt; (09) Written KLABELS File!
+  --&gt;&gt; (10) Written BAND_GAP File!
+ If you want use the default setting, type 0, if modity type 1
+0
+/public1/home/pg2059/.local/lib/python2.7/site-packages/matplotlib/font_manager.py:1328: UserWarning: findfont: Font family [u&#39;arial&#39;] not found. Falling back to DejaVu Sans
+  (prop.get_family(), self.defaultFamily[fontext]))
+  --&gt;&gt; (11) Graph has been generated!
+</code></pre><p>Output BAND.dat，BAND_REFORMATTED.dat，KLINES.dat，KLABELS，BAND_GAP files，</p>
+<p>BAND.dat，BAND_REFORMATTED.dat files save the band information, which can be input to ORIGIN directly. </p>
+<p>BAND_REFORMATTED.dat:  First column is the length of K-path, and following columns are the energies of energy bands.</p>
+<pre><code>#K-Path     Energy-Level
+  0.000   -14.278   -13.063    -5.798    -2.813    -2.813    -1.962    -1.693    ...   
+  0.060   -14.268   -13.058    -5.787    -2.836    -2.802    -2.055    -1.710    ...   
+  0.120   -14.239   -13.044    -5.752    -2.906    -2.769    -2.226    -1.761    ...   
+  0.180   -14.190   -13.021    -5.695    -3.015    -2.716    -2.416    -1.840    ...   
+  0.240   -14.123   -12.989    -5.619    -3.157    -2.642    -2.614    -1.943    ...   
+  0.300   -14.039   -12.948    -5.528    -3.321    -2.817    -2.551    -2.064    ...   
+  0.360   -13.938   -12.900    -5.428    -3.496    -3.023    -2.443    -2.195    ...   
+  0.420   -13.823   -12.846    -5.329    -3.671    -3.232    -2.333    -2.322    ...   
+  0.480   -13.696   -12.786    -5.244    -3.830    -3.441    -2.471    -2.190    ...
+  ...
+</code></pre><p>KLABELS file saves the positions of high symmetry points on band structure figures:</p>
+<pre><code>K-Label    K-Coordinate in band-structure plots 
+GAMMA              0.000
+M                  1.140
+K                  1.798
+GAMMA              3.114
+
+
+* Give the label for each high symmetry point in KPOINTS (KPATH.in) file. Otherwise, they will be identified as &#39;Undefined&#39; in KLABELS file
+</code></pre><p>BAND_GAP file save the information of VBM, CBM, and band gap：</p>
+<pre><code> +-------------------------- Summary ----------------------------+
+          Band Character:    Direct
+           Band Gap (eV):    1.6743
+  Eigenvalue of VBM (eV):   -0.2257
+  Eigenvalue of CBM (eV):    1.4485
+       HOMO &amp; LUMO Bands:         9        10
+         Location of VBM:  0.333333  0.333333  0.000000
+         Location of CBM:  0.333333  0.333333  0.000000
+ +---------------------------------------------------------------+
+
+ NOTE: The VBM and CBM are subtracted by the Fermi Energy.
+</code></pre><p>If you have python with matplotlib environment，VASPKIT can output a band.png figure automatically：</p>
+<p><img src="/images/band/band4.png" alt></p>
+<p><strong>212，213，214 get projected band structures</strong>：</p>
+<p> <strong>212) Projected Band-Structure for Selected Atoms</strong>. select projected atoms:</p>
+<p>(1) List number selected atoms：<code>1-4</code> <code>7</code> <code>8</code> <code>24</code></p>
+<p>(2) List elements：<code>C</code> <code>Fe</code> <code>H</code></p>
+<p>For example if you want to draw pband for atom 1 and 2, input <code>1-2</code>：</p>
+<pre><code>212
+  --&gt;&gt; (01) Reading Input Parameters From INCAR File...
+  --&gt;&gt; (02) Reading Fermi-Energy from DOSCAR File...
+ ooooooooo The Fermi Energy will be set to zero eV ooooooooooooooo
+  --&gt;&gt; (03) Reading Structural Parameters from POSCAR File...
+  --&gt;&gt; (04) Reading Energy-Levels From EIGENVAL File...
+  --&gt;&gt; (05) Reading Band-Weights From PROCAR File...
+  --&gt;&gt; (06) Reading K-Paths From KPOINTS File...
+ |---------------------------------------------------------------|
+ Input the element-symbol and/or atom-index to SUM [Total-atom: 3]
+ (Free Format is OK, e.g., C Fe H 1-4 7 8 24)
+
+ ------------&gt;&gt;
+1-2
+  --&gt;&gt; (07) Written SELECTED_ATOM_LIST File!
+  --&gt;&gt; (08) Written PBAND_A1.dat File!
+  --&gt;&gt; (09) Written PBAND_A2.dat File!
+  --&gt;&gt; (10) Written KLINES.dat File!
+  --&gt;&gt; (11) Written KLABELS File!
+</code></pre><p>VASPKIT will output two files: PBAND_A1.dat and PBAND_A2.dat.</p>
+<p>Each file include the projection information on select atoms, and there weight on each angular momentum, <code>s     py     pz     px    dxy    dyz    dz2    dxz  x2-y2    tot</code>. Those files can be used to draw ：</p>
+<pre><code>#K-Path    Energy     s     py     pz     px    dxy    dyz    dz2    dxz  x2-y2    tot
+#Band-index    1
+   0.000   -14.278  0.275  0.000  0.005  0.000  0.000  0.000  0.000  0.000  0.000  0.281
+   0.060   -14.268  0.276  0.000  0.005  0.000  0.000  0.000  0.000  0.000  0.000  0.281
+   0.120   -14.239  0.276  0.000  0.005  0.000  0.000  0.000  0.000  0.000  0.000  0.281
+   0.180   -14.190  0.277  0.000  0.005  0.000  0.000  0.000  0.000  0.000  0.000  0.282
+   0.240   -14.123  0.278  0.000  0.005  0.000  0.000  0.000  0.000  0.000  0.000  0.284
+   0.300   -14.039  0.280  0.000  0.005  0.001  0.000  0.000  0.000  0.000  0.000  0.285
+   0.360   -13.938  0.281  0.000  0.005  0.001  0.000  0.000  0.000  0.000  0.000  0.288
+   0.420   -13.823  0.283  0.000  0.005  0.001  0.000  0.000  0.000  0.000  0.000  0.290
+   ...
+#Band-index    2
+   3.114   -13.063  0.315  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.316
+   3.045   -13.056  0.315  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.000  0.316
+   ...
+#Band-index    3
+   0.000    -5.798  0.018  0.000  0.125  0.000  0.000  0.000  0.000  0.000  0.000  0.143
+   0.060    -5.787  0.018  0.000  0.125  0.000  0.000  0.000  0.000  0.000  0.000  0.143
+   ...
+</code></pre><p> <strong>213) Projected Band-Structure for Each Element</strong>，projection on each elements:</p>
+<pre><code>213
+ --&gt;&gt; (1) Reading Input Parameters From INCAR File...
+ --&gt;&gt; (2) Reading Fermi-Level From DOSCAR File...
+ ooooooooo The Fermi Energy will be set to zero eV ooooooooooooooo
+ --&gt;&gt; (3) Reading Structural Parameters from POSCAR File...
+ --&gt;&gt; (4) Reading Energy-Levels From EIGENVAL File...
+ --&gt;&gt; (5) Reading Band-Weights From PROCAR File...
+ --&gt;&gt; (6) Reading K-Paths From KPOINTS File...
+ --&gt;&gt; (7) Written PBAND_S.dat File!
+ --&gt;&gt; (8) Written PBAND_Mo.dat File!
+ --&gt;&gt; (9) Written KLINES.dat File!
+ --&gt;&gt; (*) Written KLABELS File!
+</code></pre><p>Format of PBAND_S.dat 和 PBAND_Mo.dat is same as PBAND_A1.dat：</p>
+<p><img src="/images/band/band5.png" alt></p>
+<p> <strong>214) The Sum of Projected Band-Structure for Selected Atoms</strong>：</p>
+<pre><code>214
+  --&gt;&gt; (01) Reading Input Parameters From INCAR File...
+  --&gt;&gt; (02) Reading Fermi-Energy from DOSCAR File...
+ ooooooooo The Fermi Energy will be set to zero eV ooooooooooooooo
+  --&gt;&gt; (03) Reading Structural Parameters from POSCAR File...
+  --&gt;&gt; (04) Reading Energy-Levels From EIGENVAL File...
+  --&gt;&gt; (05) Reading Band-Weights From PROCAR File...
+  --&gt;&gt; (06) Reading K-Paths From KPOINTS File...
+ |---------------------------------------------------------------|
+ Input the element-symbol and/or atom-index to SUM [Total-atom: 3]
+ (Free Format is OK, e.g., C Fe H 1-4 7 8 24)
+
+ ------------&gt;&gt;
+Mo
+  --&gt;&gt; (07) Written SELECTED_ATOM_LIST File!
+  --&gt;&gt; (08) Written PBAND_SUM.dat File!
+  --&gt;&gt; (09) Written KLINES.dat File!
+  --&gt;&gt; (10) Written KLABELS File!
+</code></pre><p>The output PBAND_SUM.dat file include the sum of defined atoms or elements. This is useful to investigate the layered DOS. By including the specific number, One can get the DOS of each slab layer:</p>
+<p><img src="/images/band/band7.png" alt></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
@@ -568,7 +827,7 @@ CONTCAR-n2-3.xsd
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-06-20, 01:30:17</p>
-    <p><span>最后更新:</span>2019-06-20, 22:51:50</p>
+    <p><span>最后更新:</span>2019-06-20, 22:56:55</p>
     <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT v0.80 Menual">http://vaspkit.com/2019/06/20/quick-start/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
