@@ -14,7 +14,7 @@
 <meta property="og:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
 <meta property="og:locale" content="English">
 <meta property="og:image" content="http://vaspkit.com/images/vaspkit-manual/vaspkit-manual1.jpg">
-<meta property="og:updated_time" content="2019-06-20T10:17:12.780Z">
+<meta property="og:updated_time" content="2019-06-20T10:53:15.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VASPKIT v0.80 Menual">
 <meta name="twitter:description" content="########## citation ########## Ve WANG, Nan XU, Jin-Cheng LIU VASPKIT: A Pre- and Post-Processing Program for the VASP Code. http://vaspkit.sourceforge.net. ########## citation ##########  The Vienna">
@@ -266,7 +266,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-20 18:17:12">2019-06-20 01:30</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-20 18:53:15">2019-06-20 01:30</time>
         
     </div>
     <div class="article-meta">
@@ -501,7 +501,22 @@ N=\max \left(1,\left|\vec{b}_{i}\right| / \mathrm{KPTResolvedValue}\right)</scri
 Gamma
   14  14  14
 0.0  0.0  0.0
-</code></pre><h3 id="2-3-Generate-POTCAR"><a href="#2-3-Generate-POTCAR" class="headerlink" title="2.3 Generate POTCAR"></a>2.3 Generate POTCAR</h3>
+</code></pre><h3 id="2-3-Generate-POTCAR"><a href="#2-3-Generate-POTCAR" class="headerlink" title="2.3 Generate POTCAR"></a>2.3 Generate POTCAR</h3><p>When generating KPOINTS, POTCAR will also be generate automatically. It extracts the elements information from POSCAR and combines the corresponding POTCAR from the pseudopotential folders that you set in <code>~/.vaspkit</code>.</p>
+<pre><code>GGA_PATH                 &#39;~/POTCAR/GGA&#39;     #  Path of GGA potential. 
+PBE_PATH                 &#39;~/POTCAR/PBE&#39;     #  Path of PBE potential. 
+LDA_PATH                 &#39;~/POTCAR/LDA&#39;     #  Path of LDA potential.
+POTCAR_TYPE               PBE               #  PBE, GGA or LDA; 
+RECOMMENDED_POTCAR       .TRUE.             # .TRUE. or .FALSE.;
+</code></pre><p>Set <code>POTCAR_TYPE</code> to <code>PBE</code>, <code>GGA</code>, or<code>LDA</code> as your requirement. The <code>RECOMMENDED_POTCAR</code> tag control whether to use recommended potentials from VASP manual (Page. 195, 2018.10.29, <a href="http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html" target="_blank" rel="noopener">http://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html</a>). If one want to generate POTCAR for GW calculation, Set the <code>GW_POTCAR</code> to .TRUE. in <code>~/.vaspkit</code>.</p>
+<pre><code>GW_POTCAR                .FALSE.            # .TRUE. or .FALSE.;
+</code></pre><p>There are several types of POTCAR. </p>
+<ol>
+<li>No suffix</li>
+<li>with <code>_d</code> suffix, which excludes the d states from the core. (For main-group element)</li>
+<li>with <code>_sv</code> or <code>_pv</code> suffix, which excludes the s or sp states from the core. (For transition metals)</li>
+<li></li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
     </div>
@@ -518,7 +533,7 @@ Gamma
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-06-20, 01:30:17</p>
-    <p><span>最后更新:</span>2019-06-20, 18:17:12</p>
+    <p><span>最后更新:</span>2019-06-20, 18:53:15</p>
     <span>原始链接:</span><a class="post-url" href="/2019/06/20/quick-start/" title="VASPKIT v0.80 Menual">http://vaspkit.com/2019/06/20/quick-start/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
