@@ -15,7 +15,7 @@
 <meta property="og:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的前处理、后处理模块。目前用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动">
 <meta property="og:locale" content="English">
 <meta property="og:image" content="http://vaspkit.com/images/zhang.png">
-<meta property="og:updated_time" content="2019-06-28T15:33:40.339Z">
+<meta property="og:updated_time" content="2019-06-28T15:35:53.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一届VASPKIT杯程序设计比赛之异质结建模">
 <meta name="twitter:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的前处理、后处理模块。目前用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动">
@@ -280,7 +280,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-28 23:33:40">2019-07-01 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-28 23:35:53">2019-07-01 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -327,28 +327,24 @@
 <li>下述测试项目中涉及到的文献仅为例子，方便参赛者了解材料结构和基本性质，参赛者可以自己寻找更多参考文献。</li>
 </ol>
 <h2 id="测试项目："><a href="#测试项目：" class="headerlink" title="测试项目："></a>测试项目：</h2><ol>
-<li><strong>2D/2D异质结简单版本</strong>：两个2D材料基矢夹角相同，晶格常数误差范围内相同。例子：MoS2/WSe2<br>基本要求：利用提供的01_MoS2_POSCAR 和01_WSe2_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空层为15Å，保持异质结晶格基矢夹角与单层材料一致（即120<sup>o</sup>），晶格常数为两个slab材料的平均数。<br>注：初始层间距定义为 MoS<sub>2</sub> 和 WSe<sub>2</sub> 之间 最近邻 S 原子层和 Se 原子层之间的距离<br>Ref: 2014 Stacking effects on the electronic and optical properties of bilayer transition metal dichalcogenides MoS<sub>2</sub>, MoSe<sub>2</sub>, WS<sub>2</sub>, and WSe<sub>2</sub></li>
-</ol>
-<ol>
-<li><strong>2D/2D异质结中级版本</strong>：两个2D材料基矢夹角相同，晶格常数不同。例子：MoS2/graphene<br> 基本要求：利用提供的02_MoS2_POSCAR 和02_Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br> Ref: 2017 First-principles study of the structural and electronic properties of graphene/MoS2 interfaces</li>
-</ol>
-<ol>
-<li><strong>2D/2D异质结复杂版本</strong>，两个2D材料基矢夹角不同，晶格常数不同。例子：graphene/black P<br> 基本要求：利用提供的03_blackP_POSCAR和03Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。异质结夹角为90<sup>o</sup>。<br> Ref: 2015 Electronic Properties of Phosphorene/ Graphene and Phosphorene/Hexagonal Boron Nitride Heterostructures</li>
-</ol>
-<ol>
-<li><strong>金属/半导体异质结</strong>：Ni/MoS<sub>2</sub><br> 基本要求：利用提供的04_Ni111_POSCAR和04_MoS2_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br> Ref: 2015 3D Behavior of Schottky Barriers of 2D Transition-Metal Dichalcogenide</li>
-</ol>
-<ol>
-<li><strong>3D/3D异质结</strong>： HfO<sub>2</sub>/GaN，其中两侧都是FCC结构<br> 基本要求：利用提供的05_GaN001_POSCAR和05_HfO2001_POSCAR文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为2Å，异质结真空15Å。<br> Ref：2015 GaN as an Interfacial Passivation Layer: Tuning Band Offset and Removing Fermi Level Pinning for III−V MOS Devices</li>
-</ol>
-<ol>
-<li><strong>加分项</strong>：<br> 加分项1：可以自定义初始层间距<br> 加分项2：可以自定义异质结真空厚度<br> 加分项3：可以自定义mismatch<br> 加分项4：可以自定义异质结夹角<br> 加分项5：可以读取提供的01MoS2bulkPOSCAR和 01WSe2bulkPOSCAR两个体材料结构自动切割出单层slab，并用于异质结建模<br> 加分项6：可以自定义异质结晶格选取标准：使用上层材料晶格、下层材料晶格、上下层材料晶格平均值。<br> 加分项7： 可以自定义上下层材料水平偏移量，从而输出不同堆垛方式的异质结。上下层材料水平偏移量使用一个平移矢量表示：异质结中下层材料相对于其 slab 结构中的位置的平移矢量(以分数坐标表示)。以测试项目中提供的 POSCAR 为例，假设 MoS2 在下，构建异质结时不平移，则是 AA 堆垛方式。MoS2 平移 [-1/3 1/3 0] 构建的就是异质结就是 AB’堆垛），参考Phys. Rev. B 89 (2014) 075409, Figure 1.<br> 加分项8：程序可以输出符合要求 mismatch 前提下，异质结晶胞晶格最小的三种 slab 晶胞搭配方案，并给出这三种搭配方案基本信息，比如异质结晶胞原子数和晶格常数/夹角。<br> 加分项9：可以自定义满足mismatch的其他异质结夹角</li>
+<li><p><strong>2D/2D异质结简单版本</strong>：两个2D材料基矢夹角相同，晶格常数误差范围内相同。例子：MoS2/WSe2<br>基本要求：利用提供的01_MoS2_POSCAR 和01_WSe2_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空层为15Å，保持异质结晶格基矢夹角与单层材料一致（即120<sup>o</sup>），晶格常数为两个slab材料的平均数。<br>注：初始层间距定义为 MoS<sub>2</sub> 和 WSe<sub>2</sub> 之间 最近邻 S 原子层和 Se 原子层之间的距离<br>Ref: 2014 Stacking effects on the electronic and optical properties of bilayer transition metal dichalcogenides MoS<sub>2</sub>, MoSe<sub>2</sub>, WS<sub>2</sub>, and WSe<sub>2</sub></p>
+</li>
+<li><p><strong>2D/2D异质结中级版本</strong>：两个2D材料基矢夹角相同，晶格常数不同。例子：MoS2/graphene<br> 基本要求：利用提供的02_MoS2_POSCAR 和02_Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br> Ref: 2017 First-principles study of the structural and electronic properties of graphene/MoS2 interfaces</p>
+</li>
+<li><p><strong>2D/2D异质结复杂版本</strong>，两个2D材料基矢夹角不同，晶格常数不同。例子：graphene/black P<br> 基本要求：利用提供的03_blackP_POSCAR和03Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。异质结夹角为90<sup>o</sup>。<br> Ref: 2015 Electronic Properties of Phosphorene/ Graphene and Phosphorene/Hexagonal Boron Nitride Heterostructures</p>
+</li>
+<li><p><strong>金属/半导体异质结</strong>：Ni/MoS<sub>2</sub><br> 基本要求：利用提供的04_Ni111_POSCAR和04_MoS2_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br> Ref: 2015 3D Behavior of Schottky Barriers of 2D Transition-Metal Dichalcogenide</p>
+</li>
+<li><p><strong>3D/3D异质结</strong>： HfO<sub>2</sub>/GaN，其中两侧都是FCC结构<br> 基本要求：利用提供的05_GaN001_POSCAR和05_HfO2001_POSCAR文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为2Å，异质结真空15Å。<br> Ref：2015 GaN as an Interfacial Passivation Layer: Tuning Band Offset and Removing Fermi Level Pinning for III−V MOS Devices</p>
+</li>
+<li><p><strong>加分项</strong>：<br> 加分项1：可以自定义初始层间距<br> 加分项2：可以自定义异质结真空厚度<br> 加分项3：可以自定义mismatch<br> 加分项4：可以自定义异质结夹角<br> 加分项5：可以读取提供的01MoS2bulkPOSCAR和 01WSe2bulkPOSCAR两个体材料结构自动切割出单层slab，并用于异质结建模<br> 加分项6：可以自定义异质结晶格选取标准：使用上层材料晶格、下层材料晶格、上下层材料晶格平均值。<br> 加分项7： 可以自定义上下层材料水平偏移量，从而输出不同堆垛方式的异质结。上下层材料水平偏移量使用一个平移矢量表示：异质结中下层材料相对于其 slab 结构中的位置的平移矢量(以分数坐标表示)。以测试项目中提供的 POSCAR 为例，假设 MoS2 在下，构建异质结时不平移，则是 AA 堆垛方式。MoS2 平移 [-1/3 1/3 0] 构建的就是异质结就是 AB’堆垛），参考Phys. Rev. B 89 (2014) 075409, Figure 1.<br> 加分项8：程序可以输出符合要求 mismatch 前提下，异质结晶胞晶格最小的三种 slab 晶胞搭配方案，并给出这三种搭配方案基本信息，比如异质结晶胞原子数和晶格常数/夹角。<br> 加分项9：可以自定义满足mismatch的其他异质结夹角</p>
+</li>
 </ol>
 <div style="float:right"><img src="/images/zhang.png"><br>
 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VASPKIT开发组</span><br><br>
 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019/07/01</span><br><br></div>   
 
-<p><br><br><br><br><br><br><br><br><br></p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 <p>.</p>
 
       
@@ -367,7 +363,7 @@
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-07-01, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-28, 23:33:40</p>
+    <p><span>最后更新:</span>2019-06-28, 23:35:53</p>
     <span>原始链接:</span><a class="post-url" href="/2019/07/01/vaspkit_cup/" title="第一届VASPKIT杯程序设计比赛之异质结建模">http://vaspkit.com/2019/07/01/vaspkit_cup/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
