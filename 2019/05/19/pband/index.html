@@ -6,54 +6,20 @@
   <meta name="keywords" content=" VASP , 能带 ">
   <meta name="description" content="Draw Band Structure figure by Origin | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
+<meta name="description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的前处理、后处理模块。目前用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动">
+<meta name="keywords" content="VASP,vaspkit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VASPKIT v0.80 Menual">
-<meta property="og:url" content="http://vaspkit.com/2019/06/28/manual/index.html">
+<meta property="og:title" content="第一届VASPKIT杯程序设计比赛之异质结建模">
+<meta property="og:url" content="http://vaspkit.com/2019/07/01/vaspkit_cup/index.html">
 <meta property="og:site_name" content="VASPKIT">
-<meta property="og:description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
+<meta property="og:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的前处理、后处理模块。目前用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动">
 <meta property="og:locale" content="English">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual1.jpg">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band1.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band2.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band3.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band6.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band4.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual12.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual13.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual14.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual15.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual16.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual17.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual18.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band5.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band1.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band5.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band4.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual2.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual3.jpg">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual4.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual5.jpg">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual6.jpg">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual8.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual19.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual7.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual9.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot3.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot1.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot2.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-macropot/vaspkit-macropot1.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-macropot/vaspkit-macropot2.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff1.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff2.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff3.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual10.png">
-<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual11.png">
-<meta property="og:updated_time" content="2019-06-28T15:00:29.633Z">
+<meta property="og:image" content="http://vaspkit.com/images/zhang.png">
+<meta property="og:updated_time" content="2019-06-28T15:33:40.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VASPKIT v0.80 Menual">
-<meta name="twitter:description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
-<meta name="twitter:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual1.jpg">
+<meta name="twitter:title" content="第一届VASPKIT杯程序设计比赛之异质结建模">
+<meta name="twitter:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的前处理、后处理模块。目前用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动">
+<meta name="twitter:image" content="http://vaspkit.com/images/zhang.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
