@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>VASPKIT</title>
-  <meta name="keywords" content>
-  <meta name="description" content="VASPKIT">
+  <title>第一届VASPKIT杯程序设计比赛之异质结建模 | VASPKIT</title>
+  <meta name="keywords" content=" VASP , vaspkit ">
+  <meta name="description" content="第一届VASPKIT杯程序设计比赛之异质结建模 | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的后处理模块。目前的用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编">
 <meta name="keywords" content="VASP,vaspkit">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="nav mobile">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg">
@@ -248,12 +248,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-vaspkit_cup" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VASPKIT"><span class="toc-text">VASPKIT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#About-VASPKIT"><span class="toc-text">About VASPKIT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature"><span class="toc-text">Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VASP-input-files："><span class="toc-text">VASP input files：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bandstructure"><span class="toc-text">Bandstructure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#density"><span class="toc-text">density</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Download"><span class="toc-text">Download</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developer"><span class="toc-text">Developer</span></a></li></ol></li></ol>
+        <h1 class="article-title">第一届VASPKIT杯程序设计比赛之异质结建模</h1>
+    
+    <div class="article-meta">
+        
+        
+        <span class="author"><a href="javascript:">vaspkit group</a></span>
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="vaspkit">vaspkit</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">VASP</a>
+            
+            <a href="javascript:" class="color3">vaspkit</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-06-28 17:08:17">2019-07-01 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#活动目的"><span class="toc-text">活动目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VASPKIT杯事宜"><span class="toc-text">VASPKIT杯事宜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参赛须知："><span class="toc-text">参赛须知：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试项目："><span class="toc-text">测试项目：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -266,59 +313,63 @@
     }
 </style>
 </div>
-            <h1 id="VASPKIT"><a href="#VASPKIT" class="headerlink" title="VASPKIT"></a>VASPKIT</h1><h2 id="About-VASPKIT"><a href="#About-VASPKIT" class="headerlink" title="About VASPKIT"></a>About VASPKIT</h2><p>VASPKIT is a postprocessing tool for VASP code. It was written by Fortran 90! </p>
-<pre><code>            \\\///         
-           / _  _ \       Hey, you must know what you are doing.  
-         (| (.)(.) |)     Otherwise you might get wrong results!  
- +-----.OOOo--()--oOOO.------------------------------------------+
- |       A Pre- and Post-Processing Program for VASP Code        |
- |          VASPKIT Version: 0.80.beta1 (20 Apr. 2019)           |
- |            Developed by Vei WANG (wangvei@me.com)             |
- |            Contributor: Nan XU (tamas@zju.edu.cn)             |
- +-----.oooO-----------------------------------------------------+
-        (   )   Oooo.     
-         \ (    (   )     
-          \_)    ) /      
-                (_/       
- ===================== Structural Options ========================
- 1)  VASP Input Files Generator    2)  Elastic-Properties         
- 3)  K-Path Generator              4)  Structure Editor           
- 5)  Catalysis-ElectroChemi Kit    6)  Symmetry Search            
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="活动目的"><a href="#活动目的" class="headerlink" title="活动目的"></a>活动目的</h2><p>在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的后处理模块。目前的用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编程的方式解决实际问题的能力，并进一步丰富和完善VASPKIT 软件包的功能，VASPKIT开发者团队决定举办第一届VASPKIT杯程序设计比赛。本届比赛由并行科技赞助，主题为异质结建模，参赛者需通过原创程序实现这一功能，其中优秀程序作品将有机会并入VASPKIT软件包，优秀参赛者将有机会成为 VASPKIT 软件包的贡献者之一。期待各位计算学子热情参与。</p>
+<h2 id="VASPKIT杯事宜"><a href="#VASPKIT杯事宜" class="headerlink" title="VASPKIT杯事宜"></a>VASPKIT杯事宜</h2><p>•    参赛时间：7月1日-7月31日。北京时间7月31日22:00投稿截止。<br>•    参赛方式：将自己的软件源码及参赛文档发送电子邮件至：vaspkit_cup@hotmail.com，邮件标题为：“真实姓名-单位全称-异质结建模”，中英文皆可。附件需要使用同样格式命名。<br>•    评审标准：优先看脚本交互性、普适性、建模效果，次要考虑程序运行时间.<br>•    评审团队： VASPKIT杯组织者团队，包含VASPKIT软件开发者团队大阪大学王伟老师，浙江大学博士研究生许楠，清华大学博士研究生刘锦程；新加坡国立大学博士研究生王添；中国科技大学博士研究生吴道雄；剑桥大学博士后张召富（以上排序不分先后）。<br>•    参赛奖励：一等奖至少一名，奖金至少800元人民币；二等奖至少一名，奖金至少400元；三等奖至少一名，奖金至少200元；参与奖人数不限，完成基本内容即可获得参与奖。同时优秀的参赛作品将有机会添加到VASPKIT主程序中。第一、二、三等奖以快递邮寄形式颁发实体证书，其他参与者颁发电子参与证书。此外，参赛者还有机会获得 VASPKIT文化衫一件。<br>•    比赛赞助：本次比赛由中国超算/人工智能行业软件服务的龙头企业北京并行科技股份有限公司赞助。<br>•    版权和法务：参赛者需要签署并提交附件中的参赛文档：VASPKIT杯程序设计比赛参赛文档.docx，声明自己提交的作品为本人原创作品。签署方式推荐手写真实名字并拍照或扫描为电子版，与自己的作品一起发送到比赛邮箱。VASPKIT开发者团队保证签名不会用于其他用途。<br>•    本次比赛最终解释权归VASPKIT杯组织者团队。<br>•    相关链接：<br>     VASPKIT软件官方网站链接：  <a href="https://vaspkit.github.io/" target="_blank" rel="noopener">https://vaspkit.github.io/</a><br>     VASPKIT开发者之一GitHub链接：<a href="https://github.com/tamaswells" target="_blank" rel="noopener">https://github.com/tamaswells</a><br>     比赛测试项目下载链接：<a href="https://tamaswells.github.io/VASPKIT_CUP/vaspkit_cup_structure.rar" target="_blank" rel="noopener">https://tamaswells.github.io/VASPKIT_CUP/vaspkit_cup_structure.rar</a><br>     并行科技公司官网链接：<a href="https://www.paratera.com/" target="_blank" rel="noopener">https://www.paratera.com/</a></p>
+<h2 id="参赛须知："><a href="#参赛须知：" class="headerlink" title="参赛须知："></a>参赛须知：</h2><ol>
+<li>使用自己独立撰写的脚本或程序，至少能够实现下述列举的异质结建模测试项目，完成基本要求即可；测试项目中的加分项不强制实现；</li>
+<li>输入文件（独立材料的POSCAR）已经提供，输出文件为异质结的POSCAR文件；</li>
+<li>请使用主流编程语言，推荐使用 Python, Fortran, Shell, MATLAB, C/C++；</li>
+<li>异质结建模脚本可以充分调用如VASPKIT或者其他开源软件/脚本，如使用商业软件MS等会酌情减分。如需调用VASPKIT以外的脚本，需在上传源码中附上相应的软件/脚本，并详细列清楚使用说明。</li>
+<li>下述测试项目中涉及到的文献仅为例子，方便参赛者了解材料结构和基本性质，参赛者可以自己寻找更多参考文献。</li>
+</ol>
+<h2 id="测试项目："><a href="#测试项目：" class="headerlink" title="测试项目："></a>测试项目：</h2><ol>
+<li><p>2D/2D异质结简单版本：两个2D材料基矢夹角相同，晶格常数误差范围内相同。例子：MoS2/WSe2<br>基本要求：利用提供的01MoS2POSCAR 和01WSe2POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空层为15Å，保持异质结晶格基矢夹角与单层材料一致（即120^∘），晶格常数为两个slab材料的平均数。<br>注：初始层间距定义为 MoS<sub>2</sub> 和 WSe<sub>2</sub> 之间 最近邻 S 原子层和 Se 原子层之间的距离<br> Ref: 2014 Stacking effects on the electronic and optical properties of bilayer transition metal dichalcogenides MoS<sub>2</sub>, MoSe<sub>2</sub>, WS<sub>2</sub>, and WSe<sub>2</sub></p>
+</li>
+<li><p>2D/2D异质结中级版本：两个2D材料基矢夹角相同，晶格常数不同。例子：MoS2/graphene<br> 基本要求：利用提供的02MoS2POSCAR 和02GraphenePOSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br> Ref: 2017 First-principles study of the structural and electronic properties of graphene/MoS2 interfaces</p>
+</li>
+<li><p>2D/2D异质结复杂版本，两个2D材料基矢夹角不同，晶格常数不同。例子：graphene/black P<br> 基本要求：利用提供的03blackPPOSCAR和03Graphene_POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。异质结夹角为90^∘。<br> Ref: 2015 Electronic Properties of Phosphorene/ Graphene and Phosphorene/Hexagonal Boron Nitride Heterostructures</p>
+</li>
+<li><p>金属/半导体异质结：Ni/MoS<sub>2</sub><br> 基本要求：利用提供的04Ni111POSCAR和04MoS2POSCAR 文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为3Å，异质结真空15Å。<br>Ref: 2015 3D Behavior of Schottky Barriers of 2D Transition-Metal Dichalcogenides</p>
+</li>
+<li><p>3D/3D异质结： HfO<sub>2</sub>/GaN，其中两侧都是FCC结构<br> 基本要求：利用提供的05GaN001POSCAR和05HfO2001POSCAR文件构建最小原子数、且mismatch在5%之内的异质结，初始层间距为2Å，异质结真空15Å。<br> Ref：2015 GaN as an Interfacial Passivation Layer: Tuning Band Offset and Removing Fermi Level Pinning for III−V MOS Devices</p>
+</li>
+<li><p>加分项：<br> 加分项1：可以自定义初始层间距<br> 加分项2：可以自定义异质结真空厚度<br> 加分项3：可以自定义mismatch<br> 加分项4：可以自定义异质结夹角<br> 加分项5：可以读取提供的01MoS2bulkPOSCAR和 01WSe2bulkPOSCAR两个体材料结构自动切割出单层slab，并用于异质结建模<br> 加分项6：可以自定义异质结晶格选取标准：使用上层材料晶格、下层材料晶格、上下层材料晶格平均值。<br> 加分项7： 可以自定义上下层材料水平偏移量，从而输出不同堆垛方式的异质结。上下层材料水平偏移量使用一个平移矢量表示：异质结中下层材料相对于其 slab 结构中的位置的平移矢量(以分数坐标表示)。以测试项目中提供的 POSCAR 为例，假设 MoS2 在下，构建异质结时不平移，则是 AA 堆垛方式。MoS2 平移 [-1/3 1/3 0] 构建的就是异质结就是 AB’堆垛），参考Phys. Rev. B 89 (2014) 075409, Figure 1.<br> 加分项8：程序可以输出符合要求 mismatch 前提下，异质结晶胞晶格最小的三种 slab 晶胞搭配方案，并给出这三种搭配方案基本信息，比如异质结晶胞原子数和晶格常数/夹角。<br> 加分项9：可以自定义满足mismatch的其他异质结夹角</p>
+</li>
+</ol>
 
- ===================== Electronic Options ========================
- 11) Density-of-States             21) DFT Band-Structure         
- 23) 3D Band-Structure             25) Hybrid-DFT Band-Structure  
- 26) Fermi-Surface                 28) Band-Structure Unfolding   
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以可以邮件至 vaspkit@gmail.com </span>
+    </div>
+</article>
 
- =========== Charge &amp; Potential &amp; Wavefunction Options ===========
- 31) Charge &amp; Spin Density         42) Potential-Related          
- 51) Wave-Function Analysis  
- ====================== Misc Utilities ===========================
- 71) Linear Optics                 72) Molecular-Dynamics Kit 
- 73) VASP2BoltzTraP Interface      74) USER interface
- 91) Semiconductor Calculator      92) 2D-Materials Kit       
 
- 0)  Quit                                                         
- ------------&gt;&gt;
-</code></pre><h2 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h2><h3 id="VASP-input-files："><a href="#VASP-input-files：" class="headerlink" title="VASP input files："></a>VASP input files：</h3><p>generate K-mesh for SCF calculation</p>
-<h3 id="Bandstructure"><a href="#Bandstructure" class="headerlink" title="Bandstructure"></a>Bandstructure</h3><p>generate K-path for band structure calculation</p>
-<h3 id="density"><a href="#density" class="headerlink" title="density"></a>density</h3><h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><p>到目前为止已经写了<code class="article_number">&lt;/code&gt;篇文章， 共<code class="site_word_count"></code>字。</code></p>
-<p>本站访问人数：<code class="site_uv">&lt;/code&gt;人次 ， 访问量：<code class="site_pv"></code>次</code></p>
-<h2 id="Developer"><a href="#Developer" class="headerlink" title="Developer"></a>Developer</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href="http://yelog.org/2017/03/24/3-hexo-shortcuts/">3-hexo快捷键说明</a></li>
-</ul>
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>第一届VASPKIT杯程序设计比赛之异质结建模</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
+    <p><span>发布时间:</span>2019-07-01, 00:00:00</p>
+    <p><span>最后更新:</span>2019-06-28, 17:08:17</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/07/01/vaspkit_cup/" title="第一届VASPKIT杯程序设计比赛之异质结建模">http://vaspkit.com/2019/07/01/vaspkit_cup/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
