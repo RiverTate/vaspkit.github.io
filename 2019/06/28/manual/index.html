@@ -6,18 +6,54 @@
   <meta name="keywords" content>
   <meta name="description" content="VASPKIT v0.80 Menual | VASPKIT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的后处理模块。目前的用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编">
-<meta name="keywords" content="VASP,vaspkit">
+<meta name="description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一届VASPKIT杯程序设计比赛之异质结建模">
-<meta property="og:url" content="http://vaspkit.com/2019/07/01/vaspkit_cup/index.html">
+<meta property="og:title" content="VASPKIT v0.80 Menual">
+<meta property="og:url" content="http://vaspkit.com/2019/06/28/manual/index.html">
 <meta property="og:site_name" content="VASPKIT">
-<meta property="og:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的后处理模块。目前的用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编">
+<meta property="og:description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-06-28T09:08:17.809Z">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual1.jpg">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band1.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band2.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band3.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band6.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band4.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual12.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual13.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual14.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual15.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual16.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual17.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual18.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/band/band5.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band1.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band5.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-hse-band/vaspkit-hse-band4.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual2.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual3.jpg">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual4.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual5.jpg">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual6.jpg">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual8.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual19.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual7.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual9.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot3.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot1.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-avgpot/vaspkit-avgpot2.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-macropot/vaspkit-macropot1.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-macropot/vaspkit-macropot2.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff1.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff2.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/chgdiff/chgdiff3.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual10.png">
+<meta property="og:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual11.png">
+<meta property="og:updated_time" content="2019-06-28T15:00:29.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一届VASPKIT杯程序设计比赛之异质结建模">
-<meta name="twitter:description" content="活动目的在目前的第一性原理计算领域，Vienna Ab initio simulation package (VASP)已经成为应用最广泛、用户数量最庞大、发表论文最多的软件包之一。市面上已经有不少可以对VASP做前处理或者后处理的软件，VASPKIT就是其中相当出色的一款，它集中了许多热门的后处理模块。目前的用户规模庞大，发展势头强劲。为激发广大计算化学工作者动手编程的热情，锻炼大家自己动手以编">
+<meta name="twitter:title" content="VASPKIT v0.80 Menual">
+<meta name="twitter:description" content="VASPKIT Manual v0.80 June, 28th, 2019 Thank you for downloading VASPKIT! VASPKIT is a Pre- and Post-Processing Program for the VASP (Vienna Ab initio Simulation Package) code. VASPKIT is written by F">
+<meta name="twitter:image" content="http://vaspkit.com/2019/06/28/images/vaspkit-manual/vaspkit-manual1.jpg">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -270,7 +306,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-06-28 17:08:23">2019-06-28 00:00</time>
+        创建时间:<time class="date" title="更新时间: 2019-06-28 23:00:29">2019-06-28 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -292,7 +328,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Generate-POSCAR"><span class="toc-text">2.4 Generate POSCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Input-File-Self-Check"><span class="toc-text">2.5 Input File Self Check</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Band-Structure"><span class="toc-text">3 Band Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Pre-process-Band-Structure-pure-functional"><span class="toc-text">3.1 Pre-process Band Structure (pure functional)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Single-layer-MoS2"><span class="toc-text">Example: Single-layer MoS2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Post-process-Band-Structure-pure-functional"><span class="toc-text">3.2 Post-process Band Structure (pure functional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Pre-process-Band-Structure-hybrid-functional"><span class="toc-text">3.3 Pre-process Band Structure (hybrid functional)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-single-layer-MoS2"><span class="toc-text">Example: single layer MoS2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Post-process-Band-Structure-hybrid-functional"><span class="toc-text">3.4 Post-process Band Structure (hybrid functional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-Effective-Mass"><span class="toc-text">3.5 Effective Mass</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Single-Layer-MoS2-effective-mass"><span class="toc-text">Example: Single Layer MoS2 effective mass</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-Band-unfolding"><span class="toc-text">3.6 Band-unfolding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Graphene-Band-unfolding"><span class="toc-text">Example: Graphene Band-unfolding</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-3D-Band-Structure"><span class="toc-text">3.7 3D Band Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Graphene-3D-Band-Structure"><span class="toc-text">Example:  Graphene 3D Band Structure</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-Fermi-Surface"><span class="toc-text">3.8 Fermi Surface</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Cu-Fermi-Surface"><span class="toc-text">Example: Cu Fermi Surface</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Density-of-States"><span class="toc-text">4 Density of States</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Extract-and-output-DOS-and-pDOS"><span class="toc-text">4.1 Extract and output DOS and pDOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-pdos-of-CO-adsorption-on-Ni-100-surface"><span class="toc-text">Example: pdos of CO adsorption on Ni(100) surface.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-D-band-Center"><span class="toc-text">4.2 D-band Center</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Thermo-Energy-Correction"><span class="toc-text">5 Thermo Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Gas-Molecule-Free-Energy-Correction"><span class="toc-text">5.1 Gas Molecule Free Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Thermo-energy-correction-for-O2"><span class="toc-text">Example: Thermo energy correction for O2:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Adsorbed-Molecular-Free-Energy-Correction"><span class="toc-text">5.2 Adsorbed Molecular Free Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Thermo-energy-correction-for-adsorbed-O-Au-111"><span class="toc-text">Example: Thermo energy correction for adsorbed O/Au(111)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Elastic-Properties"><span class="toc-text">6 Elastic Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Optic-Properties"><span class="toc-text">7 Optic Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Structure-Edition-and-Symmetry-Tools"><span class="toc-text">8 Structure Edition and Symmetry Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Redefine-Lattice"><span class="toc-text">8.1 Redefine Lattice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Build-operatorname-Au-111-sqrt-3-times-sqrt-3-R-30-circ-slab-from-primitive-slab"><span class="toc-text">Example: Build $\operatorname{Au}(111)-(\sqrt{3} \times \sqrt{3}) R 30^{\circ}$ slab from primitive slab</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-Build-Supercell"><span class="toc-text">8.2 Build Supercell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Fix-Atoms-by-Layers"><span class="toc-text">8.3 Fix Atoms by Layers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-Fix-Atoms-by-Height"><span class="toc-text">8.4 Fix Atoms by Height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Swap-Axis-of-Lattice-Vector"><span class="toc-text">8.5 Swap Axis of Lattice Vector</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Potential-related"><span class="toc-text">9 Potential related</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-Planar-Average-Potential"><span class="toc-text">9.1 Planar Average Potential</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Macroscopic-Averaged-Potential"><span class="toc-text">9.2 Macroscopic Averaged Potential</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Density-related"><span class="toc-text">10 Density related</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-Charge-Density-and-Spin-Density"><span class="toc-text">10.1 Charge Density and Spin Density</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-Charge-Density-Difference"><span class="toc-text">10.2 Charge Density Difference</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Charge-density-difference-of-two-fragments"><span class="toc-text">Example: Charge density difference of two fragments</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Deformation-charge-density-of-CO"><span class="toc-text">Example: Deformation charge density of CO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Charge-density-difference-of-InSe-with-electric-field"><span class="toc-text">Example: Charge density difference of InSe with electric field</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-WaveFunction-Visualization-in-Real-Space"><span class="toc-text">10.3 WaveFunction Visualization in Real-Space</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-WaveFunction-of-CO-molecule"><span class="toc-text">Example: WaveFunction of CO molecule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-WaveFunction-of-MoS2-WS2-Heterojuctions"><span class="toc-text">Example: WaveFunction of MoS2/WS2 Heterojuctions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Other-Functions"><span class="toc-text">12 Other Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-Molecular-Dynamics-process"><span class="toc-text">12.1 Molecular Dynamics process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-File-Format-Transfer"><span class="toc-text">12.2 File Format Transfer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-USER-interface"><span class="toc-text">12.3 USER interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-4"><span class="toc-text">12.4</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quick-Start"><span class="toc-text">1. Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Generate-Input-Files"><span class="toc-text">2. Generate Input Files</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Generate-INCAR"><span class="toc-text">2.1 Generate INCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Generate-KPOINTS"><span class="toc-text">2.2 Generate KPOINTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generate-POTCAR"><span class="toc-text">2.3 Generate POTCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Generate-POSCAR"><span class="toc-text">2.4 Generate POSCAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Input-File-Self-Check"><span class="toc-text">2.5 Input File Self Check</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Band-Structure"><span class="toc-text">3 Band Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Pre-process-Band-Structure-pure-functional"><span class="toc-text">3.1 Pre-process Band Structure (pure functional)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Single-layer-MoS2"><span class="toc-text">Example: Single-layer MoS2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Post-process-Band-Structure-pure-functional"><span class="toc-text">3.2 Post-process Band Structure (pure functional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Pre-process-Band-Structure-hybrid-functional"><span class="toc-text">3.3 Pre-process Band Structure (hybrid functional)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-single-layer-MoS2"><span class="toc-text">Example: single layer MoS2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Post-process-Band-Structure-hybrid-functional"><span class="toc-text">3.4 Post-process Band Structure (hybrid functional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-Effective-Mass"><span class="toc-text">3.5 Effective Mass</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Single-Layer-MoS2-effective-mass"><span class="toc-text">Example: Single Layer MoS2 effective mass</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-Band-unfolding"><span class="toc-text">3.6 Band-unfolding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Graphene-Band-unfolding"><span class="toc-text">Example: Graphene Band-unfolding</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-3D-Band-Structure"><span class="toc-text">3.7 3D Band Structure</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Graphene-3D-Band-Structure"><span class="toc-text">Example:  Graphene 3D Band Structure</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-Fermi-Surface"><span class="toc-text">3.8 Fermi Surface</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Cu-Fermi-Surface"><span class="toc-text">Example: Cu Fermi Surface</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Density-of-States"><span class="toc-text">4 Density of States</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Extract-and-output-DOS-and-pDOS"><span class="toc-text">4.1 Extract and output DOS and pDOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-PDOS-of-CO-adsorption-on-Ni-100-surface"><span class="toc-text">Example: PDOS of CO adsorption on Ni(100) surface.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-D-band-Center"><span class="toc-text">4.2 D-band Center</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Thermo-Energy-Correction"><span class="toc-text">5 Thermo Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Gas-Molecule-Free-Energy-Correction"><span class="toc-text">5.1 Gas Molecule Free Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Thermo-energy-correction-for-O2-molecule"><span class="toc-text">Example: Thermo energy correction for O2 molecule:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Adsorbed-Molecular-Free-Energy-Correction"><span class="toc-text">5.2 Adsorbed Molecular Free Energy Correction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Thermo-energy-correction-for-adsorbed-O-on-Au-111"><span class="toc-text">Example: Thermo energy correction for adsorbed O on Au(111)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Elastic-Properties"><span class="toc-text">6 Elastic Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Optic-Properties"><span class="toc-text">7 Optic Properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Structure-Edition-and-Symmetry-Tools"><span class="toc-text">8 Structure Edition and Symmetry Tools</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Redefine-Lattice"><span class="toc-text">8.1 Redefine Lattice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Build-operatorname-Au-111-sqrt-3-times-sqrt-3-R-30-circ-slab-from-primitive-slab"><span class="toc-text">Example: Build $\operatorname{Au}(111)-(\sqrt{3} \times \sqrt{3}) R 30^{\circ}$ slab from primitive slab</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-Build-Supercell"><span class="toc-text">8.2 Build Supercell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Fix-Atoms-by-Layers"><span class="toc-text">8.3 Fix Atoms by Layers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-Fix-Atoms-by-Height"><span class="toc-text">8.4 Fix Atoms by Height</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Swap-Axis-of-Lattice-Vector"><span class="toc-text">8.5 Swap Axis of Lattice Vector</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Potential-related"><span class="toc-text">9 Potential related</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-Planar-Average-Potential"><span class="toc-text">9.1 Planar Average Potential</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Work-function-of-Au-111-slab-with-five-atomic-layers"><span class="toc-text">Example, Work-function of Au(111) slab with five atomic layers.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Macroscopic-Averaged-Potential"><span class="toc-text">9.2 Macroscopic Averaged Potential</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Density-related"><span class="toc-text">10 Density related</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-Charge-Density-and-Spin-Density"><span class="toc-text">10.1 Charge Density and Spin Density</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-Charge-Density-Difference"><span class="toc-text">10.2 Charge Density Difference</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Charge-density-difference-of-two-fragments"><span class="toc-text">Example: Charge density difference of two fragments</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Deformation-charge-density-of-CO"><span class="toc-text">Example: Deformation charge density of CO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-Charge-density-difference-of-InSe-with-electric-field"><span class="toc-text">Example: Charge density difference of InSe with electric field</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-WaveFunction-Visualization-in-Real-Space"><span class="toc-text">10.3 WaveFunction Visualization in Real-Space</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-WaveFunction-of-CO-molecule"><span class="toc-text">Example: WaveFunction of CO molecule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-WaveFunction-of-MoS2-WS2-Heterojuctions"><span class="toc-text">Example: WaveFunction of MoS2/WS2 Heterojuctions</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Other-Functions"><span class="toc-text">12 Other Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-Molecular-Dynamics-process"><span class="toc-text">12.1 Molecular Dynamics process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-File-Format-Transfer"><span class="toc-text">12.2 File Format Transfer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-USER-interface"><span class="toc-text">12.3 USER interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-4"><span class="toc-text">12.4</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -387,6 +423,9 @@ source ~/.bashrc
 <pre><code>vaspkit: /lib64/libc.so.6: version `GLIBC_2.14&#39; not found (required by vaspkit)
 </code></pre><p>If the<code>-bash: line 7: ./vaspkit: Permission denied permission</code> issue occurs, simply add the VASPKIT execute permission:</p>
 <pre><code>chmod u+x /home/vaspkit.0.73/bin/vaspkit
+</code></pre><p>Some show graph functions rely on python environment with matplotlib. To invoke those functions, users should set the default python version and <code>PLOT_MATPLOTLIB</code> in <code>~/.vaspkit</code></p>
+<pre><code>PYTHON_VERSION           3 
+PLOT_MATPLOTLIB          .TURE.
 </code></pre><p><div style="page-break-after: always;"></div></p>
 <h2 id="2-Generate-Input-Files"><a href="#2-Generate-Input-Files" class="headerlink" title="2. Generate Input Files"></a>2. Generate Input Files</h2><p>In order to do a VASP calculation job, usually one need 4 files, INCAR, POSCAR, POTCAR and KPOINTS.</p>
 <ol>
@@ -564,7 +603,7 @@ RECOMMENDED_POTCAR       .TRUE.             # .TRUE. or .FALSE.;
 </li>
 </ol>
 <pre><code>GW_POTCAR                .TRUE.            # .TRUE. or .FALSE.;
-</code></pre><p>VASPKIT also provide <code>104</code> tag to generate POTCAR manually by selecting the type of potential for each element.</p>
+</code></pre><p>VASPKIT also provide <code>104</code> option to generate POTCAR manually by selecting the type of potential for each element.</p>
 <pre><code>104
  --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
  Auto detected POTCAR_TYPE is O, please type the one you want!
@@ -611,7 +650,7 @@ O Al
 <p><img style="width:600px" src="../images/band/band3.png" alt="effective mass" align="center"></p>
 <p>Other ways to get K-path automatically</p>
 <p>pymatgen（<a href="https://pymatgen.org/）Computational" target="_blank" rel="noopener">https://pymatgen.org/）Computational</a> Materials Science 49 (2010) 299–312.<br>seeK-path（<a href="https://www.materialscloud.org/work/tools/seekpath）Computational" target="_blank" rel="noopener">https://www.materialscloud.org/work/tools/seekpath）Computational</a> Materials Science 128 (2017) 140–184.</p>
-<p>VASPKIT use the same method as seeK-path website, and can generate line-mode KPOINTS file automatically off-line by tag <code>301</code>, <code>302</code>, and <code>303</code> for 1D, 2D, and 3D materials, respectively. </p>
+<p>VASPKIT use the same method as seeK-path website, and can generate line-mode KPOINTS file automatically off-line by option <code>301</code>, <code>302</code>, and <code>303</code> for 1D, 2D, and 3D materials, respectively. </p>
 <h4 id="Example-Single-layer-MoS2"><a href="#Example-Single-layer-MoS2" class="headerlink" title="Example: Single-layer MoS2"></a>Example: Single-layer MoS<sub>2</sub></h4><p>Band structure of single-layer MoS<sub>2</sub> without spin polarization without spin-orbital coupling.</p>
 <p><img style="width:500px" src="../images/band/band6.png" alt="effective mass" align="center"></p>
 <p>(1) Prepare MoS<sub>2</sub> POSCAR. </p>
@@ -778,7 +817,7 @@ GAMMA              3.114
 </code></pre><p>If users have python environment with matplotlib module, VASPKIT can output a <code>band.png</code> figure automatically：</p>
 <p><img style="width:500px" src="../images/band/band4.png" alt="effective mass" align="center"></p>
 <p><strong>212，213，214 get projected band structures</strong>：</p>
-<p>Be sure INCAR has <code>LORBIT = 10</code> or <code>LORBIT = 11</code> to output projection information.</p>
+<p>Ensure the <code>LORBIT = 10</code> or <code>LORBIT = 11</code> parameter in INCAR to output projection information.</p>
 <p> <strong>212) Projected Band-Structure for Selected Atoms</strong>. select projected atoms:</p>
 <p>Input number of selected atoms：<code>1-4</code> <code>7</code> <code>8</code> <code>24</code> or elements：<code>C</code> <code>Fe</code> <code>H</code></p>
 <p>For example if you want to draw projected band structure on atom 1 and 2, input <code>1-2</code>：</p>
@@ -873,7 +912,7 @@ GAMMA              3.113
   --&gt;&gt; (08) Written PBAND_SUM.dat File!
   --&gt;&gt; (09) Written KLINES.dat File!
   --&gt;&gt; (10) Written KLABELS File!
-</code></pre><p>The output <code>PBAND_SUM.dat</code> file includes the sum projection of selected atoms or elements. This is useful to investigate the layered band and compare the band of surface and inner.</p>
+</code></pre><p>The output <code>PBAND_SUM.dat</code> file includes the sum projection of selected atoms or elements. This is useful to investigate the layered band and compare surface band and inner band.</p>
 <h3 id="3-3-Pre-process-Band-Structure-hybrid-functional"><a href="#3-3-Pre-process-Band-Structure-hybrid-functional" class="headerlink" title="3.3 Pre-process Band Structure (hybrid functional)"></a>3.3 Pre-process Band Structure (hybrid functional)</h3><p>Besides the line-mode K-path, VASPKIT can also generate K-path with uniformed spacing between K points in units of 2$\pi$*Å<sup>-1</sup>, which can be used for hybrid functional band structure calculations. Such KPOINTS file contains two parts. First part is same as the self-consistent calculation with symmetry weighted K-points in Irreducilbe Brillouin Zone. And Second part is the 0-weighted K-points alone the k-path. To generate this KPOINTS file:</p>
 <p>(1) Same as pure functional calculation. Do geometry optimization. Run <strong>302</strong> (for 2D materials) or <strong>303</strong> (for 3D materials) to get:</p>
 <ol>
@@ -881,8 +920,8 @@ GAMMA              3.113
 <li>line-mode k-path for pure functional band structure calculation (KPATH.in)</li>
 <li>High-symmetry points in fractional coordinates. (HIGH_SYMMETRY_POINTS) You can check them with the seekpath database [<a href="https://www.materialscloud.org/work/tools/seekpath" target="_blank" rel="noopener">https://www.materialscloud.org/work/tools/seekpath</a>]. </li>
 </ol>
-<p>(2) Run <strong>251</strong> to generate KPOINTS file for hybrid functional band-structure calculations. Input the k spacing values to determine density of k-mesh for SCF calculation and k-path for band structure calculation. Then vaspkit will read KPATH.in file and generate the KPOINTS file for hybrid functional band-structure calculation.</p>
-<p>(3) <em>Optional</em>. Do a PBE SCF calculations based on the new generated KPOINTS file and get the wavefunctions, which can be read for next step hybrid functional calculation. Sometimes, this step can reduce the SCF time of the next step hybrid functional calculation.</p>
+<p>(2) Run <strong>251</strong> to generate KPOINTS file for hybrid functional band-structure calculations. Input the KPT resolution values to determine density of k-mesh for SCF calculation and k-path for band structure calculation. Then VASPKIT will read KPATH.in file and generate the KPOINTS file for hybrid functional band-structure calculation.</p>
+<p>(3) <em>Optional</em>. Do a PBE SCF calculations based on the new generated KPOINTS file and get the wavefunctions, which can be read for next step hybrid functional calculation. Sometimes, this step reduce the SCF time of the next step hybrid functional calculation.</p>
 <p>(4) Do hybrid functional band structure calculation.</p>
 <h4 id="Example-single-layer-MoS2"><a href="#Example-single-layer-MoS2" class="headerlink" title="Example: single layer MoS2"></a>Example: single layer MoS<sub>2</sub></h4><p>(1) After optimization. Run <strong>302</strong></p>
 <pre><code>302
@@ -911,7 +950,7 @@ GAMMA              3.113
  --&gt;&gt; (2) Written PRIMCELL.vasp file.
  --&gt;&gt; (3) Written KPATH.in File for Band-Structure Calculation.
  --&gt;&gt; (4) Written HIGH_SYMMETRY_POINTS File for Reference.
-</code></pre><p>use the new generated PRIMCELL.vasp as POSCAR: <code>cp PRIMCELL.vasp POSCAR</code></p>
+</code></pre><p>Replace the old POSCAR by the new generated PRIMCELL.vasp: <code>cp PRIMCELL.vasp POSCAR</code></p>
 <pre><code>Primitive Cell
   1.000000
     3.18401832481292    0.00000000000000    0.00000000000000
@@ -923,7 +962,7 @@ DIRECT
     0.0000000000000000    0.0000000000000000    0.4151505217091287     S1
     0.0000000000000000    0.0000000000000000    0.5848494782908713     S2
     0.6666666666666666    0.3333333333333333    0.5000000000000000    Mo1
-</code></pre><p>KPATH.in:</p>
+</code></pre><p>KPATH.in is line-mode KPOINTS file:</p>
 <pre><code>K-Path Generated by VASPKIT.
    20
 Line-Mode
@@ -936,7 +975,8 @@ Reciprocal
 
    0.3333333333   0.3333333333   0.0000000000     K              
    0.0000000000   0.0000000000   0.0000000000     GAMMA
-</code></pre><p>(2) Run <strong>251</strong> to generate KPOINTS file for hybrid functional band-structure calculations. </p>
+</code></pre><p>(2) Run <strong>251</strong> to generate KPOINTS file for hybrid functional band-structure calculations. Select (1) Monkhorst-Pack Scheme or (2) Gamma Scheme to generate k-mesh for SCF calculation. </p>
+<p>Then input the resolution value of normal weighted K-Mesh and 0-weighted K-path, respectively. VASPKIT will write a new KPOINTS according to users’ input.</p>
 <pre><code>251
  --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
  ======================= K-Mesh Scheme ==========================
@@ -965,8 +1005,7 @@ Reciprocal
  The Number of K-Point along K-Path 3:  26
  +---------------------------------------------------------------+
  --&gt;&gt; (3) Written KPOINTS File!
-</code></pre><p>Select (1) Monkhorst-Pack Scheme or (2) Gamma Scheme to generate k-mesh for SCF calculation. The allowed spacing between k points is set to be 0.04. Then also set the spacing between k points on k-path as 0.04. </p>
-<p>Vaspkit will output the k-mesh for SCF Calculation:    7    7    1. And the number of k-points along each line of k-path:  $\Gamma$-&gt; M : 22,    M -&gt; K : 13,    K -&gt; $\Gamma$ : 26. </p>
+</code></pre><p>Here, the resolution value of normal weighted K-Mesh and 0-weighted K-path is set to be 0.05. Output K-mesh for SCF Calculation:    7    7    1. And the number of k-points along each line of k-path:  $\Gamma$-&gt; M : 22,    M -&gt; K : 13,    K -&gt; $\Gamma$ : 26. The KPOINTS file:</p>
 <pre><code>Parameters to Generate KPOINTS (Don&#39;t Edit This Line):   0.050  0.050    8   61   3  22  13  26
     69
 Reciprocal lattice
@@ -990,8 +1029,6 @@ Reciprocal lattice
 <p>(4) Do hybird functional band structure calculation. The detail of INCAR parameters are discussed in <a href="http://blog.wangruixing.cn/2019/05/20/hse/" target="_blank" rel="noopener">http://blog.wangruixing.cn/2019/05/20/hse/</a> , INCAR:</p>
 <pre><code>##### initial I/O #####
 SYSTEM = Hybird Functional
-# KPAR = 4       
-NCORE = 5 
 ISTART = 1 
 ICHARG = 1 
 LWAVE = .TRUE. 
@@ -1027,8 +1064,8 @@ AEXX   =  0.25
 HFSCREEN = 0.2         
 ALGO = ALL # or Damped
 TIME   =  0.4
-</code></pre><h3 id="3-4-Post-process-Band-Structure-hybrid-functional"><a href="#3-4-Post-process-Band-Structure-hybrid-functional" class="headerlink" title="3.4 Post-process Band Structure (hybrid functional)"></a>3.4 Post-process Band Structure (hybrid functional)</h3><p>(5) Extract band structure information by <strong>252</strong>. band data is saved in BAND.dat and BAND-REFORMATTED.dat files. High-symmetry points positions on band structure figures are saved in KLABELS. </p>
-<p>(Note: bug in 0.73 version, please use 0.72p1 or 0.74 version)</p>
+</code></pre><h3 id="3-4-Post-process-Band-Structure-hybrid-functional"><a href="#3-4-Post-process-Band-Structure-hybrid-functional" class="headerlink" title="3.4 Post-process Band Structure (hybrid functional)"></a>3.4 Post-process Band Structure (hybrid functional)</h3><p>(5) Extract band structure information by <strong>252</strong>. band data is saved in <code>BAND.dat</code> and <code>BAND-REFORMATTED.dat</code> files. High-symmetry points positions on band structure figures are saved in <code>KLABELS</code>. </p>
+<p>(Note: bug in 0.73 version, please use new version)</p>
 <pre><code>252
   --&gt;&gt; (01) Reading Input Parameters From INCAR File...
   --&gt;&gt; (02) Reading Fermi-Energy from DOSCAR File...
@@ -1044,16 +1081,17 @@ TIME   =  0.4
  If you want use the default setting, type 0, if modity type 1
 0
   --&gt;&gt; (11) Graph has been generated!
-</code></pre><p>if the python and matplotlib enviornment is set correctly. vaspkit will draw a band figure <code>band.png</code>. Following parameters should be set in ~/.vaspkit file.</p>
+</code></pre><p>if the python and matplotlib enviornment is set correctly. VASPKIT will draw a band figure <code>band.png</code> automatically. Following parameters should be set in <code>~/.vaspkit</code> file.</p>
 <pre><code>PYTHON_VERSION           3 
 PLOT_MATPLOTLIB          .TURE.
 </code></pre><p><img style="width:500px" src="../images/vaspkit-hse-band/vaspkit-hse-band1.png" alt="effective mass" align="center"></p>
-<p>You can also draw the figure from BAND.dat or BAND_REFORMATTED.dat by origin.</p>
-<p>By comparing with the line-mode of KPOINTS (tag <code>3</code>). The biggest advantages of <code>25</code> is average the k spacing along K-path.</p>
-<p>Versions prior to 0.72 took the same number of K-points for energy line, resulting in uneven K-distribution on different paths, as shown in lift Figure below. The latest version of VASPKIT supports automatic determination of the number of K points on different energy band paths based on a given k-point interval, thus ensuring uniform spattering throughout the band calculation, as shown in right Figure below.</p>
+<p>You can also draw the figure from <code>BAND.dat</code> or <code>BAND_REFORMATTED.dat</code> by ORIGIN, which is described in Section 3.2.</p>
+<p>By comparing with the line-mode of KPOINTS (option <code>302</code> and <code>303</code>). The biggest advantages of <code>25</code> is that the k spacing along K-path is averaged, so that saves computational cost.</p>
+<p>Versions prior to 0.72 took the same number of K-points for energy line, resulting in uneven K-distribution on different paths, as shown in the lift figure below. The latest version of VASPKIT supports automatic determination of K-points number on different energy band paths based on a given k-point interval, thus ensuring uniform spattering throughout the band calculation, as shown in right Figure below.</p>
 <p>KPOINTS generated from vaspkit <code>251</code> keeps the spacing between every k points.  So, one can use less 0-weighted k points to get a similar qualified band structure, and thus, take less time when doing band structure calculations.</p>
 <p><img style="width:650px" src="../images/vaspkit-hse-band/vaspkit-hse-band5.png" alt="effective mass" align="center"></p>
-<p><strong>To get projected hybrid functional band structure, please use 253，254，255</strong>：</p>
+<p><strong>To get projected hybrid functional band structure, please use 253，254，255</strong>： </p>
+<p>Ensure the <code>LORBIT = 10</code> or <code>LORBIT = 11</code> parameter in INCAR to output projection information.</p>
 <pre><code> 253) Get Projected Band-Structure for Selected Atoms            
  254) Get Projected Band-Structure for Each ELement              
  255) Get the Sum of Projected Band-Structure for Selected Atoms
@@ -1112,14 +1150,14 @@ PLOT_MATPLOTLIB          .TURE.
   --&gt;&gt; (10) Written KLABELS File!
 </code></pre><p><strong>supplementary</strong>:  band structure can also be down by pymatgen package:</p>
 <p><img style="width:500px" src="../images/vaspkit-hse-band/vaspkit-hse-band4.png" alt="effective mass" align="center"></p>
-<h3 id="3-5-Effective-Mass"><a href="#3-5-Effective-Mass" class="headerlink" title="3.5 Effective Mass"></a>3.5 Effective Mass</h3><p>For electrons or electron holes in a solid, the effective mass (<em>m</em>*) is a quantity that is used to simplify band structures by modeling the behavior of a free particle with that mass. At the highest energies of the valence band in many semiconductors (Ge, Si, GaAs, …), and the lowest energies of the conduction band in some semiconductors (GaAs, …), the band structure <em>E</em>(<strong>k</strong>) can be locally approximated as:</p>
+<h3 id="3-5-Effective-Mass"><a href="#3-5-Effective-Mass" class="headerlink" title="3.5 Effective Mass"></a>3.5 Effective Mass</h3><p>For electrons or holes in a solid, the effective mass (<em>m</em>*) is a quantity that is used to simplify band structures by modeling the behavior of a free particle with that mass. At the highest energies of the valence band in semiconductors (Ge, Si, GaAs, …), and the lowest energies of the conduction band in semiconductors (GaAs, …), the band structure <em>E</em>(<strong>k</strong>) can be locally approximated as:</p>
 <script type="math/tex; mode=display">
 E(\mathbf{k})=E_{0}+\frac{\hbar^{2} \mathbf{k}^{2}}{2 m^{*}}</script><p>where <em>E</em>(<strong>k</strong>) is the energy of an electron at wavevector <strong>k</strong> in that band, <em>E</em><sub>0</sub> is a constant giving the edge of energy of that band. So <em>m</em>* can be calculated by following equation: </p>
 <script type="math/tex; mode=display">
-\frac{1}{m^{*}}=\frac{1}{\hbar^{2}} \frac{\partial^{2} E}{\partial k_{i} \partial k_{j}}</script><p>Usually, we are interested in the <em>m</em>* from one high symmetry point to another high symmetry point. So the direction of $k<em>{i}$ and $k</em>{j}$ are same, such as  K -&gt; M, K -&gt; $\Gamma$. To get the second-order partial derivative, KPOINTS file should include K points very near to that high symmetry point. VASPKIT can generate KPOINTS file for VASP calculation and get the effetive mass automatically. (Note: Now, VASPKIT only support effective mass calculation for Non-Charged &amp; Non-Magnetic Semiconductor!)</p>
+\frac{1}{m^{*}}=\frac{1}{\hbar^{2}} \frac{\partial^{2} E}{\partial k_{i} \partial k_{j}}</script><p>Usually, we are interested in the <em>m</em>* from one high symmetry point to another high symmetry point. So the direction of $k<em>{i}$ and $k</em>{j}$ are same, such as  K -&gt; M, K -&gt; $\Gamma$. To get the second-order partial derivative, KPOINTS file should include K points very near to that high symmetry point. VASPKIT can generate KPOINTS file for VASP calculation and get the effective mass automatically. (Note: Now, VASPKIT only support effective mass calculation for Non-Charged &amp; Non-Magnetic Semiconductor!)</p>
 <p><img style="width:400px" src="../images/vaspkit-manual/vaspkit-manual2.png" alt="effective mass" align="center"></p>
-<h4 id="Example-Single-Layer-MoS2-effective-mass"><a href="#Example-Single-Layer-MoS2-effective-mass" class="headerlink" title="Example: Single Layer MoS2 effective mass"></a>Example: Single Layer MoS<sub>2</sub> effective mass</h4><p>(1) Find out the band edges by band struture calculation. The VBM is at K, and the CBM is also at K. </p>
-<p>(2) Select the direction to do second-order derivative. Here, we select K -&gt; M, K -&gt; $\Gamma$ to calculate their electron and hole effetive mass.</p>
+<h4 id="Example-Single-Layer-MoS2-effective-mass"><a href="#Example-Single-Layer-MoS2-effective-mass" class="headerlink" title="Example: Single Layer MoS2 effective mass"></a>Example: Single Layer MoS<sub>2</sub> effective mass</h4><p>(1) Find out the band edges by band structure calculation. The VBM is at K, and the CBM is also at K. </p>
+<p>(2) Select the direction to do second-order derivative. Here, we select K -&gt; M, K -&gt; $\Gamma$ to calculate their electron and hole effective mass.</p>
 <p>(3) Prepare POSCAR and VPKIT.in:</p>
 <pre><code>1        # &quot;1&quot; for pre-process (generate KPOINTS), &quot;2&quot; for post-process(calculate m*)
 6        # number of points for quadratic function fitting.
@@ -1127,7 +1165,7 @@ E(\mathbf{k})=E_{0}+\frac{\hbar^{2} \mathbf{k}^{2}}{2 m^{*}}</script><p>where <e
 2        # number of tasks for effective mass calculation
 0.333333 0.3333333 0.000 0.000 0.000 0.000 K-&gt;Γ # Specified two K-points and direction
 0.333333 0.3333333 0.000 0.500 0.000 0.000 K-&gt;M # Specified two K-points and direction
-</code></pre><p>(4) Run VASPKIT <code>912</code>, and input the parameters for K-Mesh Scheme, and VASPKIT will generate a KPOINTS file based on the VPKIT.in file with 0-weight the K-points. </p>
+</code></pre><p>(4) Run VASPKIT <code>912</code>, and input the parameters for K-Mesh Scheme, and VASPKIT will generate a KPOINTS file based on the VPKIT.in file with 0-weight K-points. </p>
 <pre><code> +-------------------------- Warm Tips --------------------------+
       Test ONLY for Non-Charged &amp; Non-Magnetic Semiconductor!            
  +---------------------------------------------------------------+
@@ -1172,20 +1210,20 @@ Reciprocal lattice
     0.22222222222222    0.22222222222222    0.00000000000000     6
     0.33333333333333    0.22222222222222    0.00000000000000    12
     0.33333333333333    0.33333333333333    0.00000000000000     2
-    0.33333300000000    0.33333330000000    0.00000000000000     0 # K
+    0.33333300000000    0.33333330000000    0.00000000000000     0 # K-&gt;Γ
     0.32795808307727    0.33136593967371    0.00000000000000     0
     0.32258316615454    0.32939857934742    0.00000000000000     0
     0.31720824923180    0.32743121902113    0.00000000000000     0
     0.31183333230907    0.32546385869484    0.00000000000000     0
     0.30645841538634    0.32349649836855    0.00000000000000     0
-    0.33333300000000    0.33333330000000    0.00000000000000     0 # K
+    0.33333300000000    0.33333330000000    0.00000000000000     0 # K-&gt;M
     0.33673240318272    0.32574567174541    0.00000000000000     0
     0.34013180636544    0.31815804349082    0.00000000000000     0
     0.34353120954815    0.31057041523622    0.00000000000000     0
     0.34693061273087    0.30298278698163    0.00000000000000     0
     0.35033001591359    0.29539515872704    0.00000000000000     0
 </code></pre><p>(5) Submit VASP job.</p>
-<p>(6) Replace the first line of VPKIT.in by <code>2</code>. Then re-run VASPKIT <code>913</code> to get the effetive mass of electron and hole.</p>
+<p>(6) Replace the first line of VPKIT.in by <code>2</code>. Then re-run VASPKIT <code>913</code> to get the effective mass of electron and hole.</p>
 <pre><code>913
  +-------------------------- Warm Tips --------------------------+
       Test ONLY for Non-Charged &amp; Non-Magnetic Semiconductor!            
@@ -1203,7 +1241,7 @@ Reciprocal lattice
  K-Path Index 2: K-&gt;M        0.527 (0.8E-07)      -0.705 (0.2E-06)
  +---------------------------------------------------------------+
 </code></pre><p>Kormányos et al. calculated the effective masses of electron and hole carriers for the MoS<sub>2</sub> monolayers to be 0.44 and 0.54, respectively [see 2D Mater. 2 (2015) 049501]. Note: If the valence band and the conduction band bottom are degenerate, such as GaAs and GaN, it will be difficult to guarantee accuracy at this time.</p>
-<h3 id="3-6-Band-unfolding"><a href="#3-6-Band-unfolding" class="headerlink" title="3.6 Band-unfolding"></a>3.6 Band-unfolding</h3><p>Alloy or defect materials usually needs to use the supercell calculation. In order to compare with the energy band of the unit cell, the energy band of the supercell needs to be folded into an effective band structure (EBS).</p>
+<h3 id="3-6-Band-unfolding"><a href="#3-6-Band-unfolding" class="headerlink" title="3.6 Band-unfolding"></a>3.6 Band-unfolding</h3><p>Alloy or defect materials usually need to do supercell calculation. In order to compare with band of the unit cell and band of the supercell, band should be unfolded into an effective band structure (EBS).</p>
 <h4 id="Example-Graphene-Band-unfolding"><a href="#Example-Graphene-Band-unfolding" class="headerlink" title="Example: Graphene Band-unfolding"></a>Example: Graphene Band-unfolding</h4><p>(1) Prepare POSCAR:</p>
 <pre><code>Graphene                             
    1.00000000000000     
@@ -1261,7 +1299,7 @@ Reciprocal
 <p>(7) Draw the picture of unfold-band.</p>
 <p><img style="width:400px" src="../images/vaspkit-manual/vaspkit-manual3.jpg" alt="unfold band" align="center"></p>
 <h3 id="3-7-3D-Band-Structure"><a href="#3-7-3D-Band-Structure" class="headerlink" title="3.7 3D Band Structure"></a>3.7 3D Band Structure</h3><p>In solid-state physics, the most usual electronic <em>band structure</em> (or simply <em>band structure</em>) is 2D band structure, which shows the energy change along the K-path line. </p>
-<p>VASPKIT can also do 3D band structure, which select K-path on a surface of irreducilbe brillouin zone. And calculate the K-dependent band energies on those K-points. This method is often used to 2D materials, such as graphene.</p>
+<p>VASPKIT can also do 3D band structure, which select K-path on a surface of Irreducilbe Brillouin zone. And calculate the K-dependent band energies on those K-points. This method is often used to 2D materials, such as graphene.</p>
 <h4 id="Example-Graphene-3D-Band-Structure"><a href="#Example-Graphene-3D-Band-Structure" class="headerlink" title="Example:  Graphene 3D Band Structure"></a>Example:  Graphene 3D Band Structure</h4><p>(1) Prepare graphene POSCAR and INCAR files for SCF calculation as descript in <a href="### 3.1 Pre-process Band Structure (pure functional">Section 3.1</a>)</p>
 <p>(2) Run VASPKIT and select <code>231</code> to generate a KPOINTS file for 3D band calculation. The execution interface is as follows. The generated KPOINTS contains 1-weighted KPOINTS and 0-weight KPOINTS (Note that in order to obtain a smooth 3D energy band, the resolution value used to generate the KPOINTS file should be set at around 0.01)</p>
 <pre><code>231
@@ -1296,7 +1334,7 @@ ooooooooo The Fermi Energy will be set to zero eV oooooooooooooooo
  --&gt;&gt; (8) Written KX.grd and KY.grd Files.
 </code></pre><p>(5) run <code>python VASPKITdir/examples/3D_band/how_to_visual.py</code> to get the 3D band structure.</p>
 <p><img style="width:700px" src="../images/vaspkit-manual/vaspkit-manual4.png" alt="unfold band" align="center"></p>
-<h3 id="3-8-Fermi-Surface"><a href="#3-8-Fermi-Surface" class="headerlink" title="3.8 Fermi Surface"></a>3.8 Fermi Surface</h3><p>In condensed matter physics, the <strong>Fermi surface</strong> is the <strong>surface</strong> in reciprocal space which separates occupied from unoccupied electron states at zero temperature. The shape of the <strong>Fermi surface</strong> is derived from the periodicity and symmetry of the crystalline lattice and from the occupation of electronic energy bands.</p>
+<h3 id="3-8-Fermi-Surface"><a href="#3-8-Fermi-Surface" class="headerlink" title="3.8 Fermi Surface"></a>3.8 Fermi Surface</h3><p>In condensed matter physics, the <strong>Fermi surface</strong> is the <strong>surface</strong> in reciprocal space which separates occupied bands from unoccupied bands at zero temperature. The shape of the <strong>Fermi surface</strong> is derived from the periodicity and symmetry of the crystalline lattice and from the occupation of electronic energy bands.</p>
 <h4 id="Example-Cu-Fermi-Surface"><a href="#Example-Cu-Fermi-Surface" class="headerlink" title="Example: Cu Fermi Surface"></a>Example: Cu Fermi Surface</h4><p>(1) prepare the optimized POSCAR of FCC Cu. Note that it must be the primitive cell.</p>
 <p>(2) Run VASPKIT and enter the <code>261</code> command to generate the KPOINTS and POTCAR files for calculating the Fermi surface. </p>
 <pre><code>------------&gt;&gt;
@@ -1325,13 +1363,13 @@ ooooooooo The Fermi Energy will be set to zero eV oooooooooooooooo
 <p><img style="width:500px" src="../images/vaspkit-manual/vaspkit-manual5.jpg" alt="unfold band" align="center"></p>
 <p><img style="width:500px" src="../images/vaspkit-manual/vaspkit-manual6.jpg" alt="unfold band" align="center"></p>
 <p><div style="page-break-after: always;"></div></p>
-<h2 id="4-Density-of-States"><a href="#4-Density-of-States" class="headerlink" title="4 Density of States"></a>4 Density of States</h2><p>VASPKIT is very powerful at post-process DOS results. Set <code>LORBIT</code> = 10 or 11, VASP will output DOS and <em>l</em>-decomposed or <em>lm</em>-decomposed projected DOS for every atoms to DOSCAR and vasprun.xml. VASPKIT can extract those information as users’ demanding.</p>
+<h2 id="4-Density-of-States"><a href="#4-Density-of-States" class="headerlink" title="4 Density of States"></a>4 Density of States</h2><p>VASPKIT is very powerful at post-process DOS results. Set <code>LORBIT</code> = 10 or 11, VASP will output DOS and <em>l</em>-decomposed or <em>lm</em>-decomposed projected DOS for every atoms to DOSCAR and vasprun.xml. VASPKIT can extract those information as users’ input.</p>
 <p>Merits:</p>
 <p>(1) Do not need to download DOSCAR or vasprun.xml. Direct extract useful DOS on server.</p>
 <p>(2) Selection way for PDOS is convenient. Elements, atoms, and orbitals can be selected and sumed as you want.</p>
 <p>(3) Automatic shift fermi energy to 0 eV. It can read the E-fermi energy form OUTCAR and shift the DOS data by E-fermi. If one do not want to do shift, just close it in <code>~/.vaspkit</code> </p>
 <pre><code>SET_FERMI_ENERGY_ZERO    .FALSE.             # .TRUE. or .FALSE.;
-</code></pre><p>(4) Output file can be read by <code>Origin</code> directly with no modify.</p>
+</code></pre><p>(4) Output file can be read by ORIGIN directly with no modification.</p>
 <h3 id="4-1-Extract-and-output-DOS-and-pDOS"><a href="#4-1-Extract-and-output-DOS-and-pDOS" class="headerlink" title="4.1 Extract and output DOS and pDOS"></a>4.1 Extract and output DOS and pDOS</h3><p>Option <code>11</code> is used to DOS post-process.</p>
 <div class="table-container">
 <table>
@@ -1346,7 +1384,7 @@ ooooooooo The Fermi Energy will be set to zero eV oooooooooooooooo
 <tr>
 <td>111</td>
 <td>Get the <strong>total</strong> DOS</td>
-<td><strong>Input</strong>: None.<br><strong>Output</strong>:<br> TDOS.dat contains the total DOS; ITDOS.dat contains the integral total DOS.<br>Spin up and down are writen in one file.<br><br> Example:  Total dos of $\Theta$-Al<sub>2</sub>O<sub>3</sub> unit cell<img style="width:800px" src="../images/vaspkit-manual/vaspkit-manual8.png" alt="unfold band" align="center"></td>
+<td><strong>Input</strong>: None.<br><strong>Output</strong>:<br> TDOS.dat contains the total DOS; ITDOS.dat contains the integral total DOS.<br>Spin up and down are written in one file.<br><br> Example:  Total dos of $\Theta$-Al<sub>2</sub>O<sub>3</sub> unit cell<img style="width:800px" src="../images/vaspkit-manual/vaspkit-manual8.png" alt="unfold band" align="center"></td>
 </tr>
 <tr>
 <td>112</td>
@@ -1371,8 +1409,12 @@ ooooooooo The Fermi Energy will be set to zero eV oooooooooooooooo
 </tbody>
 </table>
 </div>
-<h4 id="Example-pdos-of-CO-adsorption-on-Ni-100-surface"><a href="#Example-pdos-of-CO-adsorption-on-Ni-100-surface" class="headerlink" title="Example: pdos of CO adsorption on Ni(100) surface."></a>Example: pdos of CO adsorption on Ni(100) surface.</h4><p>Enter <code>/vaspkit.0.73/examples/LDOS_PDOS/Partial_DOS_of_CO_on_Ni_111_surface</code>,</p>
-<p>Run <code>vaspkit</code> <code>(115) The Sum of Projected DOS for Selected Atoms and orbitals</code>. If we want s and p orbtial of O, s and p orbtial of C, d orbtial of Ni.</p>
+<h4 id="Example-PDOS-of-CO-adsorption-on-Ni-100-surface"><a href="#Example-PDOS-of-CO-adsorption-on-Ni-100-surface" class="headerlink" title="Example: PDOS of CO adsorption on Ni(100) surface."></a>Example: PDOS of CO adsorption on Ni(100) surface.</h4><p>Enter <code>/vaspkit.0.73/examples/LDOS_PDOS/Partial_DOS_of_CO_on_Ni_111_surface</code>,</p>
+<p>Run VASPKIT <code>(113) Projected Density-of-States for Each Element</code>, </p>
+<p>VASPKIT will output <code>PDOS_Ni.dat</code>, <code>PDOS_C.dat</code>, and <code>PDOS_O.dat</code>, which contain the  PDOS information of Ni, C, and O:</p>
+<p><img style="width:700px" src="../images/vaspkit-manual/vaspkit-manual19.png" alt="unfold band" align="center"></p>
+<p> Run VASPKIT <code>(114) The Sum of Projected Density-of-States for Selected Atoms</code>, and then input <code>6 7</code>, VASPKIT will output the sum PDOS of CO molecule.</p>
+<p>Run VASPKIT <code>(115) The Sum of Projected DOS for Selected Atoms and orbitals</code>. If we want s and p orbtial of O, s and p orbtial of C, d orbtial of Ni.</p>
 <pre><code> Input the Symbol and/or Number of Atoms to Sum [Total-atom: 7]
  (Free Format is OK, e.g., C Fe H 1-4 7 8 24),Press &quot;Enter&quot; if you want to end e
  ntry!
@@ -1396,8 +1438,8 @@ s
 <p>The <code>Input the Symbol and/or Number of Atoms</code> command accept free format input. You can enter the <code>1-3 4 Ni</code> to accumulate PDOS by selecting elements 1, 2, 3, 4 and Ni. The <code>Input the Orbitals to Sum</code> command only supports standard input. If you use <code>LORBIT=10</code>, only s p d f can be selected. If you use <code>LORBIT=11</code>, s py pz px dxy dyz dz2 dxz dx2 f-3 f-2 f-1 f0 f1 f2 are also supported.</p>
 <h3 id="4-2-D-band-Center"><a href="#4-2-D-band-Center" class="headerlink" title="4.2 D-band Center"></a>4.2 D-band Center</h3><p>The DOS projected onto the <em>d</em>-states that interact with the adsorbate state can be characterized by the center of d-projected DOS.</p>
 <script type="math/tex; mode=display">
-\varepsilon_{\mathrm{d}}=\frac{\int_{-\infty}^{\infty} n_{\mathrm{d}}(\varepsilon) \varepsilon d \varepsilon}{\int_{-\infty}^{\infty} n_{\mathrm{d}}(\varepsilon) d \varepsilon}</script><p>VASPKIT option <code>503</code> can calculate d-band center for every atoms directly from VASP dos outputs. And users can set the the energy range for calculation.</p>
-<p>Example: Pt metal surface model, the energy window is set up to the fermi energy.</p>
+\varepsilon_{\mathrm{d}}=\frac{\int_{-\infty}^{\infty} n_{\mathrm{d}}(\varepsilon) \varepsilon d \varepsilon}{\int_{-\infty}^{\infty} n_{\mathrm{d}}(\varepsilon) d \varepsilon}</script><p>VASPKIT option <code>503</code> can calculate d-band center for every atoms directly from VASP DOS outputs. And users can set the the energy range for calculation.</p>
+<p>Example: Pt metal cell, the energy window is set up to the Fermi energy.</p>
 <pre><code>503
  +-------------------------- Warm Tips --------------------------+
          See An Example in vaspkit/examples/d_band_center.        
@@ -1427,7 +1469,7 @@ Notice:
 The energy window of integration is [-11.80 0.00].
 The calculated d-band-center presented here are referenced to Fermi level, i.e., E_F=0 eV.
 </code></pre><p><div style="page-break-after: always;"></div></p>
-<h2 id="5-Thermo-Energy-Correction"><a href="#5-Thermo-Energy-Correction" class="headerlink" title="5 Thermo Energy Correction"></a>5 Thermo Energy Correction</h2><p>Calculation of the free energy change in catalysis is one of the most important part. But VASP do not have a module that can directly calculates the molecular free energy. Thus, the free energy correction in the some pulications is inconsistent, inaccurate. (Note: Computational chemistry programs such as Gaussian have a complete free energy calculation module.) </p>
+<h2 id="5-Thermo-Energy-Correction"><a href="#5-Thermo-Energy-Correction" class="headerlink" title="5 Thermo Energy Correction"></a>5 Thermo Energy Correction</h2><p>Calculation of the free energy change in catalysis is one of the most important thing. But VASP do not have module that can directly calculates molecular free energy. Thus, the free energy correction in the some publications is inconsistent, inaccurate. (Note: Computational chemistry programs such as Gaussian have a complete free energy calculation module.) </p>
 <h3 id="5-1-Gas-Molecule-Free-Energy-Correction"><a href="#5-1-Gas-Molecule-Free-Energy-Correction" class="headerlink" title="5.1 Gas Molecule Free Energy Correction"></a>5.1 Gas Molecule Free Energy Correction</h3><p>The equations used for computing thermochemical data for Gas in VASPKIT is equivalent to those in <a href="https://gaussian.com/thermo/" target="_blank" rel="noopener">Gaussian</a>. (<a href="https://gaussian.com/thermo/" target="_blank" rel="noopener">https://gaussian.com/thermo/</a>)<br>The partition function from any component can be used to determine the entropy contribution <em>S</em> from that component: </p>
 <script type="math/tex; mode=display">
 S=N k_{B}+N k_{B} \ln \left(\frac{q(V, T)}{N}\right)+N k_{B} T\left(\frac{\partial \ln q}{\partial T}\right)_{V}</script><p>When molar values are given $n=N / N<em>{A}$, and based on Ideal gas approximation, $N</em>{A} k_{B}=R$, We write the <em>S</em> as:</p>
@@ -1453,7 +1495,7 @@ G=H-T S</script><p> At last, VASPKIT will output:</p>
 <li>Thermal correction to G(T), = $\varepsilon<em>{\mathrm{ZPE}}$ + $\Delta U</em>{0 \rightarrow T}$ + PV + TS =  $\varepsilon<em>{\mathrm{ZPE}}$ + $\Delta G</em>{0 \rightarrow T}$ </li>
 </ol>
 <p>where $\Delta U<em>{0 \rightarrow T}$, $\Delta H</em>{0 \rightarrow T}$ , and $\Delta G_{0 \rightarrow T}$ are interal energy, enthalpy, and Gibbs free energy difference between 0 K and <em>T</em> K.</p>
-<h4 id="Example-Thermo-energy-correction-for-O2"><a href="#Example-Thermo-energy-correction-for-O2" class="headerlink" title="Example: Thermo energy correction for O2:"></a>Example: Thermo energy correction for O<sub>2</sub>:</h4><p>(1) Do a frequency calculation. After calculation, check the frequencies:</p>
+<h4 id="Example-Thermo-energy-correction-for-O2-molecule"><a href="#Example-Thermo-energy-correction-for-O2-molecule" class="headerlink" title="Example: Thermo energy correction for O2 molecule:"></a>Example: Thermo energy correction for O<sub>2</sub> molecule:</h4><p>(1) Do a frequency calculation. After calculation, check the frequencies:</p>
 <pre><code>   1 f  =   46.979964 THz   295.183821 2PiTHz 1567.082879 cm-1   194.293584 meV
    2 f  =    1.952595 THz    12.268518 2PiTHz   65.131565 cm-1     8.075288 meV
    3 f  =    1.120777 THz     7.042052 2PiTHz   37.385108 cm-1     4.635164 meV
@@ -1492,13 +1534,11 @@ G=H-T S</script><p> At last, VASPKIT will output:</p>
  Thermal correction to H(T):       4.316 kcal/mol    0.187167 eV
  Thermal correction to G(T):     -10.302 kcal/mol   -0.446723 eV
  Entropy S                 :     205.141 J/(mol*K)   0.002126 eV
-
- Thanks to Sobereva!(sobereva@sina.com)
 </code></pre><p>So, ZPE is 0.097144 eV. Thermal correction to <em>U</em>(T), <em>H</em>(T), and <em>G</em>(T) are 0.161475, 0.187167,  and -0.446723 eV, respectively. The entropy correction is</p>
 <script type="math/tex; mode=display">
 S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdot \mathrm{K}^{-1} \cdot \mathrm{mol}^{-1}</script><p>To get the free energy of O<sub>2</sub>, add the <em>G</em>(T) to electronic energy:</p>
 <p>G(O<sub>2</sub>) = -9.854 + -0.447 = -10.301 eV</p>
-<h3 id="5-2-Adsorbed-Molecular-Free-Energy-Correction"><a href="#5-2-Adsorbed-Molecular-Free-Energy-Correction" class="headerlink" title="5.2 Adsorbed Molecular Free Energy Correction"></a>5.2 Adsorbed Molecular Free Energy Correction</h3><p>Unlike the thermodynamic correction of gas molecules, adsorbed molecules will form chemical bonds with the substrat, which limits the translational and rotational freedom of the adsorbed molecules. So the contribution of translation and rotation to entropy and enthalpy is significantly reduced (so called hindered translator / hindered rotor model). This does not mean no translational or rotational contribution. </p>
+<h3 id="5-2-Adsorbed-Molecular-Free-Energy-Correction"><a href="#5-2-Adsorbed-Molecular-Free-Energy-Correction" class="headerlink" title="5.2 Adsorbed Molecular Free Energy Correction"></a>5.2 Adsorbed Molecular Free Energy Correction</h3><p>Unlike gas molecules, adsorbed molecules form chemical bonds with substrate, which limits the translational and rotational freedom of the adsorbed molecules. So the contribution of translation and rotation to entropy and enthalpy is significantly reduced (so called hindered translator / hindered rotor model). This does not mean no translational or rotational contribution. </p>
 <p>One common method is to attribute the translational or rotational part of the contribution to vibration, that is, the 3N vibrations of the surface-adsorbing molecules (except the virtual frequency) are all used to calculate the correction of the thermo energy. </p>
 <p>The small the vibration frequencies have large contribution to entropy. It is very likely that a small vibration frequency will lead to abnormal entropy and free energy correction. So, it suggests that when the free energy of the surface adsorption molecule is corrected, the contribution of the frequency below 50 cm<sup>-1</sup> is calculated as 50 cm<sup>-1</sup>, and VASPKIT also does this. And VASPKIT neglects the electron motion because of its small contribution. </p>
 <p>And the PV term is also delete. At last VASPKIT will output:</p>
@@ -1507,7 +1547,7 @@ S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdo
 <li>Thermal correction to <em>U</em>(T) = <em>H</em>(T) = $\varepsilon<em>{\mathrm{ZPE}}$ + $\Delta U</em>{0 \rightarrow T}$</li>
 <li>Thermal correction to G(T) = $\varepsilon<em>{\mathrm{ZPE}}$ + $\Delta U</em>{0 \rightarrow T}$ + TS =  $\varepsilon<em>{\mathrm{ZPE}}$ + $\Delta G</em>{0 \rightarrow T}$ </li>
 </ol>
-<h4 id="Example-Thermo-energy-correction-for-adsorbed-O-Au-111"><a href="#Example-Thermo-energy-correction-for-adsorbed-O-Au-111" class="headerlink" title="Example: Thermo energy correction for adsorbed O/Au(111)"></a>Example: Thermo energy correction for adsorbed O/Au(111)</h4><p>(1) Fix all slab metal atoms, do frequency calculation for the adsorbed molecule. Check the frequencies:</p>
+<h4 id="Example-Thermo-energy-correction-for-adsorbed-O-on-Au-111"><a href="#Example-Thermo-energy-correction-for-adsorbed-O-on-Au-111" class="headerlink" title="Example: Thermo energy correction for adsorbed O on Au(111)"></a>Example: Thermo energy correction for adsorbed O on Au(111)</h4><p>(1) Fix all slab metal atoms, do frequency calculation for the adsorbed molecule. Check the frequencies:</p>
 <pre><code>$ grep cm OUTCAR 
    1 f  =   10.904836 THz    68.517103 2PiTHz  363.746154 cm-1    45.098792 meV
    2 f  =   10.827330 THz    68.030119 2PiTHz  361.160834 cm-1    44.778253 meV
@@ -1538,17 +1578,6 @@ S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdo
  Thermal correction to H(T):       2.206 kcal/mol    0.095670 eV
  Thermal correction to G(T):       1.207 kcal/mol    0.052342 eV
  Entropy S                 :      14.021 J/(mol*K)   0.000145 eV
- +---------------------------------------------------------------+
- +---------------------------------------------------------------+
- |                         * DISCLAIMER *                        |
- |         Any Suggestions for Improvements are Welcome          |
- |      Check the Consistency of Your Results if Necessary       |
- |                     (^.^) GOOD LUCK (^.^)                     |
- |---------------------------------------------------------------|
- | Citation of VASPKIT is not Mandatory BUT would be Appreciated.|
- | Please Cite: V. Wang, N. Xu, VASPKIT: A Pre- and Post-Proces- |
- | sing Program for the VASP Code. http://vaspkit.sourceforge.net|
- +---------------------------------------------------------------+
 </code></pre><p>So, ZPE is 0.067171 eV. Thermal correction to <em>U</em>(T), <em>H</em>(T), and <em>G</em>(T) are 0.095670, 0.187167,  and -0.446723 eV, respectively.</p>
 <p><div style="page-break-after: always;"></div></p>
 <h2 id="6-Elastic-Properties"><a href="#6-Elastic-Properties" class="headerlink" title="6 Elastic Properties"></a>6 Elastic Properties</h2><p><div style="page-break-after: always;"></div></p>
@@ -1583,7 +1612,7 @@ S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdo
  Volume of New Cell is 3 times of the Old Cell
 </code></pre><h3 id="8-2-Build-Supercell"><a href="#8-2-Build-Supercell" class="headerlink" title="8.2 Build Supercell"></a>8.2 Build Supercell</h3><p>VASPKIT <code>401</code> can build supercell by three number C<sub>1</sub>, C<sub>2</sub>, C<sub>3</sub>.</p>
 <script type="math/tex; mode=display">
-\left(\begin{array}{l}{A} \\ {B} \\ {C}\end{array}\right)=\left(\begin{array}{lll}{c_{1}} & {c_{2}} & {c_{3}}\end{array}\right)\left(\begin{array}{l}{a} \\ {b} \\ {c}\end{array}\right)</script><p>For example, build supercell 2 times in the <strong><em>a</em></strong> and <strong><em>b</em></strong> direction and keep the <strong><em>c</em></strong> vector.</p>
+\left(\begin{array}{l}{A} \\ {B} \\ {C}\end{array}\right)=\left(\begin{array}{lll}{c_{1}} & {c_{2}} & {c_{3}}\end{array}\right)\left(\begin{array}{l}{a} \\ {b} \\ {c}\end{array}\right)</script><p>For example, build supercell with length is 2 times in the <strong><em>a</em></strong> and <strong><em>b</em></strong> direction and keep the <strong><em>c</em></strong> vector.</p>
 <pre><code>401
  ===================== Structural File ===========================
  1) POSCAR                                            
@@ -1603,11 +1632,11 @@ S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdo
 2 2 1
   --&gt;&gt; (02) Written SC221.vasp File
 </code></pre><h3 id="8-3-Fix-Atoms-by-Layers"><a href="#8-3-Fix-Atoms-by-Layers" class="headerlink" title="8.3 Fix Atoms by Layers"></a>8.3 Fix Atoms by Layers</h3><p>VASP default structural optimization allows all atoms to move freely in all directions (x, y, z). In some cases, structural optimization calculations require to fix some atoms. For example, surface calculations with slab model need to fix some bottom atoms. </p>
-<p>To fix atoms, the POSCAR seventh line should be switched to <code>selective dynamics</code> (only the first character is relevant and must be <em>S</em> or <em>s</em>). This mode allows to provide extra flags for each atom signaling whether the respective coordinate(s) of this atom will be allowed to change during the ionic relaxation. <code>F</code> means fix, and <code>T</code> means not fix. </p>
-<p>VASPKIT provides two options <code>402</code> to fix atoms by layers:</p>
+<p>To fix atoms, the POSCAR seventh line should be switched to <code>selective dynamics</code> (only the first character is relevant and must be <code>S</code> or <code>s</code>). This mode allows to provide extra flags for each atom signaling whether the respective coordinate(s) of this atom will be allowed to change during the ionic relaxation. <code>F</code> means fix, and <code>T</code> means not fix. </p>
+<p>VASPKIT provides options <code>402</code> to fix atoms by layers:</p>
 <p>(1) Input the file name that we want to fix. <code>1</code> for POSCAR, <code>2</code> for CONTCAR, <code>3</code> for specified name but should also be POSCAR format.</p>
-<p>(2) Input a threshold (unit: Å) to separate layers. Only two atomic layers’ z coordination bigger than the threshold, those layers can be recongnized. Otherwise, it will be recongnized to be one layer. VASPKIT shows some suggested threshold and its corresponding layers number.</p>
-<p>Then VASPKIT will print the regonized layers number.</p>
+<p>(2) Input a threshold (unit: Å) to separate layers. Only atomic layers’ z coordinates difference is bigger than the threshold, those layers can be recognized. Otherwise, it will be recognized to be one layer. VASPKIT shows some suggested threshold and its corresponding layers number.</p>
+<p>Then VASPKIT will print the recognized layers number.</p>
 <p>(3) Choose the layers that we want to fix. VASPKIT will automitically fix those bottom layers and output a <code>POSCAR_FIX</code> file. Before VASP calcualtion, <code>cp POSCAR_FIX POSCAR</code>.</p>
 <pre><code> 402
  ===================== Structural File ===========================
@@ -1631,9 +1660,9 @@ S = -[G(T)-H(T)] / T=0.0021261  \mathrm{eV} / \mathrm{K}=205.13  \mathrm{J} \cdo
 2
 Fixed atoms are:    1   4
   --&gt;&gt; (02) Written POSCAR_FIX File!
-</code></pre><h3 id="8-4-Fix-Atoms-by-Height"><a href="#8-4-Fix-Atoms-by-Height" class="headerlink" title="8.4 Fix Atoms by Height"></a>8.4 Fix Atoms by Height</h3><p>VASPKIT <code>403</code> can also fix atoms, but by a range of z coordinations. Similar as the option <code>402</code>, first select a structural file, and then input two numbers to set the z coordiation range. Then, it will output <code>POSCAR_FIX</code> file. </p>
-<p>If the <code>(1) Fractional coordinates</code> is select, the input <code>z_min z_max</code> numbers should be the z fractional coordination and the output file <code>POSCAR_FIX</code> also is writen as fractional style. </p>
-<p>If the <code>(2) Cartesian coordinates</code> is select, the input <code>z_min z_max</code> numbers should be the z cartesian coordination and the output file <code>POSCAR_FIX</code> also is writen as cartesian style. </p>
+</code></pre><h3 id="8-4-Fix-Atoms-by-Height"><a href="#8-4-Fix-Atoms-by-Height" class="headerlink" title="8.4 Fix Atoms by Height"></a>8.4 Fix Atoms by Height</h3><p>VASPKIT <code>403</code> can also fix atoms, but by a range of z coordinates. Similar as the option <code>402</code>, first select a structural file, and then input two numbers to set the z coordinate range. Then, select the output format <code>Fractional</code> or <code>Cartesian</code>. it will output <code>POSCAR_FIX</code> file. </p>
+<p>If the <code>(1) Fractional coordinates</code> is select, the input <code>z_min z_max</code> numbers should be the z fractional coordination and the output file <code>POSCAR_FIX</code> also is written as fractional style. </p>
+<p>If the <code>(2) Cartesian coordinates</code> is select, the input <code>z_min z_max</code> numbers should be the z Cartesian coordination and the output file <code>POSCAR_FIX</code> also is written as Cartesian style. </p>
 <pre><code>403
  ===================== Structural File ===========================
  1) POSCAR                                            
@@ -1658,19 +1687,18 @@ Fixed atoms are:    1   4
 Fixed atoms are:    1   4
   --&gt;&gt; (02) Written POSCAR_FIX File!
 </code></pre><h3 id="8-5-Swap-Axis-of-Lattice-Vector"><a href="#8-5-Swap-Axis-of-Lattice-Vector" class="headerlink" title="8.5 Swap Axis of Lattice Vector"></a>8.5 Swap Axis of Lattice Vector</h3><p>VASPKIT <code>407</code> can do swap two axis of lattice vector.</p>
-<h2 id="9-Potential-related"><a href="#9-Potential-related" class="headerlink" title="9 Potential related"></a>9 Potential related</h2><h3 id="9-1-Planar-Average-Potential"><a href="#9-1-Planar-Average-Potential" class="headerlink" title="9.1 Planar Average Potential"></a>9.1 Planar Average Potential</h3><p>Plane-average for grid files is one of the basic function of vaspkit (426). It supports all grid files of vasp output, such as CHGCAR, LOCPOT, ELFCAR. All such grid files write by following commands in Fortran:</p>
+<h2 id="9-Potential-related"><a href="#9-Potential-related" class="headerlink" title="9 Potential related"></a>9 Potential related</h2><h3 id="9-1-Planar-Average-Potential"><a href="#9-1-Planar-Average-Potential" class="headerlink" title="9.1 Planar Average Potential"></a>9.1 Planar Average Potential</h3><p>Planar average for grid files is one of the basic function of VASPKIT. It supports all grid files of VASP output, such as CHGCAR, PARCHG, LOCPOT, ELFCAR. All such grid files are written by following commands in Fortran:</p>
 <pre><code class="lang-fortran">WRITE(IU,FORM) (((C(NX,NY,NZ),NX=1,NGXC),NY=1,NGYZ),NZ=1,NGZC)
 </code></pre>
 <p>For one selected direction, such as z direction. VASPKIT do an average in XY plane on each NZ, </p>
 <script type="math/tex; mode=display">
 \sum_{i j} \Delta x_{i} \Delta y_{j} \rho_{i, j} / \sum_{i j} \Delta x_{i} \Delta y_{j}</script><p><img style="width:600px" src="../images/vaspkit-avgpot/vaspkit-avgpot3.png" alt="unfold band" align="center"></p>
-<p>Output POTPAVG.dat with two columns. First column is z coordination (in Å), Second column is Planar Average-Potential (in eV) or Densitiy (in e).</p>
-<p>Here, take LOCPOT as an example. It contains total local potential (in eV) when LVTOT   =  .TRUE. exists in the INCAR file, or contains electrostatic potential (in eV) when LVHAR = .TRUE. exists in the INCAR file. Electrostatic potential is desirable for the evaluation of the work-function, because the electrostatic potential converges more rapidly to the vacuum level than the total potential. To get the work-function, potential along z direction (i.e. slab normal direction) must be averaged in the slab planes. </p>
+<p>The output <code>POTPAVG.dat</code> contains two columns. First column is z coordinate (in Å), Second column is Planar Average-Potential (in eV) or Densitiy (in e).</p>
+<p>Here, take LOCPOT as an example. It contains total local potential (in eV) when <code>LVTOT   =  .TRUE.</code> exists in the INCAR file, or contains electrostatic potential (in eV) when <code>LVHAR = .TRUE.</code> exists in the INCAR file. Electrostatic potential is desirable for the evaluation of the work-function, because the electrostatic potential converges more rapidly to the vacuum level than the total potential. To get the work-function, potential along z direction (i.e. slab normal direction) must be averaged in the slab planes. </p>
 <p>Hamiltonian of Kohn-Sham is:</p>
 <script type="math/tex; mode=display">
 \hat{H}=-\frac{1}{2} \nabla^{2}-\sum_{A} \frac{Z_{A}}{\left|\boldsymbol{r}-\boldsymbol{R}_{A}\right|}+\int_{\infty} \frac{\rho\left(\boldsymbol{r}^{\prime}\right)}{\left|\boldsymbol{r}-\boldsymbol{r}^{\prime}\right|} d \boldsymbol{r}^{\prime}+v_{x c}[\rho(\boldsymbol{r})]</script><p>Electrostatic potential is the summation of second (ionic) and third (hartree) parts of Hamiltonian .</p>
-<p>For example, calculate the work-function of Au(111) slab with five atomic layers. </p>
-<p>(1) Do an optimization and a single-point calculation to get the LOCPOT file, single-point INCAR as following:</p>
+<h4 id="Example-Work-function-of-Au-111-slab-with-five-atomic-layers"><a href="#Example-Work-function-of-Au-111-slab-with-five-atomic-layers" class="headerlink" title="Example, Work-function of Au(111) slab with five atomic layers."></a>Example, Work-function of Au(111) slab with five atomic layers.</h4><p>(1) Do an optimization and a single-point calculation to get the LOCPOT file, single-point INCAR as following:</p>
 <pre><code>##### initial parameters I/O #####
 SYSTEM = Au
 NCORE = 5 
@@ -1692,7 +1720,7 @@ NELM = 300
 GGA = PE 
 LREAL = Auto 
 IDIPOL = 3
-</code></pre><p>(2) Run vaspkit 426 function, and select the surface normal direction:</p>
+</code></pre><p>(2) Run VASPKIT <code>426</code> function, and select the surface normal direction:</p>
 <pre><code>426
  +-------------------------- Warm Tips --------------------------+
                   You MUST Know What You are Doing  
@@ -1717,7 +1745,7 @@ IDIPOL = 3
  +-------------------------- Summary ----------------------------+
  Vacuum-Level  (eV):    6.695
  +---------------------------------------------------------------+
-</code></pre><p>So, the Vacuum-Level is 6.695, POTPAVG.dat as following:</p>
+</code></pre><p>So, the Vacuum-Level is <code>6.695</code>, POTPAVG.dat as following:</p>
 <pre><code> # Planar Distance (in Angstrom), Planar Average-Potential (in eV) or -Densitiy (in e)
   0.0000    0.27377302E+01
   0.1025    0.94832051E+00
@@ -1728,20 +1756,19 @@ IDIPOL = 3
   0.6148   -0.12150765E+02
   0.7172   -0.14164741E+02
   ...
-</code></pre><p>(3) get the fermi level by:</p>
+</code></pre><p>(3) Get the fermi level by:</p>
 <pre><code>grep E-fermi OUTCAR 
 E-fermi :   1.5199     XC(G=0):  -6.7056     alpha+bet : -6.4642
-</code></pre><p>(4) Draw figure with origin or matplotlib:</p>
-<p>The obtained Plane-averaged electrostatic potential figure:</p>
+</code></pre><p>(4) Draw the Plane-averaged electrostatic potential figure.</p>
 <p><img style="width:600px" src="../images/vaspkit-avgpot/vaspkit-avgpot1.png" alt="unfold band" align="center"></p>
 <p><img style="width:530px" src="../images/vaspkit-avgpot/vaspkit-avgpot2.png" alt="unfold band" align="center"></p>
 <p>So, work function can be calculated as:</p>
 <script type="math/tex; mode=display">
 \Phi=E_{\mathrm{vac}}-E_{\mathrm{F}}</script><p>$\Phi$ = 6.695 - 1.5199 = 5.1751 eV</p>
-<h3 id="9-2-Macroscopic-Averaged-Potential"><a href="#9-2-Macroscopic-Averaged-Potential" class="headerlink" title="9.2 Macroscopic Averaged Potential"></a>9.2 Macroscopic Averaged Potential</h3><p>Besides planar-avergaed potential , VASPKIT can also calculate macroscopic-averaged potential, which is obtained by convolving the planar-avergaed potential with a moving average.  e.g. If one want to do planar-avergaed potential in z-direction, use z = average(x, y) for every z. If one want to do macroscopic-averaged potential in z-dirction, use z = average(x, y, z +/- $\Delta$z’) for every z, where z’ is the layer distance for repeat strctures.</p>
+<h3 id="9-2-Macroscopic-Averaged-Potential"><a href="#9-2-Macroscopic-Averaged-Potential" class="headerlink" title="9.2 Macroscopic Averaged Potential"></a>9.2 Macroscopic Averaged Potential</h3><p>Besides planar averaged potential , VASPKIT can also calculate macroscopic-averaged potential, which is obtained by convolving the planar averaged potential with a moving average.  e.g. If one want to do planar-averaged potential in z-direction, use z = average(x, y) for every z. If one want to do macroscopic-averaged potential in z-dirction, use z = average(x, y, z &plusmn; $\Delta$z’) for every z, where 2$\Delta$z’ is the layer distance for repeat structures.</p>
 <p>For example: MoS<sub>2</sub>/WS<sub>2</sub> heterogeneous junction.</p>
-<p><strong>Step 1</strong>. do a single-point calculation with LVHAR = .TRUE., </p>
-<p><strong>Step 2</strong>. run vaspkit 427 function to obtain planar-avergaed potential and macroscopic-averaged potential from LOCPOT. </p>
+<p>(1) Do a single-point calculation with LVHAR = .TRUE., </p>
+<p>(2) Run vaspkit 427 function to obtain planar-avergaed potential and macroscopic-averaged potential from LOCPOT. </p>
 <ol>
 <li><p>Select which Direction is calculte for the Planar Average?  </p>
 </li>
@@ -2030,7 +2057,7 @@ Note: Now, VASPKIT can only output wavefunction for specified one K points and o
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="VASPKIT">VASPKIT</a></p>
     <p><span>发布时间:</span>2019-06-28, 00:00:00</p>
-    <p><span>最后更新:</span>2019-06-28, 17:08:23</p>
+    <p><span>最后更新:</span>2019-06-28, 23:00:29</p>
     <span>原始链接:</span><a class="post-url" href="/2019/06/28/manual/" title="VASPKIT v0.80 Menual">http://vaspkit.com/2019/06/28/manual/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
